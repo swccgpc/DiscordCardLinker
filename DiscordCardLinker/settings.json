@@ -1,0 +1,8 @@
+﻿{
+  "Token": "SET TOKEN HERE",
+  "ClientID": 842629929328836628,
+  "Permissions": 355328,
+  "BaseImageURL": "https://lotrtcgwiki.com/wiki/",
+  "BaseWikiURL": "https://lotrtcgwiki.com/wiki/",
+  "MaxImagesPerMessage": 5
+}
