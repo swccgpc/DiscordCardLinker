@@ -9,14 +9,14 @@ namespace DiscordCardLinker
 {
 	public class Settings
 	{
-		public const string DefaultPath = "settings.json";
+		public const string DefaultPath = "./settings.json";
 
 		public string Token { get; set; } = "SET TOKEN HERE";
 		public long ClientID { get; set; } = 842629929328836628;
 		public long Permissions { get; set; } = 355328;
 		public string BaseImageURL { get; set; }
 		public string BaseWikiURL { get; set; }
-		public string CardFilePath { get; set; }
+		public string CardFilePath { get; set; } = "cards.tsv";
 
 		public int MaxImagesPerMessage { get; set; }
 
@@ -33,7 +33,12 @@ namespace DiscordCardLinker
 				Console.WriteLine("Settings file does not exist.  Creating...");
 				Settings settings = new Settings();
 
-				Directory.CreateDirectory(Path.GetDirectoryName(path));
+				string dirpath = Path.GetDirectoryName(path);
+				if(!string.IsNullOrWhiteSpace(dirpath))
+				{
+					Directory.CreateDirectory(Path.GetDirectoryName(path));
+				}
+
 				settings.StoreSettings(path);
 			}
 			return JsonConvert.DeserializeObject<Settings>(File.ReadAllText(path));

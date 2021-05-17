@@ -1,0 +1,26 @@
+version: "3.4"
+
+services:
+
+  build:
+    container_name: discord_card_bot
+    build: 
+      context: .
+      dockerfile: discord_app.Dockerfile
+    image: discord_bot_app
+    expose:
+      - "80"
+      - "8080"
+    restart: always
+    volumes:
+      - type: bind
+        source: ./publish
+        target: /dockerbot
+    # ports:
+    #     # target means in the container
+    #   - target: 80
+    #     # published is what's on the host machine
+    #     published: "${APP_PORT}"
+    tty: true
+    #command: nohup dotnet /dockerbot/publish/DiscordCardLinker.dll &
+
