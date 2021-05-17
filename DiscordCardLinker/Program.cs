@@ -19,6 +19,7 @@ namespace DiscordCardLinker
 			//load up spreadsheet into memory
 			// analyze each message for the brackets around identifiers
 			// search according to priority: title, subtitle, nickname, longabbr, shortabbr
+			// when an ambiguity is found, ask the user to choose from options with reacts
 		}
 	}
 }

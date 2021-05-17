@@ -9,12 +9,14 @@ namespace DiscordCardLinker
 {
 	public class Settings
 	{
-		public const string DefaultPath = "app/settings.json";
+		public const string DefaultPath = "settings.json";
 
 		public string Token { get; set; } = "SET TOKEN HERE";
 		public long ClientID { get; set; } = 842629929328836628;
 		public long Permissions { get; set; } = 355328;
-		public string BaseURL { get; set; }
+		public string BaseImageURL { get; set; }
+		public string BaseWikiURL { get; set; }
+		public string CardFilePath { get; set; }
 
 		public int MaxImagesPerMessage { get; set; }
 

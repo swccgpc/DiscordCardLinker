@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -10,7 +10,17 @@
     <PackageReference Include="DSharpPlus.CommandsNext" Version="4.0.1" />
     <PackageReference Include="DSharpPlus.Interactivity" Version="4.0.1" />
     <PackageReference Include="FileHelpers" Version="3.4.2" />
+    <PackageReference Include="FuzzySharp" Version="2.0.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="cards.tsv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="settings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
