@@ -29,9 +29,9 @@ namespace DiscordCardLinker
 		public Settings CurrentSettings { get; }
 		private DiscordClient Client { get; set; }
 
-		private const string squareRegex = @"\[(.*?)]";
-		private const string curlyRegex = @"{(.*?)}";
-		private const string angleRegex = @"<(.*?)>";
+		private const string squareRegex = @"\[(?!@)(.*?)]";
+		private const string curlyRegex = @"{(?!@)(.*?)}";
+		private const string angleRegex = @"<(?!@)(.*?)>";
 		private const string collInfoRegex = @"\((\d+[\w\+]+\d+\w?)\)";
 
 		private Regex squareCR;
@@ -221,11 +221,11 @@ namespace DiscordCardLinker
 				//await e.Message.RespondAsync($"https://lotrtcgwiki.com/images/LOTR.jpg");
 			}
 
-			foreach (Match match in angleCR.Matches(content))
-			{
-				requests.Add((MatchType.Text, match.Groups[1].Value));
-				//await e.Message.RespondAsync($"Here's the text for ''!");
-			}
+			//foreach (Match match in angleCR.Matches(content))
+			//{
+			//	requests.Add((MatchType.Text, match.Groups[1].Value));
+			//	//await e.Message.RespondAsync($"Here's the text for ''!");
+			//}
 			foreach (var (type, searchString) in requests)
 			{
 				var candidates = await PerformSearch(searchString);
