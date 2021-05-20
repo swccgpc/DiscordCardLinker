@@ -350,7 +350,11 @@ namespace DiscordCardLinker
 
 		private async Task SendNotFound(MessageCreateEventArgs e, string search)
 		{
-			string response = $"Unable to find any cards called `{search}`.  Sorry :(";
+			//string response = $"Unable to find any cards called `{search}`.  Sorry :(";
+			string response = $"Sir, I am fluent in 6 million forms of communication. This signal, `{search}`, is not used by the Alliance.";
+			// Unable to find any cards called iwts.  Sorry :(
+			// Sir, I am fluent in 6 million forms of communication. This signal is not used by the Alliance.
+
 			await e.Message.RespondAsync(response);
 		}
 

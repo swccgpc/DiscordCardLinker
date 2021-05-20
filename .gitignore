@@ -351,3 +351,15 @@ MigrationBackup/
 .ionide/
 
 ColorBot/settings.json
+
+
+
+##
+## source the json files from
+## https://github.com/swccgpc/swccg-card-json
+##
+Dark.json
+DarkLegacy.json
+Light.json
+LightLegacy.json
+sets.json
