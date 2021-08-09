@@ -151,10 +151,13 @@ namespace DiscordCardLinker
 
 		private async Task OnReactionAdded(DiscordClient sender, MessageReactionAddEventArgs e)
 		{
+			if (e.User == Client.CurrentUser)
+				return;
+
 			if (e.Message.Author != Client.CurrentUser)
 				return;
 
-			if (e.Message.ReferencedMessage.Author != e.User)
+			if (e.Message.ReferencedMessage.Author != e.User && !e.Message.ReferencedMessage.Author.IsBot)
 				return;
 
 			MatchType type;
@@ -201,8 +204,11 @@ namespace DiscordCardLinker
 
 		private async Task OnMessageCreated(DiscordClient sender, MessageCreateEventArgs e)
 		{
-			if (e.Message.Author.IsBot)
+			//Absolutely can't let infinite response loops through
+			if (e.Message.Author.IsBot && e.Message.Author.Id == 842629929328836628)
 				return;
+
+			await Task.Delay(1000);
 
 			string content = e.Message.Content;
 
@@ -361,10 +367,24 @@ namespace DiscordCardLinker
 			switch (type)
 			{
 				case MatchType.Image:
-					response += $"Found multiple potential candidates for card image `{search}`.\nReact with the option you'd like to display:\n\n";
+					if (e.Author.IsBot)
+					{
+						response += $"Found multiple potential candidates for card image `{search}`.\nTry again with one of the following:\n\n";
+					}
+					else
+					{
+						response += $"Found multiple potential candidates for card image `{search}`.\nReact with the option you'd like to display:\n\n";
+					}
 					break;
 				case MatchType.Wiki:
-					response += $"Found multiple potential candidates for card wiki page `{search}`.\nReact with the option you'd like to display:\n\n";
+					if (e.Author.IsBot)
+					{
+						response += $"Found multiple potential candidates for card wiki page `{search}`.\nTry again with one of the following:\n\n";
+					}
+					else
+					{
+						response += $"Found multiple potential candidates for card wiki page `{search}`.\nReact with the option you'd like to display:\n\n";
+					}
 					break;
 			}
 			
@@ -397,6 +417,7 @@ namespace DiscordCardLinker
 
 			foreach (var option in menu)
 			{
+
 				if (option == "-")
 					continue;
 
