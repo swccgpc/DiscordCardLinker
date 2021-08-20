@@ -22,14 +22,13 @@ jobs:
       - name: Build new image
         run: |
           echo "awscli: $(which aws)"
+          echo "        $(aws --version)"
           echo "docker: $(which docker)"
           echo "pip3..: $(which pip3)"
           echo "Installing latest awscli"
           sudo pip3 install awscli
           echo "awscli: $(which aws)"
-          #echo "Installing Docker"
-          #sudo apt-get update ; sudo apt-get install -y docker.io ; true
-          #echo "docker: $(which docker)"
+          echo "        $(aws --version)"
           echo "Logging in to ECR"
           eval "$(aws ecr get-login --no-include-email --region us-east-2)"
           echo "Building DiscordCardLinker"
