@@ -10,7 +10,7 @@ on:
 
 
 jobs:
-  deploy-holotable: 
+  DiscordCardLinker: 
     runs-on: "ubuntu-latest"
 
     steps:
@@ -22,7 +22,7 @@ jobs:
       - name: Build new image
         run: |
           echo "Installing Docker"
-          apt-get update ; apt-get install -y docker.io ; which docker
+          sudo apt-get update ; sudo apt-get install -y docker.io ; which docker
           echo "Logging in to ECR"
           eval "$(aws ecr get-login --no-include-email --region us-east-2)"
           echo "Building DiscordCardLinker"
