@@ -21,13 +21,18 @@ jobs:
 
       - name: Build new image
         run: |
+          echo "Installing Docker"
+          apt-get update ; apt-get install -y docker.io ; which docker
+          echo "Logging in to ECR"
           eval "$(aws ecr get-login --no-include-email --region us-east-2)"
+          echo "Building DiscordCardLinker"
           cd DiscordCardLinker
           docker build --force-rm=true --no-cache \
             -t discordcardlinker:latest \
             -t 230787692442.dkr.ecr.us-east-2.amazonaws.com/discordcardlinker:latest \
             -f Dockerfile .
           if [ $? == 0 ]; then
+            echo "Pushing Image to ECR"
             docker push 230787692442.dkr.ecr.us-east-2.amazonaws.com/discordcardlinker:latest
           fi
         env:
