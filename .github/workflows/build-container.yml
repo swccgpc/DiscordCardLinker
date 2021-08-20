@@ -21,8 +21,11 @@ jobs:
 
       - name: Build new image
         run: |
+          echo "awscli: $(which aws)"
+          echo "docker: $(which docker)"
           echo "Installing Docker"
-          sudo apt-get update ; sudo apt-get install -y docker.io ; which docker
+          sudo apt-get update ; sudo apt-get install -y docker.io ; true
+          echo "docker: $(which docker)"
           echo "Logging in to ECR"
           eval "$(aws ecr get-login --no-include-email --region us-east-2)"
           echo "Building DiscordCardLinker"
