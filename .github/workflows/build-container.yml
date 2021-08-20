@@ -23,6 +23,10 @@ jobs:
         run: |
           echo "awscli: $(which aws)"
           echo "docker: $(which docker)"
+          echo "pip3..: $(which pip3)"
+          echo "Installing latest awscli"
+          sudo pip3 install aws-cli
+          echo "awscli: $(which aws)"
           #echo "Installing Docker"
           #sudo apt-get update ; sudo apt-get install -y docker.io ; true
           #echo "docker: $(which docker)"
