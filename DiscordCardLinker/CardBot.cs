@@ -1,18 +1,23 @@
-﻿using DSharpPlus;
-using DSharpPlus.Entities;
-using DSharpPlus.EventArgs;
-
-using FileHelpers;
-
-using Microsoft.Extensions.Logging;
-
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Reflection.Metadata;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+
+using Microsoft.Extensions.Logging;
+
+using DSharpPlus;
+using DSharpPlus.Entities;
+using DSharpPlus.EventArgs;
+using DSharpPlus.CommandsNext;
+using DSharpPlus.SlashCommands;
+
+using FileHelpers;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace DiscordCardLinker
 {
@@ -33,23 +38,30 @@ namespace DiscordCardLinker
 		private const string curlyRegex = @"{(?!@)(.*?)}";
 		private const string angleRegex = @"<(?!@)(.*?)>";
 		private const string collInfoRegex = @"\((\d+[\w\+]+\d+\w?)\)";
+		private const string abbreviationReductionRegex = @"[^\w\s]+";
+		private const string stripNonWordsRegex = @"\W+";
 
 		private Regex squareCR;
 		private Regex curlyCR;
 		private Regex angleCR;
 		private Regex collInfoCR;
+		private Regex abbreviationReductionCR;
+		private Regex stripNonWordsCR;
 
 		//Maybe split this into groups: has subtitles, has nicks, etc
 		private List<CardDefinition> Cards { get; set; }
+
+		private bool Loading { get; set; }
 
 		private Dictionary<string, List<CardDefinition>> CardTitles { get; set; }
 		private Dictionary<string, List<CardDefinition>> CardSubtitles { get; set; }
 		private Dictionary<string, List<CardDefinition>> CardFullTitles { get; set; }
 		private Dictionary<string, List<CardDefinition>> CardNicknames { get; set; }
+		private Dictionary<string, List<CardDefinition>> CardPersonas { get; set; }
 		private Dictionary<string, CardDefinition> CardCollInfo{ get; set; }
 
 		
-		private Queue<(string searchString, CardDefinition card)> Cache { get; set; }
+		//private Queue<(string searchString, CardDefinition card)> Cache { get; set; }
 
 		public CardBot(Settings settings)
 		{
@@ -58,13 +70,44 @@ namespace DiscordCardLinker
 			curlyCR = new Regex(curlyRegex, RegexOptions.Compiled);
 			angleCR = new Regex(angleRegex, RegexOptions.Compiled);
 			collInfoCR = new Regex(collInfoRegex, RegexOptions.Compiled);
+			abbreviationReductionCR = new Regex(abbreviationReductionRegex, RegexOptions.Compiled);
+			stripNonWordsCR = new Regex(stripNonWordsRegex, RegexOptions.Compiled);
 
-			LoadCardDefinitions();
-			Cache = new Queue<(string searchString, CardDefinition card)>();
+			LoadCardDefinitions().Wait();
 		}
 
-		public void LoadCardDefinitions()
+		private async Task DownloadGoogleSheet()
 		{
+			//https://docs.google.com/spreadsheets/d/1-0C3sAm78A0x7-w_rfuWuH87Fta60m2xNzmAE2KFBNE/export?format=tsv
+
+			HttpWebRequest request = (HttpWebRequest)WebRequest.Create($"https://docs.google.com/spreadsheets/d/{CurrentSettings.GoogleSheetID}/export?format=tsv");
+			request.Method = "GET";
+
+			try
+			{
+				var webResponse = await request.GetResponseAsync();
+				using (Stream webStream = webResponse.GetResponseStream() ?? Stream.Null)
+				using (StreamReader responseReader = new StreamReader(webStream))
+				{
+					string response = responseReader.ReadToEnd();
+					File.WriteAllText(CurrentSettings.CardFilePath, response);
+				}
+			}
+			catch (Exception e)
+			{
+				Console.Out.WriteLine(e);
+			}
+		}
+
+		public async Task LoadCardDefinitions()
+		{
+			Loading = true;
+
+			if(!String.IsNullOrWhiteSpace(CurrentSettings.GoogleSheetID))
+			{
+				await DownloadGoogleSheet();
+			}
+
 			var engine = new FileHelperEngine<CardDefinition>(Encoding.UTF8);
 			Cards = engine.ReadFile(CurrentSettings.CardFilePath).ToList();
 
@@ -72,47 +115,73 @@ namespace DiscordCardLinker
 			CardSubtitles = new Dictionary<string, List<CardDefinition>>();
 			CardFullTitles = new Dictionary<string, List<CardDefinition>>();
 			CardNicknames = new Dictionary<string, List<CardDefinition>>();
+			CardPersonas = new Dictionary<string, List<CardDefinition>>();
 			CardCollInfo = new Dictionary<string, CardDefinition>();
-
-			string fulltitle = "";
 
 			foreach(var card in Cards)
 			{
-				AddEntry(CardTitles, card.Title.ToLower().Trim(), card);
-				AddEntry(CardSubtitles, card.Subtitle.ToLower().Trim(), card);
-				if(!String.IsNullOrWhiteSpace(card.Subtitle))
-				{
-					fulltitle = $"{card.Title.Trim()}, {card.Subtitle.Trim()}{card.TitleSuffix.Trim()}";
-				}
-				else
-				{
-					fulltitle = $"{card.Title.Trim()}{card.TitleSuffix.Trim()}";
-				}
-				AddEntry(CardFullTitles, $"{fulltitle.ToLower().Trim()}", card);
+				AddEntry(CardTitles, ScrubInput(card.Title), card);
+				AddEntry(CardSubtitles, ScrubInput(card.Subtitle), card);
 
+				string fulltitle = $"{card.Title}{card.Subtitle}{card.TitleSuffix}";
+				AddEntry(CardFullTitles, ScrubInput(fulltitle), card);
 
 				if(!String.IsNullOrWhiteSpace(card.Subtitle))
 				{
-					AddEntry(CardNicknames, GetLongAbbreviation(card.Subtitle.ToLower().Trim()), card);
+					fulltitle = $"{card.Subtitle}{card.TitleSuffix}";
+					AddEntry(CardFullTitles, ScrubInput(fulltitle), card);
+				}
+
+				foreach (string entry in card.Personas.Split(","))
+				{
+					if (String.IsNullOrWhiteSpace(entry))
+						continue;
+
+					AddEntry(CardPersonas, ScrubInput(entry), card);
+				}
+
+				if (!String.IsNullOrWhiteSpace(card.Subtitle))
+				{
+					AddEntry(CardNicknames, GetLongAbbreviation(card.Subtitle), card);
 				}
 				else
 				{
-					AddEntry(CardNicknames, GetLongAbbreviation(card.Title.ToLower().Trim()), card);
+					AddEntry(CardNicknames, GetLongAbbreviation(card.Title), card);
 				}
 
 				foreach (string entry in card.Nicknames.Split(","))
 				{
-					AddEntry(CardNicknames, entry.ToLower().Trim(), card);
+					if (String.IsNullOrWhiteSpace(entry))
+						continue;
+
+					AddEntry(CardNicknames, ScrubInput(entry), card);
 				}
 
-				CardCollInfo.Add(card.CollInfo.ToLower().Trim(), card);
+				CardCollInfo.Add(ScrubInput(card.CollInfo), card);
 			}
+
+			Loading = false;
+		}
+
+		private string ScrubInput(string input, bool stripSymbols=true)
+		{
+			string output = input.ToLower();
+			output = output.Trim();
+			if(stripSymbols)
+			{
+				output = stripNonWordsCR.Replace(output, "");
+			}
+			
+			return output;
 		}
 
 		private string GetLongAbbreviation(string input)
 		{
+			input = input.ToLower().Trim();
+			input = input.Replace("-", " ");
+			input = abbreviationReductionCR.Replace(input, "");
 			string abbr = new string(
-				input.Split(new char[] { ' ', '-' }, StringSplitOptions.RemoveEmptyEntries)
+				input.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
 							.Where(s => s.Length > 0 && char.IsLetter(s[0]))
 							.Select(s => s[0])
 							.ToArray());
@@ -146,11 +215,26 @@ namespace DiscordCardLinker
 			Client.MessageCreated += OnMessageCreated;
 			Client.MessageReactionAdded += OnReactionAdded;
 
+			var slash = Client.UseSlashCommands(new SlashCommandsConfiguration()
+			{
+				Services = new ServiceCollection().AddSingleton<CardBot>(this).BuildServiceProvider()
+			});
+
+			//TODO: remove this id
+			slash.RegisterCommands<LoremasterSlashCommands>(699957633121255515);
+
 			await Client.ConnectAsync();
 		}
 
 		private async Task OnReactionAdded(DiscordClient sender, MessageReactionAddEventArgs e)
 		{
+			if (Loading)
+			{
+				await Task.Delay(3000);
+				if (Loading)
+					return;
+			}
+				
 			if (e.User == Client.CurrentUser)
 				return;
 
@@ -194,21 +278,23 @@ namespace DiscordCardLinker
 						await e.Message.ModifyAsync(card.WikiURL);
 						break;
 				}
-
-				AddSuccessfulSearch(search, card);
-
 			}
-
-			
 		}
 
 		private async Task OnMessageCreated(DiscordClient sender, MessageCreateEventArgs e)
 		{
+			if (Loading)
+			{
+				await Task.Delay(3000);
+				if (Loading)
+					return;
+			}
+
 			//Absolutely can't let infinite response loops through
 			if (e.Message.Author.IsBot && e.Message.Author.Id == 842629929328836628)
 				return;
 
-			await Task.Delay(1000);
+			await Task.Delay(500);
 
 			string content = e.Message.Content;
 
@@ -217,14 +303,11 @@ namespace DiscordCardLinker
 			foreach (Match match in curlyCR.Matches(content))
 			{
 				requests.Add((MatchType.Wiki, match.Groups[1].Value));
-
-				//await e.Message.RespondAsync($"Here's a wiki link for ''!");
 			}
 
 			foreach (Match match in squareCR.Matches(content))
 			{
 				requests.Add((MatchType.Image, match.Groups[1].Value));
-				//await e.Message.RespondAsync($"https://lotrtcgwiki.com/images/LOTR.jpg");
 			}
 
 			//foreach (Match match in angleCR.Matches(content))
@@ -266,31 +349,13 @@ namespace DiscordCardLinker
 					await SendCollisions(e, type, searchString, candidates);
 				}
 			}
-				
-
-		}
-
-		private void AddSuccessfulSearch(string search, CardDefinition card)
-		{
-			search = search.ToLower().Trim();
-			Cache.Enqueue((search, card));
-			if(Cache.Count > 100)
-			{
-				Cache.Dequeue();
-			}
 		}
 
 		private async Task<List<CardDefinition>> PerformSearch(string searchString)
 		{
 			var candidates = new List<CardDefinition>();
 
-			string lowerSearch = searchString.ToLower().Trim();
-			if(Cache.Any(x => x.searchString == searchString))
-			{
-				var card = Cache.Where(x => x.searchString == lowerSearch).First().card;
-				candidates.Add(card);
-				return candidates;
-			}
+			string lowerSearch = ScrubInput(searchString);
 
 			if (CardSubtitles.ContainsKey(lowerSearch))
 			{
@@ -322,6 +387,12 @@ namespace DiscordCardLinker
 				return candidates;
 			}
 
+			if (CardPersonas.ContainsKey(lowerSearch))
+			{
+				candidates.AddRange(CardPersonas[lowerSearch]);
+				return candidates;
+			}
+
 			//TODO: fuzzy search on all of the above
 			return candidates;
 		}
@@ -337,8 +408,6 @@ namespace DiscordCardLinker
 					await SendWikiLink(e, card);
 					break;
 			}
-
-			AddSuccessfulSearch(search, card);
 		}
 
 		private async Task SendImage(MessageCreateEventArgs e, CardDefinition card)
@@ -349,9 +418,6 @@ namespace DiscordCardLinker
 		private async Task SendWikiLink(MessageCreateEventArgs e, CardDefinition card)
 		{
 			await e.Message.RespondAsync(card.WikiURL);
-			//var msg = await new DiscordMessageBuilder()
-			//	.With
-			//e.Message.RespondAsync()
 		}
 
 		private async Task SendNotFound(MessageCreateEventArgs e, string search)
@@ -459,9 +525,5 @@ namespace DiscordCardLinker
 
 			return IDEmoji[count];
 		}
-
-		
 	}
-
-
 }

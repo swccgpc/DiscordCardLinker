@@ -1,9 +1,5 @@
 ﻿{
-  "Token": "SET TOKEN HERE",
-  "ClientID": 842629929328836628,
-  "Permissions": 355328,
-  "BaseImageURL": "https://lotrtcgwiki.com/images/LOTR10011.jpg",
-  "BaseWikiURL": "https://lotrtcgwiki.com/wiki/",
+  "Token": "BOT TOKEN GOES HERE",
   "CardFilePath": "./cards.tsv",
-  "MaxImagesPerMessage": 5
+  "GoogleSheetID": "14qs2zxr16wg3N_OAnU9lcw0hn67YZtLDUhKGQg-1_TM"
 }

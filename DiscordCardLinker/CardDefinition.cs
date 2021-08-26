@@ -21,5 +21,6 @@ namespace DiscordCardLinker
 		public string TitleSuffix;
 
 		public string Nicknames;
+		public string Personas;
 	}
 }
