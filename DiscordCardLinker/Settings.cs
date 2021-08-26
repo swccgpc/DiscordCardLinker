@@ -12,12 +12,8 @@ namespace DiscordCardLinker
 		public const string DefaultPath = "./settings.json";
 
 		public string Token { get; set; }            = Environment.GetEnvironmentVariable("TOKEN");
-		public long ClientID { get; set; }           = long.Parse(Environment.GetEnvironmentVariable("CLIENTID"));
-		public long Permissions { get; set; }        = long.Parse(Environment.GetEnvironmentVariable("PERMISSIONS"));
-		public string BaseImageURL { get; set; }     = Environment.GetEnvironmentVariable("BASEIMAGEURL");
-		public string BaseWikiURL { get; set; }      = Environment.GetEnvironmentVariable("BASEWIKIURL");
 		public string CardFilePath { get; set; }     = "cards.tsv";
-		public int MaxImagesPerMessage { get; set; } = int.Parse(Environment.GetEnvironmentVariable("MAXIMAGESPERMESSAGE"));
+		public string GoogleSheetID { get; set; }    //= Environment.GetEnvironmentVariable("GOOGLESHEETID");
 
 		public void StoreSettings(string path= DefaultPath)
 		{
