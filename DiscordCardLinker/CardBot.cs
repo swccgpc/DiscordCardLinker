@@ -205,7 +205,7 @@ namespace DiscordCardLinker
 		private async Task OnMessageCreated(DiscordClient sender, MessageCreateEventArgs e)
 		{
 			//Absolutely can't let infinite response loops through
-			if (e.Message.Author.IsBot && e.Message.Author.Id == 842629929328836628)
+			if (e.Message.Author.IsBot)
 				return;
 
 			await Task.Delay(1000);
