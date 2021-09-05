@@ -33,6 +33,8 @@ jobs:
           eval "$(aws ecr get-login --no-include-email --region us-east-2)"
           echo "Building DiscordCardLinker"
           cd DiscordCardLinker
+          rm -f {Dark,Light,sets}.json
+          python3 make_cards_tsv.py
           docker build --force-rm=true --no-cache \
             -t discordcardlinker:latest \
             -t 230787692442.dkr.ecr.us-east-2.amazonaws.com/discordcardlinker:latest \
