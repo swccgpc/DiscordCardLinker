@@ -31,10 +31,11 @@ jobs:
           echo "        $(aws --version)"
           echo "Logging in to ECR"
           eval "$(aws ecr get-login --no-include-email --region us-east-2)"
-          echo "Building DiscordCardLinker"
-          cd DiscordCardLinker
+          echo "Building cards.tsv"
           rm -f {Dark,Light,sets}.json
           python3 make_cards_tsv.py
+          echo "Building DiscordCardLinker"
+          cd DiscordCardLinker
           docker build --force-rm=true --no-cache \
             -t discordcardlinker:latest \
             -t 230787692442.dkr.ecr.us-east-2.amazonaws.com/discordcardlinker:latest \
