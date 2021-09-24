@@ -11,6 +11,7 @@ def parse_json_file(json_filename):
     side_json = json.load(json_data)
 
   for card in side_json["cards"]:
+    nicknames  = []
     card_id    = str(card["id"])
     img_url    = card["front"]["imageUrl"]
     http_url   = card["front"]["imageUrl"]+"?need_to_add_direct_link_capability_to_scomp"
@@ -19,6 +20,8 @@ def parse_json_file(json_filename):
     #collecting = card["gempId"].replace("_", card["rarity"]) + " ("+release_sets[card["set"]]["abbr"]+card["rarity"]+gempid[1]+")"
     collecting = release_sets[card["set"]]["abbr"]+card["rarity"]+gempid[1]
     title      = card["front"]["title"]
+    nicknames.append(title)
+    nicknames.append(title.replace("•", ""))
     name       = title.replace("•", "").replace(" (V)", "").replace("<>", "").replace(" (AI)", "").replace("'", "")
     card_type  = card["front"]["type"]
     ##
@@ -43,9 +46,11 @@ def parse_json_file(json_filename):
       title_suffix = "(V)"
 
 
-    nicknames = ""
     if (("Obi-Wan" in title) or ("Kenobi" in title)):
-      nicknames = "Obi-Wan,Kenobi,General Kenobi,Hello There"
+      nicknames.append("Obi-Wan")
+      nicknames.append("Kenobi")
+      nicknames.append("General Kenobi")
+      nicknames.append("Hello There")
 
 
     if (collecting in known_ids):
@@ -54,7 +59,7 @@ def parse_json_file(json_filename):
     else:
       known_ids[collecting] = card_id + "\t" + collecting + "\t" + title
 
-      out = card_id + "\t" + img_url + "\t" + http_url + "\t" + collecting + "\t" + title + "\t" + name + "\t" + subtitle + "\t" + title_suffix + "\t" + nicknames
+      out = card_id + "\t" + img_url + "\t" + http_url + "\t" + collecting + "\t" + title + "\t" + name + "\t" + subtitle + "\t" + title_suffix + "\t" + ",".join(nicknames)
       print(card_id + "\t" + collecting + "\t" + title)
       fh.write(out+"\n")
 
