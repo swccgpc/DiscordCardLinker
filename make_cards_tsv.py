@@ -18,10 +18,21 @@ def parse_json_file(json_filename):
     gempid     = card["gempId"].split("_")
     #collecting = card["gempId"].replace("_", card["rarity"])
     #collecting = card["gempId"].replace("_", card["rarity"]) + " ("+release_sets[card["set"]]["abbr"]+card["rarity"]+gempid[1]+")"
+    if card["set"] == "200d":
+      set_id = 200
+    else:
+      set_id = int(card["set"])
     collecting = release_sets[card["set"]]["abbr"]+card["rarity"]+gempid[1]
     title      = card["front"]["title"]
+    if set_id >199 and set_id < 300:
+      if "(V)" not in title:
+        title = title+" (V)"
+    # •Death Star (SER117)
     nicknames.append(title)
     nicknames.append(title.replace("•", ""))
+    nicknames.append(title+" ("+collecting+")")
+    nicknames.append(collecting)
+    nicknames.append("("+collecting+")")
     name       = title.replace("•", "").replace(" (V)", "").replace("<>", "").replace(" (AI)", "").replace("'", "")
     card_type  = card["front"]["type"]
     ##
