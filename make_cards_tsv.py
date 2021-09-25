@@ -16,24 +16,38 @@ def parse_json_file(json_filename):
     img_url    = card["front"]["imageUrl"]
     http_url   = card["front"]["imageUrl"]+"?need_to_add_direct_link_capability_to_scomp"
     gempid     = card["gempId"].split("_")
-    #collecting = card["gempId"].replace("_", card["rarity"])
-    #collecting = card["gempId"].replace("_", card["rarity"]) + " ("+release_sets[card["set"]]["abbr"]+card["rarity"]+gempid[1]+")"
+    collecting = release_sets[card["set"]]["abbr"]+card["rarity"]+gempid[1]
+    title      = card["front"]["title"]
+
     if card["set"] == "200d":
       set_id = 200
     else:
       set_id = int(card["set"])
-    collecting = release_sets[card["set"]]["abbr"]+card["rarity"]+gempid[1]
-    title      = card["front"]["title"]
+
+    ## if it is a non-legacy virtual set, and (V) not in the title, add it.
     if set_id >199 and set_id < 300:
       if "(V)" not in title:
         title = title+" (V)"
-    # •Death Star (SER117)
+
+    ## full name, with <>, •, and the "(V)" at the end
     nicknames.append(title)
-    nicknames.append(title.replace("•", ""))
+
+    ## preserve the "(V)" at the end
+    if "•" in title:
+      nicknames.append(title.replace("•", ""))
+
+    ## preserve the "(V)" at the end
+    if "<>" in title:
+      nicknames.append(title.replace("<>", ""))
+
+    ## Callable by the collecting ID
     nicknames.append(title+" ("+collecting+")")
     nicknames.append(collecting)
     nicknames.append("("+collecting+")")
+
+    ## A clean name without all the extras
     name       = title.replace("•", "").replace(" (V)", "").replace("<>", "").replace(" (AI)", "").replace("'", "")
+
     card_type  = card["front"]["type"]
     ##
     ## for names like: Obi-Wan Kenobi, Jedi Knight
