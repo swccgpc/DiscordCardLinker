@@ -16,6 +16,8 @@ def parse_json_file(json_filename):
     img_url    = card["front"]["imageUrl"]
     http_url   = card["front"]["imageUrl"]+"?need_to_add_direct_link_capability_to_scomp"
     gempid     = card["gempId"].split("_")
+    title      = card["front"]["title"]
+
     ## Generate a collecting code like they have with MTG.
     ## The collecting code is basically: ReleaseAbbr+Rarity+CardID
     ## The interesting part is that we have 3 different levels of "Unlimited" cards: U, U1, and U2.
@@ -27,12 +29,11 @@ def parse_json_file(json_filename):
     ##   •Lt. Poldin Lehuse            V11U1004  V11 U1  4
     ##   •Trade Federation Tactics (V) V11U014   V11 U  14
     collecting = release_sets[card["set"]]["abbr"]+card["rarity"]+("000"+gempid[1])[-3:]
-    if "(AI)" in cardname:
+    if "(AI)" in title:
       collecting = collecting + "AI"
-    if "(OAI)" in cardname:
+    if "(OAI)" in title:
       collecting = collecting + "OAI"
 
-    title      = card["front"]["title"]
 
     if card["set"] == "200d":
       set_id = 200
