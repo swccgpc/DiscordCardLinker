@@ -4,7 +4,6 @@ import json
 import os
 
 
-
 def parse_json_file(json_filename):
 
   with open(json_filename) as json_data:
@@ -40,29 +39,43 @@ def parse_json_file(json_filename):
     else:
       set_id = int(card["set"])
 
-    ## if it is a non-legacy virtual set, and (V) not in the title, add it.
-    if set_id >199 and set_id < 300:
-      if "(V)" not in title:
-        title = title+" (V)"
+    ##
+    ## Process the card titles.
+    ## This method of processing accomodates cards with multiple titles like:
+    ##   "•The Mythrol/•The Mythrol"
+    ##   "•The Falcon, Junkyard Garbage/•The Falcon, Junkyard Garbage"
+    ##   "•There Is No Try & •Oppressive Enforcement"
+    ##
+    titles = [title]
+    if "/" in title:
+      titles = title.split("/")
 
-    ## full name, with <>, •, and the "(V)" at the end
-    nicknames.append(title)
+    for title in titles:
+      #print("  * Processing Title: ["+title+"]")
+      ## if it is a non-legacy virtual set, and (V) not in the title, add it.
+      if set_id >199 and set_id < 300:
+        if "(V)" not in title:
+          title = title+" (V)"
 
-    ## preserve the "(V)" at the end
-    if "•" in title:
-      nicknames.append(title.replace("•", ""))
+      ## full name, with <>, •, and the "(V)" at the end
+      nicknames.append(title)
 
-    ## preserve the "(V)" at the end
-    if "<>" in title:
-      nicknames.append(title.replace("<>", ""))
+      ## preserve the "(V)" at the end
+      if "•" in title:
+        nicknames.append(title.replace("•", ""))
 
-    ## Callable by the collecting ID
-    nicknames.append(title+" ("+collecting+")")
-    nicknames.append(collecting)
-    nicknames.append("("+collecting+")")
+      ## preserve the "(V)" at the end
+      if "<>" in title:
+        nicknames.append(title.replace("<>", ""))
 
-    ## A clean name without all the extras
-    name       = title.replace("•", "").replace(" (V)", "").replace("<>", "").replace(" (AI)", "").replace("'", "")
+      ## Callable by the collecting ID
+      nicknames.append(title+" ("+collecting+")")
+      nicknames.append(collecting)
+      nicknames.append("("+collecting+")")
+
+      ## A clean name without all the extras
+      name       = title.replace("•", "").replace(" (V)", "").replace("<>", "").replace(" (AI)", "").replace("'", "")
+
 
     card_type  = card["front"]["type"]
     ##
