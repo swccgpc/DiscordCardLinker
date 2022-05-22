@@ -10,7 +10,9 @@ namespace DiscordCardLinker
 	{
 		static async Task Main(string[] args)
 		{
+			Console.WriteLine("Starting up, the Bot!");
 			CardBot bot = new CardBot(Settings.FromFile());
+			Console.WriteLine("Initializing Bot (asynchronously)");
 			await bot.Initialize();
 
 			await Task.Delay(-1);

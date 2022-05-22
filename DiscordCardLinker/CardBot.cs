@@ -1,4 +1,11 @@
-﻿using DSharpPlus;
+﻿/*
+ * DSharpPlus
+ * An unofficial .NET wrapper for the Discord API, 
+ * based off DiscordSharp, but rewritten to fit the API standards.
+ * https://github.com/DSharpPlus/DSharpPlus
+ * https://dsharpplus.github.io/
+ */
+using DSharpPlus;
 using DSharpPlus.Entities;
 using DSharpPlus.EventArgs;
 
@@ -120,16 +127,36 @@ namespace DiscordCardLinker
 			return abbr;
 		}
 
+		/*
+		 * Load cards from TSV in to our in-memory index.
+		 */
 		private void AddEntry(Dictionary<string, List<CardDefinition>> collection, string key, CardDefinition card)
 		{
-			if (String.IsNullOrWhiteSpace(key))
+			/*
+			 * Do not add blank or null lines.
+			 */
+			if (String.IsNullOrWhiteSpace(key)) {
 				return;
+			}
 
+			/*
+			 * Only add the card key once.
+			 */
 			if(!collection.ContainsKey(key))
 			{
+				Console.WriteLine("Adding Key: ["+key+"]");
 				collection.Add(key, new List<CardDefinition>());
 			}
 
+			Console.WriteLine("  .. ID.........: "+card.ID);
+			Console.WriteLine("  .. ImageURL...: "+card.ImageURL);
+			Console.WriteLine("  .. WikiURL....: "+card.WikiURL);
+			Console.WriteLine("  .. CollInfo...: "+card.CollInfo);
+			Console.WriteLine("  .. DisplayName: "+card.DisplayName);
+			Console.WriteLine("  .. Title......: "+card.Title);
+			Console.WriteLine("  .. Subtitle...: "+card.Subtitle);
+			Console.WriteLine("  .. TitleSuffix: "+card.TitleSuffix);
+			Console.WriteLine("  .. Nicknames..: "+card.Nicknames);
 			collection[key].Add(card);
 		}
 
@@ -139,16 +166,21 @@ namespace DiscordCardLinker
 			{
 				Token = CurrentSettings.Token,
 				TokenType = TokenType.Bot,
-				Intents = DiscordIntents.AllUnprivileged,
+				Intents = DiscordIntents.AllUnprivileged, // All intents are granted on discord dev page
 				MinimumLogLevel = LogLevel.Debug
 			});
-
 			Client.MessageCreated += OnMessageCreated;
 			Client.MessageReactionAdded += OnReactionAdded;
 
+			// https://dsharpplus.github.io/api/DSharpPlus.DiscordClient.html?q=ConnectAsync#DSharpPlus_DiscordClient_ConnectAsync_DiscordActivity_System_Nullable_UserStatus__System_Nullable_DateTimeOffset__
+			/* connecting to discord */
 			await Client.ConnectAsync();
+			/* successfully connected to discord */
 		}
 
+		/*
+		 * process reaction to discord chat message
+		 */
 		private async Task OnReactionAdded(DiscordClient sender, MessageReactionAddEventArgs e)
 		{
 			if (e.Message.Author != Client.CurrentUser)
@@ -199,8 +231,14 @@ namespace DiscordCardLinker
 			
 		}
 
+		/*
+		 * Message created in discord chat, check if we should process it.
+		 */
 		private async Task OnMessageCreated(DiscordClient sender, MessageCreateEventArgs e)
 		{
+			/*
+			 * Do not process bot originated messages
+			 */
 			if (e.Message.Author.IsBot)
 				return;
 
@@ -228,6 +266,9 @@ namespace DiscordCardLinker
 			//}
 			foreach (var (type, searchString) in requests)
 			{
+				/*
+				 * Search for the card requested
+				 */
 				var candidates = await PerformSearch(searchString);
 				if(candidates.Count == 0)
 				{
@@ -411,7 +452,6 @@ namespace DiscordCardLinker
 		//There's a limit of 20 reactions to any one message on Discord
 		private Dictionary<int, string> IDEmoji = new Dictionary<int, string>()
 		{
-
 			[1] = ":one:",
 			[2] = ":two:",
 			[3] = ":three:",
