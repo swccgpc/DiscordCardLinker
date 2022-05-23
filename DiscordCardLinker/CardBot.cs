@@ -220,7 +220,7 @@ namespace DiscordCardLinker
 						await e.Message.ModifyAsync(card.ImageURL);
 						break;
 					case MatchType.Wiki:
-						await e.Message.ModifyAsync(card.WikiURL);
+						await e.Message.ModifyAsync("Information about " + card.Title + " is available on scomp at: " + card.WikiURL);
 						break;
 				}
 
