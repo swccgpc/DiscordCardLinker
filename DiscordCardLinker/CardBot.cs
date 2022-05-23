@@ -383,7 +383,7 @@ namespace DiscordCardLinker
 
 		private async Task SendWikiLink(MessageCreateEventArgs e, CardDefinition card)
 		{
-			await e.Message.RespondAsync(card.WikiURL);
+			await e.Message.RespondAsync("Information about " + card.Title + " is available on scomp at: " + card.WikiURL);
 			//var msg = await new DiscordMessageBuilder()
 			//	.With
 			//e.Message.RespondAsync()
