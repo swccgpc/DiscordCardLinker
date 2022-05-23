@@ -4,13 +4,21 @@
 
 ## Bot Commands
 
-* `[card name]` for the image
+### Images
 
-* `{card name}` for the [scomp link](httsp://scomp.starwarsccg.org)
+* Use `[card name]` for the image link
 
 ![](hello_there.png)
 
 ![](general_jar_jar.png)
+
+
+### Wiki URL's
+
+* LOTR uses a Wiki for their card database. With SWCCG, we use Scomp.
+* Use `{card name}` for the [scomp link](httsp://scomp.starwarsccg.org)
+
+![](wikiurl.png)
 
 
 
