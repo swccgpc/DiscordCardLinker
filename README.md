@@ -47,8 +47,6 @@
 ENV TOKEN               "xxxxxxx"
 ENV CLIENTID            "xxxxxxx"
 ENV PERMISSIONS         "xxxxxxx"
-ENV BASEIMAGEURL        "https://res.starwarsccg.org/cards/Premiere-Dark/large/darthvader.gif"
-ENV BASEWIKIURL         "https://scomp.starwarsccg.org/"
 ENV MAXIMAGESPERMESSAGE "5"
 ```
 
@@ -61,8 +59,6 @@ docker run -ti \
   -e TOKEN="xxxxxxxxx" \
   -e CLIENTID="xxxxxxxxx" \
   -e PERMISSIONS="xxxxxxxxx" \
-  -e BASEIMAGEURL="https://res.starwarsccg.org/cards/Premiere-Dark/large/darthvader.gif" \
-  -e BASEWIKIURL="https://scomp.starwarsccg.org/" \
   -e MAXIMAGESPERMESSAGE="5" \
   discordcardlinker:latest
 ```

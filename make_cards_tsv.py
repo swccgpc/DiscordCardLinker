@@ -2,7 +2,7 @@
 
 import json
 import os
-
+import urllib.parse
 
 def parse_json_file(json_filename):
 
@@ -13,9 +13,14 @@ def parse_json_file(json_filename):
     nicknames  = []
     card_id    = str(card["id"])
     img_url    = card["front"]["imageUrl"]
-    http_url   = card["front"]["imageUrl"]+"?need_to_add_direct_link_capability_to_scomp"
     gempid     = card["gempId"].split("_")
     title      = card["front"]["title"]
+    ##
+    ## http_url is the Wiki URL.
+    ## LOTR uses a wiki, so this is the URL that would display information about that page.
+    ## The string can be sent to scomp using s?=
+    ##
+    http_url   = "https://scomp.starwarsccg.org/?s="+urllib.parse.quote_plus(title)
 
     ## Generate a collecting code like they have with MTG.
     ## The collecting code is basically: ReleaseAbbr+Rarity+CardID

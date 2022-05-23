@@ -30,8 +30,6 @@ FROM mcr.microsoft.com/dotnet/core/runtime
 ENV TOKEN               ""
 ENV CLIENTID            ""
 ENV PERMISSIONS         ""
-ENV BASEIMAGEURL        "https://res.starwarsccg.org/cards/Premiere-Dark/large/darthvader.gif"
-ENV BASEWIKIURL         "https://scomp.starwarsccg.org/"
 ENV MAXIMAGESPERMESSAGE "5"
 
 
