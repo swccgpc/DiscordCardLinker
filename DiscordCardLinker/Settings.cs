@@ -5,10 +5,8 @@ using System.Text;
 
 using Newtonsoft.Json;
 
-namespace DiscordCardLinker
-{
-	public class Settings
-	{
+namespace DiscordCardLinker {
+	public class Settings {
 		public const string DefaultPath = "./settings.json";
 
 		public string Token { get; set; }            = Environment.GetEnvironmentVariable("TOKEN");
@@ -17,8 +15,7 @@ namespace DiscordCardLinker
 		public string CardFilePath { get; set; }     = "cards.tsv";
 		public int MaxImagesPerMessage { get; set; } = int.Parse(Environment.GetEnvironmentVariable("MAXIMAGESPERMESSAGE"));
 
-		public void StoreSettings(string path= DefaultPath)
-		{
+		public void StoreSettings(string path= DefaultPath) {
 			Console.WriteLine("Storing Settings to "+path);
 			string json = JsonConvert.SerializeObject(this, Formatting.Indented);
 			Console.WriteLine(json);
@@ -26,16 +23,13 @@ namespace DiscordCardLinker
 			Console.WriteLine("Settings Stored");
 		}
 
-		public static Settings FromFile(string path= DefaultPath)
-		{
-			if(!File.Exists(path))
-			{
+		public static Settings FromFile(string path= DefaultPath) {
+			if(!File.Exists(path)) {
 				Console.WriteLine("Settings file does not exist.  Creating... " + path);
 				Settings settings = new Settings();
 
 				string dirpath = Path.GetDirectoryName(path);
-				if(!string.IsNullOrWhiteSpace(dirpath))
-				{
+				if(!string.IsNullOrWhiteSpace(dirpath)) {
 					Directory.CreateDirectory(Path.GetDirectoryName(path));
 				}
 

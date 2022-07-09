@@ -21,17 +21,14 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace DiscordCardLinker
-{
-	public enum MatchType
-	{
+namespace DiscordCardLinker {
+	public enum MatchType {
 		Image,
 		Wiki,
 		Text
 	}
 
-	public class CardBot
-	{
+	public class CardBot {
 
 		public Settings CurrentSettings { get; }
 		private DiscordClient Client { get; set; }
@@ -58,8 +55,7 @@ namespace DiscordCardLinker
 		
 		private Queue<(string searchString, CardDefinition card)> Cache { get; set; }
 
-		public CardBot(Settings settings)
-		{
+		public CardBot(Settings settings) {
 			CurrentSettings = settings;
 			squareCR = new Regex(squareRegex, RegexOptions.Compiled);
 			curlyCR = new Regex(curlyRegex, RegexOptions.Compiled);
@@ -70,8 +66,7 @@ namespace DiscordCardLinker
 			Cache = new Queue<(string searchString, CardDefinition card)>();
 		}
 
-		public void LoadCardDefinitions()
-		{
+		public void LoadCardDefinitions() {
 			var engine = new FileHelperEngine<CardDefinition>(Encoding.UTF8);
 			Cards = engine.ReadFile(CurrentSettings.CardFilePath).ToList();
 
@@ -83,32 +78,26 @@ namespace DiscordCardLinker
 
 			string fulltitle = "";
 
-			foreach(var card in Cards)
-			{
+			foreach(var card in Cards) {
 				AddEntry(CardTitles, card.Title.ToLower().Trim(), card);
 				AddEntry(CardSubtitles, card.Subtitle.ToLower().Trim(), card);
-				if(!String.IsNullOrWhiteSpace(card.Subtitle))
-				{
+				if(!String.IsNullOrWhiteSpace(card.Subtitle)) {
 					fulltitle = $"{card.Title.Trim()}, {card.Subtitle.Trim()}{card.TitleSuffix.Trim()}";
 				}
-				else
-				{
+				else {
 					fulltitle = $"{card.Title.Trim()}{card.TitleSuffix.Trim()}";
 				}
 				AddEntry(CardFullTitles, $"{fulltitle.ToLower().Trim()}", card);
 
 
-				if(!String.IsNullOrWhiteSpace(card.Subtitle))
-				{
+				if(!String.IsNullOrWhiteSpace(card.Subtitle)) {
 					AddEntry(CardNicknames, GetLongAbbreviation(card.Subtitle.ToLower().Trim()), card);
 				}
-				else
-				{
+				else {
 					AddEntry(CardNicknames, GetLongAbbreviation(card.Title.ToLower().Trim()), card);
 				}
 
-				foreach (string entry in card.Nicknames.Split(","))
-				{
+				foreach (string entry in card.Nicknames.Split(",")) {
 					AddEntry(CardNicknames, entry.ToLower().Trim(), card);
 				}
 
@@ -116,8 +105,7 @@ namespace DiscordCardLinker
 			}
 		}
 
-		private string GetLongAbbreviation(string input)
-		{
+		private string GetLongAbbreviation(string input) {
 			string abbr = new string(
 				input.Split(new char[] { ' ', '-' }, StringSplitOptions.RemoveEmptyEntries)
 							.Where(s => s.Length > 0 && char.IsLetter(s[0]))
@@ -130,8 +118,7 @@ namespace DiscordCardLinker
 		/*
 		 * Load cards from TSV in to our in-memory index.
 		 */
-		private void AddEntry(Dictionary<string, List<CardDefinition>> collection, string key, CardDefinition card)
-		{
+		private void AddEntry(Dictionary<string, List<CardDefinition>> collection, string key, CardDefinition card) {
 			/*
 			 * Do not add blank or null lines.
 			 */
@@ -142,8 +129,7 @@ namespace DiscordCardLinker
 			/*
 			 * Only add the card key once.
 			 */
-			if(!collection.ContainsKey(key))
-			{
+			if(!collection.ContainsKey(key)) {
 				Console.WriteLine("Adding Key: ["+key+"]");
 				collection.Add(key, new List<CardDefinition>());
 			}
@@ -160,10 +146,8 @@ namespace DiscordCardLinker
 			collection[key].Add(card);
 		}
 
-		public async Task Initialize()
-		{
-			Client = new DiscordClient(new DiscordConfiguration()
-			{
+		public async Task Initialize() {
+			Client = new DiscordClient(new DiscordConfiguration() {
 				Token = CurrentSettings.Token,
 				TokenType = TokenType.Bot,
 				Intents = DiscordIntents.AllUnprivileged, // All intents are granted on discord dev page
@@ -181,61 +165,92 @@ namespace DiscordCardLinker
 		/*
 		 * process reaction to discord chat message
 		 */
-		private async Task OnReactionAdded(DiscordClient sender, MessageReactionAddEventArgs e)
-		{
+		private async Task OnReactionAdded(DiscordClient sender, MessageReactionAddEventArgs e) {
+
 			if (e.Message.Author != Client.CurrentUser)
 				return;
 
-			if (e.Message.ReferencedMessage.Author != e.User)
+			if (e.Message.ReferencedMessage.Author != e.User && !e.Message.ReferencedMessage.Author.IsBot)
 				return;
 
+			/*
+			 * Check if the user is looking for an Image or a Wiki page.
+			 */
 			MatchType type;
-			if(e.Message.Content.Contains("Found multiple potential candidates for card image"))
-			{
+			if(e.Message.Content.Contains("Found multiple potential candidates for card image")) {
 				type = MatchType.Image;
 			}
-			else if (e.Message.Content.Contains("Found multiple potential candidates for card wiki page"))
-			{
+			else if (e.Message.Content.Contains("Found multiple potential candidates for card wiki page")) {
 				type = MatchType.Wiki;
 			}
-			else
-			{
+			else {
+				// It's not an Image or a Wiki page? How odd...
 				return;
 			}
 
-			foreach(string line in e.Message.Content.Split("\n"))
-			{
-				if (!line.Contains(e.Emoji.GetDiscordName()))
-					continue;
+			/*
+			 * Loop through the lines of the message sent to the user originally looking for the line with the emoji on it.
+			 * Once the correct emoji line is found, pull the collection code from it.
+			 * Do a new search with the collection code and send th results.
+			 * Emoji chosen by user: e.Emoji.GetDiscordName()
+			 */
+			foreach(string line in e.Message.Content.Split("\n")) {
 
-				string collinfo = collInfoCR.Match(line).Groups[1].Value.ToLower().Trim();
-				string search = Regex.Match(e.Message.Content, @"`(.*)`").Value;
-				var card = CardCollInfo[collinfo];
+				/*
+				 * If the current line contains the emoji, process that line.
+				 * Lines look like: ":one: : •Ben Kenobi (SER004)"
+				 * The emoji will be ":one:"
+				 */
+				if (line.Contains(e.Emoji.GetDiscordName())) {
+					Console.WriteLine("Line contains "+e.Emoji.GetDiscordName()+":");
+					Console.WriteLine(line);
+					/*
+					 * Use regex to pull the collection code out of the line
+					 * Lines look like: ":one: : •Ben Kenobi (SER004)"
+					 * The collection code in this case would be SER004
+					 */
+					string search = Regex.Match(line, @"\(([A-Z0-9]+)\)$").Value.Replace("(", "").Replace(")", "");
 
-				await e.Message.DeleteAllReactionsAsync();
+					/*
+					 * All card indexes are imported as lowercase, so the search must be made to be lowercase as well.
+					 * SER004 -> ser004
+					 */
+					string lowerSearch = search.ToLower().Trim();
+					var card = CardCollInfo[lowerSearch];
 
-				switch (type)
-				{
-					case MatchType.Image:
-						await e.Message.ModifyAsync(card.ImageURL);
-						break;
-					case MatchType.Wiki:
-						await e.Message.ModifyAsync("Information about " + card.Title + " is available on scomp at: " + card.WikiURL);
-						break;
-				}
+					/*
+					 * Delete the emojis from the message.
+					 */
+					await e.Message.DeleteAllReactionsAsync();
 
-				AddSuccessfulSearch(search, card);
+					/*
+					 * Send the image or wiki link back to the user.
+					 */
+					switch (type) {
+						case MatchType.Image:
+							await e.Message.ModifyAsync(card.ImageURL);
+							break;
+						case MatchType.Wiki:
+							await e.Message.ModifyAsync("Information about " + card.Title + " is available on scomp at: " + card.WikiURL);
+							break;
+					} // switch
 
-			}
+					/*
+					 * Add found card to cache.
+					 */
+					AddSuccessfulSearch(search, card);
+
+				} // if
+
+			} // foreach
 
 			
-		}
+		} // OnReactionAdded
 
 		/*
 		 * Message created in discord chat, check if we should process it.
 		 */
-		private async Task OnMessageCreated(DiscordClient sender, MessageCreateEventArgs e)
-		{
+		private async Task OnMessageCreated(DiscordClient sender, MessageCreateEventArgs e) {
 			/*
 			 * Do not process bot originated messages
 			 */
@@ -246,15 +261,13 @@ namespace DiscordCardLinker
 
 			var requests = new List<(MatchType type, string searchString)>();
 
-			foreach (Match match in curlyCR.Matches(content))
-			{
+			foreach (Match match in curlyCR.Matches(content)) {
 				requests.Add((MatchType.Wiki, match.Groups[1].Value));
 
 				//await e.Message.RespondAsync($"Here's a wiki link for ''!");
 			}
 
-			foreach (Match match in squareCR.Matches(content))
-			{
+			foreach (Match match in squareCR.Matches(content)) {
 				requests.Add((MatchType.Image, match.Groups[1].Value));
 				//await e.Message.RespondAsync($"https://lotrtcgwiki.com/images/LOTR.jpg");
 			}
@@ -264,40 +277,37 @@ namespace DiscordCardLinker
 			//	requests.Add((MatchType.Text, match.Groups[1].Value));
 			//	//await e.Message.RespondAsync($"Here's the text for ''!");
 			//}
-			foreach (var (type, searchString) in requests)
-			{
+			foreach (var (type, searchString) in requests) {
 				/*
 				 * Search for the card requested
 				 */
 				var candidates = await PerformSearch(searchString);
-				if(candidates.Count == 0)
-				{
+				if(candidates.Count == 0) {
 					await SendNotFound(e, searchString);
 				}
-				else if(candidates.Count == 1)
-				{
+				else if(candidates.Count == 1) {
 					await SendSingle(e, candidates.First(), type, searchString);
 				}
-				else
-				{
+				else {
 					string title = candidates.First().Title;
-					if(candidates.All(x => x.Title == title))
-					{
+					if(candidates.All(x => x.Title == title)) {
 						var cutdown = candidates.Where(x => string.IsNullOrWhiteSpace(x.TitleSuffix)).ToList();
-						if(cutdown.Count == 1)
-						{
+						if(cutdown.Count == 1) {
 							await SendSingle(e, cutdown.First(), type, searchString);
 							continue;
 						}
 
 						string fulltitle = cutdown.First().DisplayName;
-						if(cutdown.All(x => x.DisplayName == fulltitle))
-						{
+						if(cutdown.All(x => x.DisplayName == fulltitle)) {
 							await SendSingle(e, cutdown.First(), type, searchString);
 							continue;
 						}
 					}
 
+					/*
+					 * If more than one card was found, send a list of the crads with emoji as a method of allowing the 
+					 * caller to select one of the cards from the list.
+					 */
 					await SendCollisions(e, type, searchString, candidates);
 				}
 			}
@@ -305,54 +315,45 @@ namespace DiscordCardLinker
 
 		}
 
-		private void AddSuccessfulSearch(string search, CardDefinition card)
-		{
+		private void AddSuccessfulSearch(string search, CardDefinition card) {
 			search = search.ToLower().Trim();
 			Cache.Enqueue((search, card));
-			if(Cache.Count > 100)
-			{
+			if(Cache.Count > 100) {
 				Cache.Dequeue();
 			}
 		}
 
-		private async Task<List<CardDefinition>> PerformSearch(string searchString)
-		{
+		private async Task<List<CardDefinition>> PerformSearch(string searchString) {
 			var candidates = new List<CardDefinition>();
 
 			string lowerSearch = searchString.ToLower().Trim();
-			if(Cache.Any(x => x.searchString == searchString))
-			{
+			if(Cache.Any(x => x.searchString == searchString)) {
 				var card = Cache.Where(x => x.searchString == lowerSearch).First().card;
 				candidates.Add(card);
 				return candidates;
 			}
 
-			if (CardSubtitles.ContainsKey(lowerSearch))
-			{
+			if (CardSubtitles.ContainsKey(lowerSearch)) {
 				candidates.AddRange(CardSubtitles[lowerSearch]);
 				return candidates;
 			}
 
-			if (CardCollInfo.ContainsKey(lowerSearch))
-			{
+			if (CardCollInfo.ContainsKey(lowerSearch)) {
 				candidates.Add(CardCollInfo[lowerSearch]);
 				return candidates;
 			}
 
-			if (CardFullTitles.ContainsKey(lowerSearch))
-			{
+			if (CardFullTitles.ContainsKey(lowerSearch)) {
 				candidates.AddRange(CardFullTitles[lowerSearch]);
 				return candidates;
 			}
 
-			if (CardTitles.ContainsKey(lowerSearch))
-			{
+			if (CardTitles.ContainsKey(lowerSearch)) {
 				candidates.AddRange(CardTitles[lowerSearch]);
 				return candidates;
 			}
 
-			if (CardNicknames.ContainsKey(lowerSearch))
-			{
+			if (CardNicknames.ContainsKey(lowerSearch)) {
 				candidates.AddRange(CardNicknames[lowerSearch]);
 				return candidates;
 			}
@@ -361,10 +362,8 @@ namespace DiscordCardLinker
 			return candidates;
 		}
 
-		private async Task SendSingle(MessageCreateEventArgs e, CardDefinition card, MatchType type, string search)
-		{
-			switch (type)
-			{
+		private async Task SendSingle(MessageCreateEventArgs e, CardDefinition card, MatchType type, string search) {
+			switch (type) {
 				case MatchType.Image:
 					await SendImage(e, card);
 					break;
@@ -376,35 +375,33 @@ namespace DiscordCardLinker
 			AddSuccessfulSearch(search, card);
 		}
 
-		private async Task SendImage(MessageCreateEventArgs e, CardDefinition card)
-		{
+		private async Task SendImage(MessageCreateEventArgs e, CardDefinition card) {
 			await e.Message.RespondAsync(card.ImageURL);
 		}
 
-		private async Task SendWikiLink(MessageCreateEventArgs e, CardDefinition card)
-		{
+		private async Task SendWikiLink(MessageCreateEventArgs e, CardDefinition card) {
 			await e.Message.RespondAsync("Information about " + card.Title + " is available on scomp at: " + card.WikiURL);
 			//var msg = await new DiscordMessageBuilder()
 			//	.With
 			//e.Message.RespondAsync()
 		}
 
-		private async Task SendNotFound(MessageCreateEventArgs e, string search)
-		{
-			//string response = $"Unable to find any cards called `{search}`.  Sorry :(";
+		/*
+		 * If no card found, send a response to the caller telling them you are unable to find the card.
+		 */
+		private async Task SendNotFound(MessageCreateEventArgs e, string search) {
 			string response = $"Sir, I am fluent in 6 million forms of communication. This signal, `{search}`, is not used by the Alliance.";
-			// Unable to find any cards called iwts.  Sorry :(
-			// Sir, I am fluent in 6 million forms of communication. This signal is not used by the Alliance.
-
 			await e.Message.RespondAsync(response);
 		}
 
-		private async Task SendCollisions(MessageCreateEventArgs e, MatchType type, string search, List<CardDefinition> candidates)
-		{
+		/*
+		 * If more than one card was found, send a list of the crads with emoji as a method of allowing the 
+		 * caller to select one of the cards from the list.
+		 */
+		private async Task SendCollisions(MessageCreateEventArgs e, MatchType type, string search, List<CardDefinition> candidates) {
 			string response = "";
 
-			switch (type)
-			{
+			switch (type) {
 				case MatchType.Image:
 					response += $"Found multiple potential candidates for card image `{search}`.\nReact with the option you'd like to display:\n\n";
 					break;
@@ -417,22 +414,18 @@ namespace DiscordCardLinker
 			var menu = new List<string>();
 
 			int count = 1;
-			foreach(var card in candidates)
-			{
+			foreach(var card in candidates) {
 				string emoji = GetEmoji(count++);
 				menu.Add(emoji);
 
-				if(count == 22)
-				{
+				if(count == 22) {
 					response += "\n Maximum menu limit reached.  More cards were found:\n";
 				}
 
-				if(count < 22)
-				{
-					response += $"\t{emoji} : {card.DisplayName} ({card.CollInfo})\n";
+				if(count < 22) {
+					response += $"\t{emoji} : {card.DisplayName} ({card.CollInfo})\n"; // :one: : •Ben Kenobi (SER004)
 				}
-				else
-				{
+				else {
 					response += $"\t{card.DisplayName} ({card.CollInfo})\n";
 				}
 
@@ -440,8 +433,7 @@ namespace DiscordCardLinker
 			}
 			var reply = await e.Message.RespondAsync(response);
 
-			foreach (var option in menu)
-			{
+			foreach (var option in menu) {
 				if (option == "-")
 					continue;
 
@@ -450,8 +442,7 @@ namespace DiscordCardLinker
 		}
 
 		//There's a limit of 20 reactions to any one message on Discord
-		private Dictionary<int, string> IDEmoji = new Dictionary<int, string>()
-		{
+		private Dictionary<int, string> IDEmoji = new Dictionary<int, string>() {
 			[1] = ":one:",
 			[2] = ":two:",
 			[3] = ":three:",
@@ -475,8 +466,7 @@ namespace DiscordCardLinker
 
 		};
 
-		private string GetEmoji(int count)
-		{
+		private string GetEmoji(int count) {
 			if (count <= 0 || count > 20)
 				return "-";
 

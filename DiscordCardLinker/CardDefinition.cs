@@ -4,12 +4,10 @@ using System.Text;
 
 using FileHelpers;
 
-namespace DiscordCardLinker
-{
+namespace DiscordCardLinker {
 	[DelimitedRecord("\t")]
 	[IgnoreFirst]
-	public class CardDefinition
-	{
+	public class CardDefinition {
 		public string ID;
 		public string ImageURL;
 		public string WikiURL;

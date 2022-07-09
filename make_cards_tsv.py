@@ -15,6 +15,7 @@ def parse_json_file(json_filename):
     img_url    = card["front"]["imageUrl"]
     gempid     = card["gempId"].split("_")
     title      = card["front"]["title"]
+    side       = card["side"]
     ##
     ## http_url is the Wiki URL.
     ## LOTR uses a wiki, so this is the URL that would display information about that page.
@@ -62,16 +63,88 @@ def parse_json_file(json_filename):
         if "(V)" not in title:
           title = title+" (V)"
 
+      ##
+      side_title = side+" "+title
+      short_title = side+""+title
+      abbr_side_title = side.replace("Dark", "DS").replace("Light", "LS")+" "+title
+      short_abbr_side_title = side.replace("Dark", "DS").replace("Light", "LS")+""+title
+
       ## full name, with <>, •, and the "(V)" at the end
       nicknames.append(title)
+      nicknames.append(side_title)
+      nicknames.append(short_title)
+      nicknames.append(abbr_side_title)
+      nicknames.append(short_abbr_side_title)
 
       ## preserve the "(V)" at the end
       if "•" in title:
         nicknames.append(title.replace("•", ""))
+        nicknames.append(side_title.replace("•", ""))
+        nicknames.append(short_title.replace("•", ""))
+        nicknames.append(abbr_side_title.replace("•", ""))
+        nicknames.append(short_abbr_side_title.replace("•", ""))
 
       ## preserve the "(V)" at the end
       if "<>" in title:
         nicknames.append(title.replace("<>", ""))
+        nicknames.append(side_title.replace("<>", ""))
+        nicknames.append(short_title.replace("<>", ""))
+        nicknames.append(abbr_side_title.replace("<>", ""))
+        nicknames.append(short_abbr_side_title.replace("<>", ""))
+
+      ## Apple machines replace regular quotes with Smartquotes
+      if "'" in title:
+        nicknames.append(title.replace("'", "’"))
+        nicknames.append(title.replace("'", "‘"))
+
+        nicknames.append(side_title.replace("'", "’"))
+        nicknames.append(side_title.replace("'", "‘"))
+
+        nicknames.append(short_title.replace("'", "’"))
+        nicknames.append(short_title.replace("'", "‘"))
+
+        nicknames.append(abbr_side_title.replace("'", "’"))
+        nicknames.append(abbr_side_title.replace("'", "‘"))
+
+        nicknames.append(short_abbr_side_title.replace("'", "’"))
+        nicknames.append(short_abbr_side_title.replace("'", "‘"))
+
+      if '"' in title:
+        nicknames.append(title.replace('"', '“'))
+        nicknames.append(title.replace('"', '”'))
+
+        nicknames.append(side_title.replace('"', '“'))
+        nicknames.append(side_title.replace('"', '”'))
+
+        nicknames.append(short_title.replace('"', '“'))
+        nicknames.append(short_title.replace('"', '”'))
+
+        nicknames.append(abbr_side_title.replace('"', '“'))
+        nicknames.append(abbr_side_title.replace('"', '”'))
+
+        nicknames.append(short_abbr_side_title.replace('"', '“'))
+        nicknames.append(short_abbr_side_title.replace('"', '”'))
+
+
+      if ("'" in title) and ('"' in title):
+        nicknames.append(title.replace("'", "’").replace('"', '“').replace('"', '”'))
+        nicknames.append(title.replace("'", "‘").replace('"', '“').replace('"', '”'))
+
+        nicknames.append(side_title.replace("'", "’").replace('"', '“').replace('"', '”'))
+        nicknames.append(side_title.replace("'", "‘").replace('"', '“').replace('"', '”'))
+
+        nicknames.append(short_title.replace("'", "’").replace('"', '“').replace('"', '”'))
+        nicknames.append(short_title.replace("'", "‘").replace('"', '“').replace('"', '”'))
+
+        nicknames.append(abbr_side_title.replace("'", "’").replace('"', '“').replace('"', '”'))
+        nicknames.append(abbr_side_title.replace("'", "‘").replace('"', '“').replace('"', '”'))
+
+        nicknames.append(short_abbr_side_title.replace("'", "’").replace('"', '“').replace('"', '”'))
+        nicknames.append(short_abbr_side_title.replace("'", "‘").replace('"', '“').replace('"', '”'))
+
+
+
+
 
       ## Callable by the collecting ID
       nicknames.append(title+" ("+collecting+")")
@@ -110,6 +183,36 @@ def parse_json_file(json_filename):
       nicknames.append("Kenobi")
       nicknames.append("General Kenobi")
       nicknames.append("Hello There")
+
+    if "Maul" in title:
+      nicknames.append("Kenobi!")
+      nicknames.append("Kenobii")
+      nicknames.append("Kenobiii")
+      nicknames.append("Kenobiiii")
+      nicknames.append("Kenobiiiii")
+      nicknames.append("Kenobiiiiii")
+      nicknames.append("Kenobiiiiiii")
+      nicknames.append("Kenobiiiiiiii")
+      nicknames.append("Kenobiiiiiiiii")
+      nicknames.append("Kenobiiiiiiiiii")
+      nicknames.append("Kenobii!")
+      nicknames.append("Kenobiii!")
+      nicknames.append("Kenobiiii!")
+      nicknames.append("Kenobiiiii!")
+      nicknames.append("Kenobiiiiii!")
+      nicknames.append("Kenobiiiiiii!")
+      nicknames.append("Kenobiiiiiiii!")
+      nicknames.append("Kenobiiiiiiiii!")
+      nicknames.append("Kenobiiiiiiiiii!")
+      nicknames.append("Kenobi!")
+      nicknames.append("Kenobi!!")
+      nicknames.append("Kenobi!!!")
+      nicknames.append("Kenobi!!!!")
+      nicknames.append("Kenobi!!!!!")
+      nicknames.append("Kenobi!!!!!!")
+      nicknames.append("Kenobi!!!!!!!")
+      nicknames.append("Kenobi!!!!!!!!")
+      nicknames.append("Kenobi!!!!!!!!!")
 
 
     if (collecting in known_ids):

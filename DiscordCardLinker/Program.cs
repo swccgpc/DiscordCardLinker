@@ -4,12 +4,9 @@ using System;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace DiscordCardLinker
-{
-	class Program
-	{
-		static async Task Main(string[] args)
-		{
+namespace DiscordCardLinker {
+	class Program {
+		static async Task Main(string[] args) {
 			Console.WriteLine("Starting up, the Bot!");
 			CardBot bot = new CardBot(Settings.FromFile());
 			Console.WriteLine("Initializing Bot (asynchronously)");
