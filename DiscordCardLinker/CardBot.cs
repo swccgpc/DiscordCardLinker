@@ -92,33 +92,107 @@ namespace DiscordCardLinker {
 			foreach(var card in Cards) {
 				if (string.IsNullOrWhiteSpace(card.ID) || string.IsNullOrWhiteSpace(card.CollInfo))
 					continue;
+				Console.WriteLine("Adding card to search...");
+				Console.WriteLine($"  .. ID.........: {card.ID}");
+				Console.WriteLine($"  .. ImageURL...: {card.ImageURL}");
+				Console.WriteLine($"  .. WikiURL....: {card.WikiURL}");
+				Console.WriteLine($"  .. CollInfo...: {card.CollInfo}");
+				Console.WriteLine($"  .. DisplayName: {card.DisplayName}");
+				Console.WriteLine($"  .. Title......: {card.Title}");
+				Console.WriteLine($"  .. Subtitle...: {card.Subtitle}");
+				Console.WriteLine($"  .. TitleSuffix: {card.TitleSuffix}");
+				Console.WriteLine($"  .. Nicknames..: {card.Nicknames}");
 
-				AddEntry(CardTitles, ScrubInput(card.Title), card);
-				AddEntry(CardSubtitles, ScrubInput(card.Subtitle), card);
-
-				string fulltitle = $"{card.Title}{card.TitleSuffix}";
-				AddEntry(CardFullTitles, ScrubInput(fulltitle), card);
-
-				//This catches cards like "2-1B (Too-Onebee)", splitting them into "2-1B" and "Too-Onebee"
-				var matches = aliasCR.Match(card.Title);
-				if (matches.Success) {
-					AddEntry(CardNicknames, ScrubInput(matches.Groups[1].Value), card);
-					AddEntry(CardNicknames, ScrubInput(matches.Groups[2].Value), card);
+				var collinfo = ScrubInput(card.CollInfo);
+				if (!CardCollInfo.ContainsKey(collinfo))
+				{
+					CardCollInfo.Add(ScrubInput(card.CollInfo), card);
+				}
+				else
+				{
+					Console.Error.WriteLine($"Collector's Info collision: {collinfo} provided by {card.ID} but previously entered by {CardCollInfo[collinfo].ID}");
+					continue;
 				}
 
-				AddEntry(CardNicknames, GetLongAbbreviation(card.Title), card);
+				//Luke Skywalker
+				AddEntry(CardTitles, ScrubInput(card.Title), card);
+				//Jedi Knight
+				AddEntry(CardSubtitles, ScrubInput(card.Subtitle), card);
+
+				string fulltitle = $"{card.Title}{card.Subtitle}{card.TitleSuffix}";
+				//Luke Skywalker, Jedi Knight (V)
+				AddEntry(CardFullTitles, ScrubInput(fulltitle), card);
+
+				if (!String.IsNullOrWhiteSpace(card.Subtitle) && !String.IsNullOrWhiteSpace(card.TitleSuffix))
+				{
+					fulltitle = $"{card.Subtitle}{card.TitleSuffix}";
+					AddEntry(CardFullTitles, ScrubInput(fulltitle), card);
+				}
+
+				string abbr = "";
+
+				if (!String.IsNullOrWhiteSpace(card.Subtitle))
+				{
+					//JK
+					abbr = GetLongAbbreviation(card.Subtitle);
+					AddEntry(CardNicknames, abbr, card);
+					//Luke Skywalker JK
+					string titleAbbr = ScrubInput($"{card.Title}{abbr}");
+					AddEntry(CardNicknames, titleAbbr, card);
+
+					if (card.Title.Contains(" "))
+					{
+						foreach (string sub in card.Title.Split(" "))
+						{
+							if (sub.ToLower() == "the" || sub.ToLower() == "of")
+								continue;
+							//Luke JK
+							string subAbbr = ScrubInput($"{sub}{abbr}");
+							AddEntry(CardNicknames, subAbbr, card);
+						}
+					}
+
+					if (!String.IsNullOrWhiteSpace(card.TitleSuffix))
+					{
+						//Jedi Knight (V)
+						fulltitle = $"{card.Subtitle}{card.TitleSuffix}";
+						AddEntry(CardFullTitles, ScrubInput(fulltitle), card);
+						//JK (V)
+						fulltitle = $"{abbr}{card.TitleSuffix}";
+						AddEntry(CardFullTitles, ScrubInput(fulltitle), card);
+					}
+
+					//LSJK
+					abbr = GetLongAbbreviation($"{card.Title} {card.Subtitle}");
+					AddEntry(CardNicknames, abbr, card);
+				}
+
+				//LS
+				abbr = GetLongAbbreviation(card.Title);
+				AddEntry(CardNicknames, abbr, card);
+
+				if (!String.IsNullOrWhiteSpace(card.TitleSuffix))
+				{
+					//LS (V)
+					fulltitle = $"{abbr}{card.TitleSuffix}";
+					AddEntry(CardFullTitles, ScrubInput(fulltitle), card);
+				}
 
 				foreach (string entry in card.Nicknames.Split(",")) {
 					if (String.IsNullOrWhiteSpace(entry))
 						continue;
 
-					//Once the nicknames column in cards.tsv has been cleared of all that redundant crud, feel free
-					// to uncomment this.  For the meantime tho, it's adding tens of thousands of completely unnecessary
-					// search terms, slowing down the search time.
-					//AddEntry(CardNicknames, ScrubInput(entry), card);
-				}
+					string nick = ScrubInput(entry);
+					//Shotgun
+					AddEntry(CardNicknames, nick, card);
 
-				CardCollInfo.Add(ScrubInput(card.CollInfo), card);
+					if (!String.IsNullOrWhiteSpace(card.TitleSuffix))
+					{
+						//Shotgun (V)
+						fulltitle = $"{nick}{card.TitleSuffix}";
+						AddEntry(CardFullTitles, ScrubInput(fulltitle), card);
+					}
+				}
 			}
 
 			Loading = false;
@@ -177,15 +251,6 @@ namespace DiscordCardLinker {
 				collection.Add(key, new List<CardDefinition>());
 			}
 
-            Console.WriteLine("  .. ID.........: " + card.ID);
-            Console.WriteLine("  .. ImageURL...: " + card.ImageURL);
-            Console.WriteLine("  .. WikiURL....: " + card.WikiURL);
-            Console.WriteLine("  .. CollInfo...: " + card.CollInfo);
-            Console.WriteLine("  .. DisplayName: " + card.DisplayName);
-            Console.WriteLine("  .. Title......: " + card.Title);
-            Console.WriteLine("  .. Subtitle...: " + card.Subtitle);
-            Console.WriteLine("  .. TitleSuffix: " + card.TitleSuffix);
-            Console.WriteLine("  .. Nicknames..: " + card.Nicknames);
             collection[key].Add(card);
 		}
 
@@ -381,11 +446,27 @@ namespace DiscordCardLinker {
 
 			if (lowerSearch.Length > 2)
 			{
-				foreach (var key in CardFullTitles.Keys)
+				foreach (var key in CardTitles.Keys)
 				{
 					if (key.Contains(lowerSearch))
 					{
-						candidates.AddRange(CardFullTitles[key]);
+						candidates.AddRange(CardTitles[key]);
+					}
+				};
+
+				foreach (var key in CardSubtitles.Keys)
+				{
+					if (key.Contains(lowerSearch))
+					{
+						candidates.AddRange(CardSubtitles[key]);
+					}
+				};
+
+				foreach (var key in CardNicknames.Keys)
+				{
+					if (key.Contains(lowerSearch))
+					{
+						candidates.AddRange(CardNicknames[key]);
 					}
 				};
 			}
@@ -470,7 +551,7 @@ namespace DiscordCardLinker {
 
 			var menu = new List<string>();
 
-			var options = candidates.OrderBy(x => x.Title)
+			var options = candidates
 				.Take(25)
 				.Select(x => new DiscordSelectComponentOption($"{x.DisplayName} ({x.CollInfo})", x.CollInfo));
 
