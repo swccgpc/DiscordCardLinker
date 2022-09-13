@@ -54,6 +54,8 @@ namespace DiscordCardLinker {
 		private Dictionary<string, List<CardDefinition>> CardNicknames { get; set; }
 		private Dictionary<string, CardDefinition> CardCollInfo{ get; set; }
 
+		//When presenting the dropdown, a card reference is provided.  This is used on the initial presentation,
+		// which has no image (this could theoretically be a placeholder, but what's the point of that).
 		private CardDefinition NullCard { get; } = new CardDefinition() {			
 			ImageURL = ""
 		};
@@ -69,6 +71,10 @@ namespace DiscordCardLinker {
 			LoadCardDefinitions();
 		}
 
+		/*
+		 * Loops through cards.tsv and converts each row to a card definition.  Each card definition is then inserted
+		 * into several dictionaries, with the keys being possible search terms used to look up that card.
+		 */
 		public void LoadCardDefinitions() {
 
 			Loading = true;
@@ -118,8 +124,11 @@ namespace DiscordCardLinker {
 			Loading = false;
 		}
 
-		//This produces a version of the card title with all spaces, punctuation, and sundry all removed from the lookup.
-		// This means that user typos that omit spaces, punctuation, or sundry will not be defeated for completely predictable reasons.
+		/*
+		 * This produces a version of the card title with all spaces, punctuation, and sundry all removed from the lookup.
+		 * This means that user typos that omit spaces, punctuation, or sundry will not be defeated for completely predictable reasons.
+		 * This is also used to transform search queries to match the same search form.
+		 */
 		private string ScrubInput(string input, bool stripSymbols = true)
 		{
 			string output = input.ToLower();
@@ -132,6 +141,10 @@ namespace DiscordCardLinker {
 			return output;
 		}
 
+		/*
+		 * Used to turn a card name like "Darth Vader, Dark Lord of the Sith" into "dvdlots". Treats hyphens as a 
+		 * space for abbreviation purposes, so "Obi-wan Kenobi" is abbreviated as "owk" instead of just "ok".
+		 */
 		private string GetLongAbbreviation(string input) {
 			input = input.ToLower().Trim();
 			input = input.Replace("-", " ");
@@ -160,20 +173,20 @@ namespace DiscordCardLinker {
 			 * Only add the card key once.
 			 */
 			if(!collection.ContainsKey(key)) {
-				//Console.WriteLine("Adding Key: ["+key+"]");
+				Console.WriteLine("Adding Key: ["+key+"]");
 				collection.Add(key, new List<CardDefinition>());
 			}
 
-			//Console.WriteLine("  .. ID.........: "+card.ID);
-			//Console.WriteLine("  .. ImageURL...: "+card.ImageURL);
-			//Console.WriteLine("  .. WikiURL....: "+card.WikiURL);
-			//Console.WriteLine("  .. CollInfo...: "+card.CollInfo);
-			//Console.WriteLine("  .. DisplayName: "+card.DisplayName);
-			//Console.WriteLine("  .. Title......: "+card.Title);
-			//Console.WriteLine("  .. Subtitle...: "+card.Subtitle);
-			//Console.WriteLine("  .. TitleSuffix: "+card.TitleSuffix);
-			//Console.WriteLine("  .. Nicknames..: "+card.Nicknames);
-			collection[key].Add(card);
+            Console.WriteLine("  .. ID.........: " + card.ID);
+            Console.WriteLine("  .. ImageURL...: " + card.ImageURL);
+            Console.WriteLine("  .. WikiURL....: " + card.WikiURL);
+            Console.WriteLine("  .. CollInfo...: " + card.CollInfo);
+            Console.WriteLine("  .. DisplayName: " + card.DisplayName);
+            Console.WriteLine("  .. Title......: " + card.Title);
+            Console.WriteLine("  .. Subtitle...: " + card.Subtitle);
+            Console.WriteLine("  .. TitleSuffix: " + card.TitleSuffix);
+            Console.WriteLine("  .. Nicknames..: " + card.Nicknames);
+            collection[key].Add(card);
 		}
 
 		public async Task Initialize() {
@@ -184,7 +197,7 @@ namespace DiscordCardLinker {
 				MinimumLogLevel = LogLevel.Debug
 			});
 			Client.MessageCreated += OnMessageCreated;
-			Client.ComponentInteractionCreated += OnButtonPressed;
+			Client.ComponentInteractionCreated += OnUIControlInteracted;
 			Client.ThreadCreated += OnThreadCreated;
 			Client.ThreadUpdated += OnThreadUpdated;
 
@@ -194,17 +207,33 @@ namespace DiscordCardLinker {
 			/* successfully connected to discord */
 		}
 
+		/*
+		 * Ensures that any existing threads that were created while the bot was offline (or unaware of threads)
+		 * will be subscribed to by the bot whenever someone posts in that thread (or changes its status).
+		 */
 		private async Task OnThreadUpdated(DiscordClient sender, ThreadUpdateEventArgs e)
 		{
 			await e.ThreadAfter.JoinThreadAsync();
 		}
 
+		/*
+		 * Automatically joins any new threads that are created while the bot is online.
+		 */
 		private async Task OnThreadCreated(DiscordClient sender, ThreadCreateEventArgs e)
 		{
 			await e.Thread.JoinThreadAsync();
 		}
 
-		private async Task OnButtonPressed(DiscordClient sender, ComponentInteractionCreateEventArgs e)
+		/*
+		 * Handles the behavior of the bot whenever a button or dropdown is interacted with.  
+		 * Each control is instantiated with an ID, which we treat as a vehicle for the user ID of the summoner and an action code 
+		 * for the behavior the bot should be performing:
+		 *  - "delete" indicates the Delete button was pressed for the bot to self-delete a response
+		 *  - "lockin" is the Accept button, which removes any dropdowns and buttons (except the wiki button) and is for the user to
+		 *	  communicate that the correct card was found.
+		 *	- "dropdown" indicates that the user changed the active selection.
+		 */
+		private async Task OnUIControlInteracted(DiscordClient sender, ComponentInteractionCreateEventArgs e)
 		{
 			var match = Regex.Match(e.Id, @"(\w+?)_(.*)");
 			string buttonId = match.Groups[1].Value;
@@ -259,9 +288,6 @@ namespace DiscordCardLinker {
 
 					break;
 
-				case "repick":
-
-					break;
 				default:
 					break;
 			}
@@ -294,7 +320,7 @@ namespace DiscordCardLinker {
 				/*
 				 * Search for the card requested
 				 */
-				var candidates = await PerformSearch(searchString);
+				var candidates = PerformSearch(searchString);
 				if(candidates.Count == 0) {
 					await SendNotFound(e, searchString);
 				}
@@ -312,7 +338,7 @@ namespace DiscordCardLinker {
 					}
 
 					/*
-					 * If more than one card was found, send a list of the crads with emoji as a method of allowing the 
+					 * If more than one card was found, send a list of the crads in a dropdown as a method of allowing the 
 					 * caller to select one of the cards from the list.
 					 */
 					await SendCollisions(e, type, searchString, candidates);
@@ -320,7 +346,14 @@ namespace DiscordCardLinker {
 			}
 		}
 
-		private async Task<HashSet<CardDefinition>> PerformSearch(string searchString) {
+		/*
+		 * Given a scrubbed search query, searches through each dictionary for a key matching the input.
+		 * The dictionaries are separate to create an implied order of priority, where a higher priority
+		 * match takes precedence over a lower priority one, although this difference is more tenuous in
+		 * this version of the bot than in LOTR.  This separation could be made more useful if the csv
+		 * data itself was improved somewhat.
+		 */
+		private HashSet<CardDefinition> PerformSearch(string searchString) {
 			var candidates = new HashSet<CardDefinition>();
 
 			string lowerSearch = ScrubInput(searchString);
@@ -359,21 +392,36 @@ namespace DiscordCardLinker {
 			return candidates;
 		}
 
+		/*
+		 * Helper function for generating a consistent Delete button, which uses the ID to store the original
+		 * author of the summons as well as which action to perform when interacted with.
+		 */
 		private DiscordButtonComponent DeleteButton(ulong AuthorID)
 		{
 			return new DiscordButtonComponent(ButtonStyle.Danger, $"delete_{AuthorID}", "Delete");
 		}
 
+		/*
+		 * Helper function for generating a consistent Accept button, which uses the ID to store the original
+		 * author of the summons as well as which action to perform when interacted with.
+		 */
 		private DiscordButtonComponent LockinButton(ulong AuthorID, bool disabled = false)
 		{
 			return new DiscordButtonComponent(ButtonStyle.Primary, $"lockin_{AuthorID}", "Accept", disabled);
 		}
 
+		/*
+		 * Responds to the summons with a message consisting only of a card URL, which should automatically embed
+		 * as an image in Discord.  Also ensures that a discreet wiki link button is presented.
+		 */
 		private async Task SendImage(DiscordMessage original, CardDefinition card)
 		{
 			await original.RespondAsync(BuildSingle(original, card, true, true, false));
 		}
 
+		/*
+		 * Handles the construction of a well-formed response to a summons.
+		 */
 		private DiscordMessageBuilder BuildSingle(DiscordMessage original, CardDefinition card, bool wiki, bool buttons, bool disable)
 		{
 			var builder = new DiscordMessageBuilder()
@@ -384,7 +432,7 @@ namespace DiscordCardLinker {
 
 			if (wiki)
 			{
-				comps.Add(new DiscordLinkButtonComponent(card.WikiURL, "Wiki", false));
+				comps.Add(new DiscordLinkButtonComponent(card.WikiURL, "scomp", false));
 			}
 			if (buttons)
 			{
