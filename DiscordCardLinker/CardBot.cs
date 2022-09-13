@@ -36,15 +36,21 @@ namespace DiscordCardLinker {
 		private const string squareRegex = @"\[(?!@)(.*?)]";
 		private const string curlyRegex = @"{(?!@)(.*?)}";
 		private const string angleRegex = @"<(?!@)(.*?)>";
-		private const string collInfoRegex = @"\((\d+[\w\+]+\d+\w?)\)";
+		private const string aliasRegex = @"(.*?)\s*\((.*)\)";
+		private const string abbreviationReductionRegex = @"[^\w\s]+";
+		private const string stripNonWordsRegex = @"\W+";
 
 		private Regex squareCR;
 		private Regex curlyCR;
 		private Regex angleCR;
-		private Regex collInfoCR;
+		private Regex aliasCR;
+		private Regex abbreviationReductionCR;
+		private Regex stripNonWordsCR;
 
 		//Maybe split this into groups: has subtitles, has nicks, etc
 		private List<CardDefinition> Cards { get; set; }
+
+		private bool Loading { get; set; }
 
 		private Dictionary<string, List<CardDefinition>> CardTitles { get; set; }
 		private Dictionary<string, List<CardDefinition>> CardSubtitles { get; set; }
@@ -52,21 +58,23 @@ namespace DiscordCardLinker {
 		private Dictionary<string, List<CardDefinition>> CardNicknames { get; set; }
 		private Dictionary<string, CardDefinition> CardCollInfo{ get; set; }
 
-		
-		private Queue<(string searchString, CardDefinition card)> Cache { get; set; }
 
 		public CardBot(Settings settings) {
 			CurrentSettings = settings;
 			squareCR = new Regex(squareRegex, RegexOptions.Compiled);
 			curlyCR = new Regex(curlyRegex, RegexOptions.Compiled);
 			angleCR = new Regex(angleRegex, RegexOptions.Compiled);
-			collInfoCR = new Regex(collInfoRegex, RegexOptions.Compiled);
+			aliasCR = new Regex(aliasRegex, RegexOptions.Compiled);
+			abbreviationReductionCR = new Regex(abbreviationReductionRegex, RegexOptions.Compiled);
+			stripNonWordsCR = new Regex(stripNonWordsRegex, RegexOptions.Compiled);
 
 			LoadCardDefinitions();
-			Cache = new Queue<(string searchString, CardDefinition card)>();
 		}
 
 		public void LoadCardDefinitions() {
+
+			Loading = true;
+
 			var engine = new FileHelperEngine<CardDefinition>(Encoding.UTF8);
 			Cards = engine.ReadFile(CurrentSettings.CardFilePath).ToList();
 
@@ -76,38 +84,54 @@ namespace DiscordCardLinker {
 			CardNicknames = new Dictionary<string, List<CardDefinition>>();
 			CardCollInfo = new Dictionary<string, CardDefinition>();
 
-			string fulltitle = "";
 
 			foreach(var card in Cards) {
-				AddEntry(CardTitles, card.Title.ToLower().Trim(), card);
-				AddEntry(CardSubtitles, card.Subtitle.ToLower().Trim(), card);
-				if(!String.IsNullOrWhiteSpace(card.Subtitle)) {
-					fulltitle = $"{card.Title.Trim()}, {card.Subtitle.Trim()}{card.TitleSuffix.Trim()}";
-				}
-				else {
-					fulltitle = $"{card.Title.Trim()}{card.TitleSuffix.Trim()}";
-				}
-				AddEntry(CardFullTitles, $"{fulltitle.ToLower().Trim()}", card);
+				AddEntry(CardTitles, ScrubInput(card.Title), card);
+				AddEntry(CardSubtitles, ScrubInput(card.Subtitle), card);
 
+				string fulltitle = $"{card.Title}{card.TitleSuffix}";
+				AddEntry(CardFullTitles, ScrubInput(fulltitle), card);
 
-				if(!String.IsNullOrWhiteSpace(card.Subtitle)) {
-					AddEntry(CardNicknames, GetLongAbbreviation(card.Subtitle.ToLower().Trim()), card);
+				//This catches cards like "2-1B (Too-Onebee)", splitting them into "2-1B" and "Too-Onebee"
+				var matches = aliasCR.Match(card.Title);
+				if (matches.Success) {
+					AddEntry(CardNicknames, ScrubInput(matches.Groups[1].Value), card);
+					AddEntry(CardNicknames, ScrubInput(matches.Groups[2].Value), card);
 				}
-				else {
-					AddEntry(CardNicknames, GetLongAbbreviation(card.Title.ToLower().Trim()), card);
-				}
+
+				AddEntry(CardNicknames, GetLongAbbreviation(card.Title), card);
 
 				foreach (string entry in card.Nicknames.Split(",")) {
-					AddEntry(CardNicknames, entry.ToLower().Trim(), card);
+					if (String.IsNullOrWhiteSpace(entry))
+						continue;
+
+					AddEntry(CardNicknames, ScrubInput(entry), card);
 				}
 
-				CardCollInfo.Add(card.CollInfo.ToLower().Trim(), card);
+				CardCollInfo.Add(ScrubInput(card.CollInfo), card);
 			}
 		}
 
+		//This produces a version of the card title with all spaces, punctuation, and sundry all removed from the lookup.
+		// This means that user typos that omit spaces, punctuation, or sundry will not be defeated for completely predictable reasons.
+		private string ScrubInput(string input, bool stripSymbols = true)
+		{
+			string output = input.ToLower();
+			output = output.Trim();
+			if (stripSymbols)
+			{
+				output = stripNonWordsCR.Replace(output, "");
+			}
+
+			return output;
+		}
+
 		private string GetLongAbbreviation(string input) {
+			input = input.ToLower().Trim();
+			input = input.Replace("-", " ");
+			input = abbreviationReductionCR.Replace(input, "");
 			string abbr = new string(
-				input.Split(new char[] { ' ', '-' }, StringSplitOptions.RemoveEmptyEntries)
+				input.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
 							.Where(s => s.Length > 0 && char.IsLetter(s[0]))
 							.Select(s => s[0])
 							.ToArray());
@@ -130,19 +154,19 @@ namespace DiscordCardLinker {
 			 * Only add the card key once.
 			 */
 			if(!collection.ContainsKey(key)) {
-				Console.WriteLine("Adding Key: ["+key+"]");
+				//Console.WriteLine("Adding Key: ["+key+"]");
 				collection.Add(key, new List<CardDefinition>());
 			}
 
-			Console.WriteLine("  .. ID.........: "+card.ID);
-			Console.WriteLine("  .. ImageURL...: "+card.ImageURL);
-			Console.WriteLine("  .. WikiURL....: "+card.WikiURL);
-			Console.WriteLine("  .. CollInfo...: "+card.CollInfo);
-			Console.WriteLine("  .. DisplayName: "+card.DisplayName);
-			Console.WriteLine("  .. Title......: "+card.Title);
-			Console.WriteLine("  .. Subtitle...: "+card.Subtitle);
-			Console.WriteLine("  .. TitleSuffix: "+card.TitleSuffix);
-			Console.WriteLine("  .. Nicknames..: "+card.Nicknames);
+			//Console.WriteLine("  .. ID.........: "+card.ID);
+			//Console.WriteLine("  .. ImageURL...: "+card.ImageURL);
+			//Console.WriteLine("  .. WikiURL....: "+card.WikiURL);
+			//Console.WriteLine("  .. CollInfo...: "+card.CollInfo);
+			//Console.WriteLine("  .. DisplayName: "+card.DisplayName);
+			//Console.WriteLine("  .. Title......: "+card.Title);
+			//Console.WriteLine("  .. Subtitle...: "+card.Subtitle);
+			//Console.WriteLine("  .. TitleSuffix: "+card.TitleSuffix);
+			//Console.WriteLine("  .. Nicknames..: "+card.Nicknames);
 			collection[key].Add(card);
 		}
 
@@ -166,6 +190,11 @@ namespace DiscordCardLinker {
 		 * process reaction to discord chat message
 		 */
 		private async Task OnReactionAdded(DiscordClient sender, MessageReactionAddEventArgs e) {
+			if (Loading) {
+				await Task.Delay(3000);
+				if (Loading)
+					return;
+			}
 
 			if (e.Message.Author != Client.CurrentUser)
 				return;
@@ -235,11 +264,6 @@ namespace DiscordCardLinker {
 							break;
 					} // switch
 
-					/*
-					 * Add found card to cache.
-					 */
-					AddSuccessfulSearch(search, card);
-
 				} // if
 
 			} // foreach
@@ -251,6 +275,11 @@ namespace DiscordCardLinker {
 		 * Message created in discord chat, check if we should process it.
 		 */
 		private async Task OnMessageCreated(DiscordClient sender, MessageCreateEventArgs e) {
+			if (Loading) {
+				await Task.Delay(3000);
+				if (Loading)
+					return;
+			}
 			/*
 			 * Do not process bot originated messages
 			 */
@@ -263,20 +292,12 @@ namespace DiscordCardLinker {
 
 			foreach (Match match in curlyCR.Matches(content)) {
 				requests.Add((MatchType.Wiki, match.Groups[1].Value));
-
-				//await e.Message.RespondAsync($"Here's a wiki link for ''!");
 			}
 
 			foreach (Match match in squareCR.Matches(content)) {
 				requests.Add((MatchType.Image, match.Groups[1].Value));
-				//await e.Message.RespondAsync($"https://lotrtcgwiki.com/images/LOTR.jpg");
 			}
 
-			//foreach (Match match in angleCR.Matches(content))
-			//{
-			//	requests.Add((MatchType.Text, match.Groups[1].Value));
-			//	//await e.Message.RespondAsync($"Here's the text for ''!");
-			//}
 			foreach (var (type, searchString) in requests) {
 				/*
 				 * Search for the card requested
@@ -315,23 +336,10 @@ namespace DiscordCardLinker {
 
 		}
 
-		private void AddSuccessfulSearch(string search, CardDefinition card) {
-			search = search.ToLower().Trim();
-			Cache.Enqueue((search, card));
-			if(Cache.Count > 100) {
-				Cache.Dequeue();
-			}
-		}
-
 		private async Task<List<CardDefinition>> PerformSearch(string searchString) {
 			var candidates = new List<CardDefinition>();
 
-			string lowerSearch = searchString.ToLower().Trim();
-			if(Cache.Any(x => x.searchString == searchString)) {
-				var card = Cache.Where(x => x.searchString == lowerSearch).First().card;
-				candidates.Add(card);
-				return candidates;
-			}
+			string lowerSearch = ScrubInput(searchString);
 
 			if (CardSubtitles.ContainsKey(lowerSearch)) {
 				candidates.AddRange(CardSubtitles[lowerSearch]);
@@ -371,8 +379,6 @@ namespace DiscordCardLinker {
 					await SendWikiLink(e, card);
 					break;
 			}
-
-			AddSuccessfulSearch(search, card);
 		}
 
 		private async Task SendImage(MessageCreateEventArgs e, CardDefinition card) {
