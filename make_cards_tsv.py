@@ -106,6 +106,13 @@ def parse_json_file(json_filename):
       else:
         row.title      = names[0].strip()
         row.subtitle   = names[1].strip()
+    elif "&" in row.title:
+      names      = row.title.split("&", 1)
+      if names[0] == names[1]:
+        row.title      = names[0].strip()
+      else:
+        row.title      = names[0].strip()
+        row.subtitle   = names[1].strip()
     
     if row.subtitle == "":
       if (row.title.count(",") == 1):
@@ -197,8 +204,7 @@ if __name__ == "__main__":
   ##
   ## Open tsv file for writing
   ##
-  #fh = open("DiscordCardLinker/cards.tsv", "w")
-  fh = codecs.open("cards.tsv", "w", "utf-8")
+  fh = codecs.open("DiscordCardLinker/cards.tsv", "w", "utf-8")
   fh.write("ID\tImageURL\tWikiURL\tCollInfo\tDisplayName\tTitle\tSubtitle\tTitleSuffix\tNicknames"+"\n")
 
   ##

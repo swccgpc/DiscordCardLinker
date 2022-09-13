@@ -462,6 +462,14 @@ namespace DiscordCardLinker {
 					}
 				};
 
+				foreach (var key in CardFullTitles.Keys)
+				{
+					if (key.Contains(lowerSearch))
+					{
+						candidates.AddRange(CardFullTitles[key]);
+					}
+				};
+
 				foreach (var key in CardNicknames.Keys)
 				{
 					if (key.Contains(lowerSearch))

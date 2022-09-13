@@ -53,10 +53,10 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 81	https://res.starwarsccg.org/cards/SpecialEdition-Light/large/alderaanoperative.gif	https://scomp.starwarsccg.org/?s=Alderaan+Operative	SEC001	Alderaan Operative	Alderaan Operative			
 84	https://res.starwarsccg.org/cards/CloudCity-Light/large/allmyurchins.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2All+My+Urchins	CCR017	•All My Urchins	All My Urchins			
 88	https://res.starwarsccg.org/cards/SpecialEdition-Light/large/allwingsreportin.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2All+Wings+Report+In	SER082	•All Wings Report In	All Wings Report In			
-89	https://res.starwarsccg.org/cards/Coruscant-Light/large/allwingsreportin&darklighterspin.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2All+Wings+Report+In+%26+%E2%80%A2Darklighter+Spin	CORR053	•All Wings Report In & •Darklighter Spin	All Wings Report In & Darklighter Spin			
+89	https://res.starwarsccg.org/cards/Coruscant-Light/large/allwingsreportin&darklighterspin.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2All+Wings+Report+In+%26+%E2%80%A2Darklighter+Spin	CORR053	•All Wings Report In & •Darklighter Spin	All Wings Report In	Darklighter Spin		
 99	https://res.starwarsccg.org/cards/Coruscant-Light/large/alter.gif	https://scomp.starwarsccg.org/?s=Alter	CORU054	[LS] Alter	Alter			
 95	https://res.starwarsccg.org/cards/Premiere-Light/large/alter.gif	https://scomp.starwarsccg.org/?s=Alter	PU1071	[LS] Alter	Alter			
-97	https://res.starwarsccg.org/cards/ReflectionsII-Light/large/alter&friendlyfire.gif	https://scomp.starwarsccg.org/?s=Alter+%26+Friendly+Fire	Ref2PM001	Alter & Friendly Fire	Alter & Friendly Fire			
+97	https://res.starwarsccg.org/cards/ReflectionsII-Light/large/alter&friendlyfire.gif	https://scomp.starwarsccg.org/?s=Alter+%26+Friendly+Fire	Ref2PM001	Alter & Friendly Fire	Alter	Friendly Fire		
 5333	https://res.starwarsccg.org/cards/Virtual0-Light/large/altercoruscant.gif	https://scomp.starwarsccg.org/?s=Alter+%28Coruscant%29+%28V%29	V0U1143	[LS] Alter (Coruscant) (V)	Alter	Coruscant	(V)	
 5335	https://res.starwarsccg.org/cards/Virtual0-Light/large/alterpremiere.gif	https://scomp.starwarsccg.org/?s=Alter+%28Premiere%29+%28V%29	V0U1048	[LS] Alter (Premiere) (V)	Alter	Premiere	(V)	
 100	https://res.starwarsccg.org/cards/ANewHope-Light/large/alternativestofighting.gif	https://scomp.starwarsccg.org/?s=Alternatives+To+Fighting	ANHU1044	Alternatives To Fighting	Alternatives To Fighting			
@@ -91,7 +91,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 133	https://res.starwarsccg.org/cards/CloudCity-Light/large/armedanddangerous.gif	https://scomp.starwarsccg.org/?s=Armed+And+Dangerous	CCU032	Armed And Dangerous	Armed And Dangerous			
 135	https://res.starwarsccg.org/cards/Hoth-Light/large/artilleryremote.gif	https://scomp.starwarsccg.org/?s=Artillery+Remote	HR2028	Artillery Remote	Artillery Remote			
 136	https://res.starwarsccg.org/cards/JabbasPalace-Light/large/artoo.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Artoo	JPR003	•Artoo	Artoo			
-137	https://res.starwarsccg.org/cards/ReflectionsII-Light/large/artoo&threepio.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Artoo+%26+%E2%80%A2Threepio	Ref2PM002	•Artoo & •Threepio	Artoo & Threepio			
+137	https://res.starwarsccg.org/cards/ReflectionsII-Light/large/artoo&threepio.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Artoo+%26+%E2%80%A2Threepio	Ref2PM002	•Artoo & •Threepio	Artoo	Threepio		
 138	https://res.starwarsccg.org/cards/TheedPalace-Light/large/artoobravelittledroid.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Artoo%2C+Brave+Little+Droid	TPR003	•Artoo, Brave Little Droid	Artoo	Brave Little Droid		
 5352	https://res.starwarsccg.org/cards/TheedPalace-Light/large/artoobravelittledroidai.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Artoo%2C+Brave+Little+Droid+%28AI%29	TPR004AI	•Artoo, Brave Little Droid (AI)	Artoo	Brave Little Droid	(AI)	
 139	https://res.starwarsccg.org/cards/CloudCity-Light/large/artoocomebackatonce.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Artoo%2C+Come+Back+At+Once%21	CCR033	•Artoo, Come Back At Once!	Artoo	Come Back At Once!		
@@ -126,13 +126,13 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 202	https://res.starwarsccg.org/cards/Coruscant-Light/large/baselessaccusations.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Baseless+Accusations	CORC056	•Baseless Accusations	Baseless Accusations			
 211	https://res.starwarsccg.org/cards/Endor-Light/large/battleplan.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Battle+Plan	EDRU035	•Battle Plan	Battle Plan			
 212	https://res.starwarsccg.org/cards/ReflectionsIII-Light/large/battleplan.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Battle+Plan	Ref3PM008	•Battle Plan	Battle Plan			
-213	https://res.starwarsccg.org/cards/Coruscant-Light/large/battleplan&drawtheirfire.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Battle+Plan+%26+%E2%80%A2Draw+Their+Fire	CORR041	•Battle Plan & •Draw Their Fire	Battle Plan & Draw Their Fire			
+213	https://res.starwarsccg.org/cards/Coruscant-Light/large/battleplan&drawtheirfire.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Battle+Plan+%26+%E2%80%A2Draw+Their+Fire	CORR041	•Battle Plan & •Draw Their Fire	Battle Plan	Draw Their Fire		
 5164	https://res.starwarsccg.org/cards/Virtual7-Light/large/bazemalbuswithcannon.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Baze+Malbus+With+Cannon	V7C001	•Baze Malbus With Cannon (V)	Baze Malbus With Cannon		(V)	
 5088	https://res.starwarsccg.org/cards/Virtual4-Light/large/bb8.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2BB-8+%28Beebee-Ate%29	V4R1001	•BB-8 (Beebee-Ate) (V)	BB-8	Beebee-Ate	(V)	
 5373	https://res.starwarsccg.org/cards/Virtual11-Light/large/bb8inblacksquadron1.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2BB-8+In+Black+Squadron+1	V11U028	•BB-8 In Black Squadron 1 (V)	BB-8 In Black Squadron 1		(V)	
 215	https://res.starwarsccg.org/cards/Premiere-Light/large/beggar.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Beggar	PR1044	•Beggar	Beggar			
 217	https://res.starwarsccg.org/cards/CloudCity-Light/large/beldonseye.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Beldon%27s+Eye	CCR018	•Beldon's Eye	Beldon's Eye			
-5376	https://res.starwarsccg.org/cards/Virtual11-Light/large/beldonseyeallmyurchins.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Beldon%27s+Eye+%26+%E2%80%A2All+My+Urchins	V11R031	•Beldon's Eye & •All My Urchins (V)	Beldon's Eye & All My Urchins		(V)	
+5376	https://res.starwarsccg.org/cards/Virtual11-Light/large/beldonseyeallmyurchins.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Beldon%27s+Eye+%26+%E2%80%A2All+My+Urchins	V11R031	•Beldon's Eye & •All My Urchins (V)	Beldon's Eye	All My Urchins	(V)	
 218	https://res.starwarsccg.org/cards/Virtual0-Light/large/beldonseye.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Beldon%27s+Eye+%28V%29	V0R036	•Beldon's Eye (V)	Beldon's Eye		(V)	
 219	https://res.starwarsccg.org/cards/SpecialEdition-Light/large/benkenobi.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Ben+Kenobi	SER004	•Ben Kenobi	Ben Kenobi			General Kenobi,Hello There
 221	https://res.starwarsccg.org/cards/Premiere-Light/large/berulars.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Beru+Lars	PU2002	•Beru Lars	Beru Lars			
@@ -291,7 +291,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 517	https://res.starwarsccg.org/cards/DeathStarII-Light/large/concussionmissiles.gif	https://scomp.starwarsccg.org/?s=Concussion+Missiles	DS2C087	[LS] Concussion Missiles	Concussion Missiles			
 525	https://res.starwarsccg.org/cards/Coruscant-Light/large/control.gif	https://scomp.starwarsccg.org/?s=Control	CORU057	[LS] Control	Control			
 521	https://res.starwarsccg.org/cards/Dagobah-Light/large/control.gif	https://scomp.starwarsccg.org/?s=Control	DAGU048	[LS] Control	Control			
-523	https://res.starwarsccg.org/cards/ReflectionsII-Light/large/control&tunnelvision.gif	https://scomp.starwarsccg.org/?s=Control+%26+Tunnel+Vision	Ref2PM004	Control & Tunnel Vision	Control & Tunnel Vision			
+523	https://res.starwarsccg.org/cards/ReflectionsII-Light/large/control&tunnelvision.gif	https://scomp.starwarsccg.org/?s=Control+%26+Tunnel+Vision	Ref2PM004	Control & Tunnel Vision	Control	Tunnel Vision		
 527	https://res.starwarsccg.org/cards/ANewHope-Light/large/corellia.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Corellia	ANHR1061	•Corellia	Corellia			
 528	https://res.starwarsccg.org/cards/SpecialEdition-Light/large/corelliaoperative.gif	https://scomp.starwarsccg.org/?s=Corellia+Operative	SEU013	Corellia Operative	Corellia Operative			
 529	https://res.starwarsccg.org/cards/ANewHope-Light/large/corellian.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2%E2%80%A2%E2%80%A2Corellian	ANHC2006	•••Corellian	Corellian			
@@ -389,7 +389,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 740	https://res.starwarsccg.org/cards/ReflectionsIII-Light/large/diversionarytactics.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Diversionary+Tactics	Ref3PM014	•Diversionary Tactics	Diversionary Tactics			
 745	https://res.starwarsccg.org/cards/Dagobah-Light/large/doordonot.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Do%2C+Or+Do+Not	DAGC021	•Do, Or Do Not	Do	Or Do Not		
 746	https://res.starwarsccg.org/cards/ReflectionsIII-Light/large/doordonot.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Do%2C+Or+Do+Not	Ref3PM015	•Do, Or Do Not	Do	Or Do Not		
-747	https://res.starwarsccg.org/cards/ReflectionsII-Light/large/doordonot&wiseadvice.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Do%2C+Or+Do+Not+%26+%E2%80%A2Wise+Advice	Ref2PM007	•Do, Or Do Not & •Wise Advice	Do	Or Do Not & Wise Advice		
+747	https://res.starwarsccg.org/cards/ReflectionsII-Light/large/doordonot&wiseadvice.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Do%2C+Or+Do+Not+%26+%E2%80%A2Wise+Advice	Ref2PM007	•Do, Or Do Not & •Wise Advice	Do, Or Do Not	Wise Advice		
 748	https://res.starwarsccg.org/cards/SpecialEdition-Light/large/dockingandrepairfacilities.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Docking+And+Repair+Facilities	SER058	•Docking And Repair Facilities	Docking And Repair Facilities			
 749	https://res.starwarsccg.org/cards/CloudCity-Light/large/dodge.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Dodge	CCC045	•Dodge	Dodge			
 751	https://res.starwarsccg.org/cards/ANewHope-Light/large/doikknats.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Doikk+Na%27ts	ANHU2007	•Doikk Na'ts	Doikk Na'ts			
@@ -425,7 +425,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 810	https://res.starwarsccg.org/cards/SpecialEdition-Light/large/echobasetrooperrifle.gif	https://scomp.starwarsccg.org/?s=Echo+Base+Trooper+Rifle	SEC158	Echo Base Trooper Rifle	Echo Base Trooper Rifle			
 811	https://res.starwarsccg.org/cards/Hoth-Light/large/echotrooperbackpack.gif	https://scomp.starwarsccg.org/?s=Echo+Trooper+Backpack	HC2029	Echo Trooper Backpack	Echo Trooper Backpack			
 814	https://res.starwarsccg.org/cards/Dagobah-Light/large/effectiverepairs.gif	https://scomp.starwarsccg.org/?s=Effective+Repairs	DAGR049	Effective Repairs	Effective Repairs			
-5503	https://res.starwarsccg.org/cards/Virtual9-Light/large/effectiverepairsstarshiplevitation.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Effective+Repairs+%26+%E2%80%A2Starship+Levitation	V9R019	•Effective Repairs & •Starship Levitation (V)	Effective Repairs & Starship Levitation		(V)	
+5503	https://res.starwarsccg.org/cards/Virtual9-Light/large/effectiverepairsstarshiplevitation.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Effective+Repairs+%26+%E2%80%A2Starship+Levitation	V9R019	•Effective Repairs & •Starship Levitation (V)	Effective Repairs	Starship Levitation	(V)	
 815	https://res.starwarsccg.org/cards/Hoth-Light/large/eg4eegeefour.gif	https://scomp.starwarsccg.org/?s=EG-4+%28Eegee-Four%29	HC1008	EG-4 (Eegee-Four)	EG-4	Eegee-Four		
 817	https://res.starwarsccg.org/cards/Dagobah-Light/large/egregiouspiloterror.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Egregious+Pilot+Error	DAGR050	•Egregious Pilot Error	Egregious Pilot Error			
 818	https://res.starwarsccg.org/cards/Tatooine-Light/large/eitherwayyouwin.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Either+Way%2C+You+Win	TATU032	•Either Way, You Win	Either Way	You Win		
@@ -462,7 +462,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 875	https://res.starwarsccg.org/cards/SpecialEdition-Light/large/entrenchment.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Entrenchment	SER061	•Entrenchment	Entrenchment			
 877	https://res.starwarsccg.org/cards/Tatooine-Light/large/eopie.gif	https://scomp.starwarsccg.org/?s=Eopie	TATC048	Eopie	Eopie			
 882	https://res.starwarsccg.org/cards/Premiere-Light/large/escapepod.gif	https://scomp.starwarsccg.org/?s=Escape+Pod	PU2079	Escape Pod	Escape Pod			
-5073	https://res.starwarsccg.org/cards/Virtual4-Light/large/escapepodweredoomed.gif	https://scomp.starwarsccg.org/?s=Escape+Pod+%26+We%27re+Doomed	V4C2018	Escape Pod & We're Doomed (V)	Escape Pod & We're Doomed		(V)	
+5073	https://res.starwarsccg.org/cards/Virtual4-Light/large/escapepodweredoomed.gif	https://scomp.starwarsccg.org/?s=Escape+Pod+%26+We%27re+Doomed	V4C2018	Escape Pod & We're Doomed (V)	Escape Pod	We're Doomed	(V)	
 883	https://res.starwarsccg.org/cards/Virtual1-Light/large/escapepod.gif	https://scomp.starwarsccg.org/?s=Escape+Pod+%28V%29	V1U2012	Escape Pod (V)	Escape Pod		(V)	
 889	https://res.starwarsccg.org/cards/Hoth-Light/large/evacuationcontrol.gif	https://scomp.starwarsccg.org/?s=Evacuation+Control	HU1035	Evacuation Control	Evacuation Control			
 890	https://res.starwarsccg.org/cards/Virtual0-Light/large/idontlikesand.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2I+Don%27t+Like+Sand	V0U1039	•I Don't Like Sand (V)	I Don't Like Sand		(V)	
@@ -507,7 +507,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 976	https://res.starwarsccg.org/cards/Dagobah-Light/large/foundsomeoneyouhave.gif	https://scomp.starwarsccg.org/?s=Found+Someone+You+Have	DAGU051	Found Someone You Have	Found Someone You Have			
 977	https://res.starwarsccg.org/cards/Virtual0-Light/large/foundsomeoneyouhave.gif	https://scomp.starwarsccg.org/?s=Found+Someone+You+Have+%28V%29	V0U052	Found Someone You Have (V)	Found Someone You Have		(V)	
 980	https://res.starwarsccg.org/cards/Endor-Light/large/freeride.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Free+Ride	EDRU052	•Free Ride	Free Ride			
-981	https://res.starwarsccg.org/cards/Coruscant-Light/large/freeride&endorcelebration.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Free+Ride+%26+%E2%80%A2Endor+Celebration	CORR058	•Free Ride & •Endor Celebration	Free Ride & Endor Celebration			
+981	https://res.starwarsccg.org/cards/Coruscant-Light/large/freeride&endorcelebration.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Free+Ride+%26+%E2%80%A2Endor+Celebration	CORR058	•Free Ride & •Endor Celebration	Free Ride	Endor Celebration		
 984	https://res.starwarsccg.org/cards/Coruscant-Light/large/freondrevan.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Freon+Drevan	CORU005	•Freon Drevan	Freon Drevan			
 985	https://res.starwarsccg.org/cards/Premiere-Light/large/friendlyfire.gif	https://scomp.starwarsccg.org/?s=Friendly+Fire	PC2080	Friendly Fire	Friendly Fire			
 987	https://res.starwarsccg.org/cards/Hoth-Light/large/frostbite.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Frostbite	HC2036	[LS] •Frostbite	Frostbite			
@@ -641,7 +641,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 5590	https://res.starwarsccg.org/cards/Hoth-Light/large/hothnorthridge.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Hoth%3A+North+Ridge+%284th+Marker%29	HC2062	[LS] •Hoth: North Ridge (4th Marker)	Hoth	North Ridge (4th Marker)		
 5591	https://res.starwarsccg.org/cards/Hoth-Light/large/hothsnowtrench.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Hoth%3A+Snow+Trench+%282nd+Marker%29	HC2063	•Hoth: Snow Trench (2nd Marker)	Hoth	Snow Trench (2nd Marker)		
 1183	https://res.starwarsccg.org/cards/ANewHope-Light/large/houjix.gif	https://scomp.starwarsccg.org/?s=Houjix	ANHC2050	Houjix	Houjix			
-1184	https://res.starwarsccg.org/cards/ReflectionsII-Light/large/houjix&outofnowhere.gif	https://scomp.starwarsccg.org/?s=Houjix+%26+Out+Of+Nowhere	Ref2PM008	Houjix & Out Of Nowhere	Houjix & Out Of Nowhere			
+1184	https://res.starwarsccg.org/cards/ReflectionsII-Light/large/houjix&outofnowhere.gif	https://scomp.starwarsccg.org/?s=Houjix+%26+Out+Of+Nowhere	Ref2PM008	Houjix & Out Of Nowhere	Houjix	Out Of Nowhere		
 1187	https://res.starwarsccg.org/cards/Premiere-Light/large/howdidwegetintothismess.gif	https://scomp.starwarsccg.org/?s=How+Did+We+Get+Into+This+Mess%3F	PU2087	How Did We Get Into This Mess?	How Did We Get Into This Mess?			
 1189	https://res.starwarsccg.org/cards/ANewHope-Light/large/hunchback.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Hunchback	ANHR1010	•Hunchback	Hunchback			
 1196	https://res.starwarsccg.org/cards/Premiere-Light/large/hydroponicsstation.gif	https://scomp.starwarsccg.org/?s=Hydroponics+Station	PU2037	Hydroponics Station	Hydroponics Station			
@@ -683,7 +683,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 1313	https://res.starwarsccg.org/cards/CloudCity-Light/large/innocentscoundrel.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Innocent+Scoundrel	CCU053	•Innocent Scoundrel	Innocent Scoundrel			
 1314	https://res.starwarsccg.org/cards/DeathStarII-Light/large/insertionplanning.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Insertion+Planning	DS2C052	•Insertion Planning	Insertion Planning			
 1317	https://res.starwarsccg.org/cards/Endor-Light/large/insurrection.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Insurrection	EDRU040	•Insurrection	Insurrection			
-1318	https://res.starwarsccg.org/cards/Coruscant-Light/large/insurrection&aimhigh.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Insurrection+%26+%E2%80%A2Aim+High	CORR044	•Insurrection & •Aim High	Insurrection & Aim High			
+1318	https://res.starwarsccg.org/cards/Coruscant-Light/large/insurrection&aimhigh.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Insurrection+%26+%E2%80%A2Aim+High	CORR044	•Insurrection & •Aim High	Insurrection	Aim High		
 1321	https://res.starwarsccg.org/cards/Premiere-Light/large/intothegarbagechuteflyboy.gif	https://scomp.starwarsccg.org/?s=Into+The+Garbage+Chute%2C+Flyboy	PR2089	Into The Garbage Chute, Flyboy	Into The Garbage Chute	Flyboy		
 1323	https://res.starwarsccg.org/cards/CloudCity-Light/large/intotheventilationshaftlefty.gif	https://scomp.starwarsccg.org/?s=Into+The+Ventilation+Shaft%2C+Lefty	CCR054	Into The Ventilation Shaft, Lefty	Into The Ventilation Shaft	Lefty		
 1325	https://res.starwarsccg.org/cards/SpecialEdition-Light/large/intrudermissile.gif	https://scomp.starwarsccg.org/?s=Intruder+Missile	SEF159	[LS] Intruder Missile	Intruder Missile			
@@ -962,7 +962,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 4085	https://res.starwarsccg.org/cards/Virtual0-Light/large/narshaddaa.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Nar+Shaddaa	V0C058	•Nar Shaddaa (V)	Nar Shaddaa		(V)	
 7033	https://res.starwarsccg.org/cards/VirtualAlternateImage-Light/large/narshaddaa_ai.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Nar+Shaddaa+%28AI%29	V0C058AI	•Nar Shaddaa (AI) (V)	Nar Shaddaa		(AI)	
 1753	https://res.starwarsccg.org/cards/JabbasPalace-Light/large/narshaddaawindchimes.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Nar+Shaddaa+Wind+Chimes	JPU072	•Nar Shaddaa Wind Chimes	Nar Shaddaa Wind Chimes			
-1754	https://res.starwarsccg.org/cards/ReflectionsII-Light/large/narshaddaawindchimes&outofsomewhere.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Nar+Shaddaa+Wind+Chimes+%26+%E2%80%A2Out+Of+Somewhere	Ref2PM013	•Nar Shaddaa Wind Chimes & •Out Of Somewhere	Nar Shaddaa Wind Chimes & Out Of Somewhere			
+1754	https://res.starwarsccg.org/cards/ReflectionsII-Light/large/narshaddaawindchimes&outofsomewhere.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Nar+Shaddaa+Wind+Chimes+%26+%E2%80%A2Out+Of+Somewhere	Ref2PM013	•Nar Shaddaa Wind Chimes & •Out Of Somewhere	Nar Shaddaa Wind Chimes	Out Of Somewhere		
 1755	https://res.starwarsccg.org/cards/Premiere-Light/large/narrowescape.gif	https://scomp.starwarsccg.org/?s=Narrow+Escape	PC2098	Narrow Escape	Narrow Escape			
 1760	https://res.starwarsccg.org/cards/SpecialEdition-Light/large/nebdulo.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Neb+Dulo	SEU034	•Neb Dulo	Neb Dulo			
 1763	https://res.starwarsccg.org/cards/DeathStarII-Light/large/nebulonbfrigate.gif	https://scomp.starwarsccg.org/?s=Nebulon-B+Frigate	DS2U080	Nebulon-B Frigate	Nebulon-B Frigate			
@@ -994,7 +994,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 1813	https://res.starwarsccg.org/cards/Premiere-Light/large/obiwanslightsaber.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Obi-Wan%27s+Lightsaber	PR1157	•Obi-Wan's Lightsaber	Obi-Wan's Lightsaber			General Kenobi,Hello There
 1814	https://res.starwarsccg.org/cards/ReflectionsIII-Light/large/obiwanslightsaber.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Obi-Wan%27s+Lightsaber	Ref3PM034	•Obi-Wan's Lightsaber	Obi-Wan's Lightsaber			General Kenobi,Hello There
 1820	https://res.starwarsccg.org/cards/Coruscant-Light/large/odinnesloor.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Odin+Nesloor	CORU065	•Odin Nesloor	Odin Nesloor			
-5774	https://res.starwarsccg.org/cards/Virtual9-Light/large/odinnesloorfirstaid.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Odin+Nesloor+%26+%E2%80%A2First+Aid	V9F021	•Odin Nesloor & •First Aid (V)	Odin Nesloor & First Aid		(V)	
+5774	https://res.starwarsccg.org/cards/Virtual9-Light/large/odinnesloorfirstaid.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Odin+Nesloor+%26+%E2%80%A2First+Aid	V9F021	•Odin Nesloor & •First Aid (V)	Odin Nesloor	First Aid	(V)	
 1821	https://res.starwarsccg.org/cards/CloudCity-Light/large/offtheedge.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Off+The+Edge	CCR059	•Off The Edge	Off The Edge			
 1822	https://res.starwarsccg.org/cards/TheedPalace-Light/large/officerdolphe.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Officer+Dolphe	TPU020	•Officer Dolphe	Officer Dolphe			
 1823	https://res.starwarsccg.org/cards/TheedPalace-Light/large/officerellberger.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Officer+Ellberger	TPU021	•Officer Ellberger	Officer Ellberger			
@@ -1020,13 +1020,13 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 1870	https://res.starwarsccg.org/cards/Premiere-Light/large/ourmostdesperatehour.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Our+Most+Desperate+Hour	PR1058	•Our Most Desperate Hour	Our Most Desperate Hour			
 1871	https://res.starwarsccg.org/cards/DeathStarII-Light/large/ouronlyhope.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Our+Only+Hope	DS2U053	•Our Only Hope	Our Only Hope			
 1872	https://res.starwarsccg.org/cards/ANewHope-Light/large/outofcommission.gif	https://scomp.starwarsccg.org/?s=Out+Of+Commission	ANHU2054	Out Of Commission	Out Of Commission			
-1873	https://res.starwarsccg.org/cards/ReflectionsII-Light/large/outofcommission&transmissionterminated.gif	https://scomp.starwarsccg.org/?s=Out+Of+Commission+%26+Transmission+Terminated	Ref2PM016	Out Of Commission & Transmission Terminated	Out Of Commission & Transmission Terminated			
+1873	https://res.starwarsccg.org/cards/ReflectionsII-Light/large/outofcommission&transmissionterminated.gif	https://scomp.starwarsccg.org/?s=Out+Of+Commission+%26+Transmission+Terminated	Ref2PM016	Out Of Commission & Transmission Terminated	Out Of Commission	Transmission Terminated		
 1874	https://res.starwarsccg.org/cards/Premiere-Light/large/outofnowhere.gif	https://scomp.starwarsccg.org/?s=Out+Of+Nowhere	PU2102	Out Of Nowhere	Out Of Nowhere			
 1875	https://res.starwarsccg.org/cards/CloudCity-Light/large/outofsomewhere.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Out+Of+Somewhere	CCU061	•Out Of Somewhere	Out Of Somewhere			
 1879	https://res.starwarsccg.org/cards/ReflectionsII-Light/large/outrider.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Outrider	Ref2PM017	•Outrider	Outrider			
 4092	https://res.starwarsccg.org/cards/Virtual0-Light/large/overseer.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Overseer	V0PM064	•Overseer (V)	Overseer		(V)	
 1883	https://res.starwarsccg.org/cards/Premiere-Light/large/owenlars.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Owen+Lars	PU1022	•Owen Lars	Owen Lars			
-1884	https://res.starwarsccg.org/cards/ReflectionsII-Light/large/owenlars&berulars.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Owen+Lars+%26+%E2%80%A2Beru+Lars	Ref2PM018	•Owen Lars & •Beru Lars	Owen Lars & Beru Lars			
+1884	https://res.starwarsccg.org/cards/ReflectionsII-Light/large/owenlars&berulars.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Owen+Lars+%26+%E2%80%A2Beru+Lars	Ref2PM018	•Owen Lars & •Beru Lars	Owen Lars	Beru Lars		
 1888	https://res.starwarsccg.org/cards/Tatooine-Light/large/padmenaberrie.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Padme+Naberrie	TATR008	•Padme Naberrie	Padme Naberrie			
 5787	https://res.starwarsccg.org/cards/Tatooine-Light/large/padmenaberrieai.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Padme+Naberrie+%28AI%29	TATR009AI	•Padme Naberrie (AI)	Padme Naberrie		(AI)	
 5042	https://res.starwarsccg.org/cards/Virtual3-Light/large/padmenaberrie.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Padme+Naberrie+%28V%29	V3R010	•Padme Naberrie (V)	Padme Naberrie		(V)	
@@ -1042,7 +1042,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 5794	https://res.starwarsccg.org/cards/Virtual10-Light/large/paploo.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Paploo+%28V%29	V10U022	•Paploo (V)	Paploo		(V)	
 5795	https://res.starwarsccg.org/cards/Virtual10-Light/large/partofthetribe.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Part+Of+The+Tribe	V10U1021	•Part Of The Tribe (V)	Part Of The Tribe		(V)	
 1897	https://res.starwarsccg.org/cards/CloudCity-Light/large/pathofleastresistance.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Path+Of+Least+Resistance	CCC062	•Path Of Least Resistance	Path Of Least Resistance			
-1898	https://res.starwarsccg.org/cards/ReflectionsII-Light/large/pathofleastresistance&revealed.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Path+Of+Least+Resistance+%26+%E2%80%A2Revealed	Ref2PM019	•Path Of Least Resistance & •Revealed	Path Of Least Resistance & Revealed			
+1898	https://res.starwarsccg.org/cards/ReflectionsII-Light/large/pathofleastresistance&revealed.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Path+Of+Least+Resistance+%26+%E2%80%A2Revealed	Ref2PM019	•Path Of Least Resistance & •Revealed	Path Of Least Resistance	Revealed		
 1900	https://res.starwarsccg.org/cards/SpecialEdition-Light/large/patrolcraft.gif	https://scomp.starwarsccg.org/?s=Patrol+Craft	SEC153	[LS] Patrol Craft	Patrol Craft			
 1902	https://res.starwarsccg.org/cards/Hoth-Light/large/perimeterscan.gif	https://scomp.starwarsccg.org/?s=Perimeter+Scan	HC2048	Perimeter Scan	Perimeter Scan			
 4114	https://res.starwarsccg.org/cards/Virtual1-Light/large/perimeterscan.gif	https://scomp.starwarsccg.org/?s=Perimeter+Scan+%28V%29	V1C2014	Perimeter Scan (V)	Perimeter Scan		(V)	
@@ -1101,7 +1101,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 1997	https://res.starwarsccg.org/cards/Hoth-Light/large/r3poarthreepio.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2R-3PO+%28Ar-Threepio%29	HR2014	•R-3PO (Ar-Threepio)	R-3PO	Ar-Threepio		
 4076	https://res.starwarsccg.org/cards/Virtual0-Light/large/r3poarthreepio.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2R-3PO+%28Ar-Threepio%29+%28V%29	V0R2024	•R-3PO (Ar-Threepio) (V)	R-3PO	Ar-Threepio	(V)	
 1990	https://res.starwarsccg.org/cards/Hoth-Light/large/r2sensorarray.gif	https://scomp.starwarsccg.org/?s=R2+Sensor+Array	HC2031	R2 Sensor Array	R2 Sensor Array			
-5043	https://res.starwarsccg.org/cards/Virtual3-Light/large/r2d2c3po.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2R2-D2+%26+%E2%80%A2C-3PO	V3U2011	•R2-D2 & •C-3PO (V)	R2-D2 & C-3PO		(V)	
+5043	https://res.starwarsccg.org/cards/Virtual3-Light/large/r2d2c3po.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2R2-D2+%26+%E2%80%A2C-3PO	V3U2011	•R2-D2 & •C-3PO (V)	R2-D2	C-3PO	(V)	
 1992	https://res.starwarsccg.org/cards/ANewHope-Light/large/r2d2.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2R2-D2+%28Artoo-Detoo%29	ANHR2014	•R2-D2 (Artoo-Detoo)	R2-D2	Artoo-Detoo		
 1993	https://res.starwarsccg.org/cards/Virtual1-Light/large/r2d2.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2R2-D2+%28Artoo-Detoo%29+%28V%29	V1R2006	•R2-D2 (Artoo-Detoo) (V)	R2-D2	Artoo-Detoo	(V)	
 1995	https://res.starwarsccg.org/cards/Premiere-Light/large/r2x2.gif	https://scomp.starwarsccg.org/?s=R2-X2+%28Artoo-Extoo%29	PC2024	R2-X2 (Artoo-Extoo)	R2-X2	Artoo-Extoo		
@@ -1257,7 +1257,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 5907	https://res.starwarsccg.org/cards/Coruscant-Light/large/senatorpalpatineai.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Senator+Palpatine+%28AI%29	CORR029AI	•Senator Palpatine (AI)	Senator Palpatine		(AI)	
 2221	https://res.starwarsccg.org/cards/Coruscant-Light/large/sense.gif	https://scomp.starwarsccg.org/?s=Sense	CORU068	[LS] Sense	Sense			
 2217	https://res.starwarsccg.org/cards/Premiere-Light/large/sense.gif	https://scomp.starwarsccg.org/?s=Sense	PU1109	[LS] Sense	Sense			
-2218	https://res.starwarsccg.org/cards/ReflectionsII-Light/large/sense&recoilinfear.gif	https://scomp.starwarsccg.org/?s=Sense+%26+Recoil+In+Fear	Ref2PM021	Sense & Recoil In Fear	Sense & Recoil In Fear			
+2218	https://res.starwarsccg.org/cards/ReflectionsII-Light/large/sense&recoilinfear.gif	https://scomp.starwarsccg.org/?s=Sense+%26+Recoil+In+Fear	Ref2PM021	Sense & Recoil In Fear	Sense	Recoil In Fear		
 2222	https://res.starwarsccg.org/cards/ANewHope-Light/large/sensorpanel.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Sensor+Panel	ANHU2029	•Sensor Panel	Sensor Panel			
 2225	https://res.starwarsccg.org/cards/Endor-Light/large/sergeantbrookscarlson.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Sergeant+Brooks+Carlson	EDRR027	•Sergeant Brooks Carlson	Sergeant Brooks Carlson			
 2226	https://res.starwarsccg.org/cards/Endor-Light/large/sergeantbruckman.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Sergeant+Bruckman	EDRR028	•Sergeant Bruckman	Sergeant Bruckman			
@@ -1270,7 +1270,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 2250	https://res.starwarsccg.org/cards/Premiere-Light/large/shistavanenwolfman.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2%E2%80%A2%E2%80%A2Shistavanen+Wolfman	PC2030	•••Shistavanen Wolfman	Shistavanen Wolfman			
 2251	https://res.starwarsccg.org/cards/Tatooine-Light/large/shmiskywalker.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Shmi+Skywalker	TATR012	•Shmi Skywalker	Shmi Skywalker			
 2252	https://res.starwarsccg.org/cards/CloudCity-Light/large/shockinginformation.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Shocking+Information	CCC068	•Shocking Information	Shocking Information			
-2253	https://res.starwarsccg.org/cards/ReflectionsII-Light/large/shockinginformation&grimtaash.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Shocking+Information+%26+%E2%80%A2Grimtaash	Ref2PM022	•Shocking Information & •Grimtaash	Shocking Information & Grimtaash			
+2253	https://res.starwarsccg.org/cards/ReflectionsII-Light/large/shockinginformation&grimtaash.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Shocking+Information+%26+%E2%80%A2Grimtaash	Ref2PM022	•Shocking Information & •Grimtaash	Shocking Information	Grimtaash		
 2257	https://res.starwarsccg.org/cards/Dagobah-Light/large/shooshoo.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Shoo%21+Shoo%21	DAGU059	•Shoo! Shoo!	Shoo! Shoo!			
 2263	https://res.starwarsccg.org/cards/JabbasPalace-Light/large/sicsix.gif	https://scomp.starwarsccg.org/?s=Sic-Six	JPC040	Sic-Six	Sic-Six			
 4406	https://res.starwarsccg.org/cards/ResetDS-Light/large/simpletricksandnonsense.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Simple+Tricks+And+Nonsense	VDSC028	•Simple Tricks And Nonsense (V)	Simple Tricks And Nonsense		(V)	
@@ -1279,7 +1279,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 2274	https://res.starwarsccg.org/cards/JabbasPalace-Light/large/skiff.gif	https://scomp.starwarsccg.org/?s=Skiff	JPC088	[LS] Skiff	Skiff			
 2276	https://res.starwarsccg.org/cards/JabbasPalace-Light/large/skull.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Skull	JPU074	•Skull	Skull			
 2277	https://res.starwarsccg.org/cards/Premiere-Light/large/skywalkers.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Skywalkers	PR1110	•Skywalkers	Skywalkers			
-2280	https://res.starwarsccg.org/cards/SpecialEdition-Light/large/slaynkorpilfacilities.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Slayn+%26+Korpil+Facilities	SER076	•Slayn & Korpil Facilities	Slayn & Korpil Facilities			
+2280	https://res.starwarsccg.org/cards/SpecialEdition-Light/large/slaynkorpilfacilities.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Slayn+%26+Korpil+Facilities	SER076	•Slayn & Korpil Facilities	Slayn	Korpil Facilities		
 2282	https://res.starwarsccg.org/cards/SpecialEdition-Light/large/slightweaponsmalfunction.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Slight+Weapons+Malfunction	SEC102	•Slight Weapons Malfunction	Slight Weapons Malfunction			
 2285	https://res.starwarsccg.org/cards/CloudCity-Light/large/smokescreen.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Smoke+Screen	CCR069	•Smoke Screen	Smoke Screen			
 2286	https://res.starwarsccg.org/cards/Dagobah-Light/large/smugglersblues.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Smuggler%27s+Blues	DAGR038	•Smuggler's Blues	Smuggler's Blues			
@@ -1293,7 +1293,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 2304	https://res.starwarsccg.org/cards/Dagobah-Light/large/sonofskywalker.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Son+Of+Skywalker	DAGR001	•Son Of Skywalker	Son Of Skywalker			
 2307	https://res.starwarsccg.org/cards/Premiere-Light/large/sorosuubv35landspeeder.gif	https://scomp.starwarsccg.org/?s=SoroSuub+V-35+Landspeeder	PC2151	SoroSuub V-35 Landspeeder	SoroSuub V-35 Landspeeder			
 2308	https://res.starwarsccg.org/cards/ANewHope-Light/large/sorryaboutthemess.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Sorry+About+The+Mess	ANHU1057	•Sorry About The Mess	Sorry About The Mess			
-2309	https://res.starwarsccg.org/cards/ReflectionsII-Light/large/sorryaboutthemess&blasterproficiency.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Sorry+About+The+Mess+%26+%E2%80%A2Blaster+Proficiency	Ref2PM023	•Sorry About The Mess & •Blaster Proficiency	Sorry About The Mess & Blaster Proficiency			
+2309	https://res.starwarsccg.org/cards/ReflectionsII-Light/large/sorryaboutthemess&blasterproficiency.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Sorry+About+The+Mess+%26+%E2%80%A2Blaster+Proficiency	Ref2PM023	•Sorry About The Mess & •Blaster Proficiency	Sorry About The Mess	Blaster Proficiency		
 2310	https://res.starwarsccg.org/cards/SpecialEdition-Light/large/sothpetikkin.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Soth+Petikkin	SER043	•Soth Petikkin	Soth Petikkin			
 2311	https://res.starwarsccg.org/cards/Endor-Light/large/soundtheattack.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Sound+The+Attack	EDRC059	•Sound The Attack	Sound The Attack			
 2313	https://res.starwarsccg.org/cards/Dagobah-Light/large/spaceslug.gif	https://scomp.starwarsccg.org/?s=%3C%3ESpace+Slug	DAGR006	[LS] ♢Space Slug	Space Slug			
@@ -1401,7 +1401,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 2509	https://res.starwarsccg.org/cards/Premiere-Light/large/thankthemaker.gif	https://scomp.starwarsccg.org/?s=Thank+The+Maker	PR2114	Thank The Maker	Thank The Maker			
 2512	https://res.starwarsccg.org/cards/Endor-Light/large/thatsone.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2That%27s+One	EDRR041	•That's One	That's One			
 2514	https://res.starwarsccg.org/cards/Premiere-Light/large/thebithshuffle.gif	https://scomp.starwarsccg.org/?s=The+Bith+Shuffle	PC2115	The Bith Shuffle	The Bith Shuffle			
-2515	https://res.starwarsccg.org/cards/ReflectionsII-Light/large/thebithshuffle&desperatereach.gif	https://scomp.starwarsccg.org/?s=The+Bith+Shuffle+%26+Desperate+Reach	Ref2PM025	The Bith Shuffle & Desperate Reach	The Bith Shuffle & Desperate Reach			
+2515	https://res.starwarsccg.org/cards/ReflectionsII-Light/large/thebithshuffle&desperatereach.gif	https://scomp.starwarsccg.org/?s=The+Bith+Shuffle+%26+Desperate+Reach	Ref2PM025	The Bith Shuffle & Desperate Reach	The Bith Shuffle	Desperate Reach		
 2516	https://res.starwarsccg.org/cards/Tatooine-Light/large/thecamp.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2The+Camp	TATC021	•The Camp	The Camp			
 5153	https://res.starwarsccg.org/cards/Virtual6-Light/large/thefalcon.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2The+Falcon	V6R008	•The Falcon (V)	The Falcon		(V)	
 5959	https://res.starwarsccg.org/cards/Virtual4-Light/large/thefalconjunkyardgarbagefront.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2The+Falcon%2C+Junkyard+Garbage+%2F+%E2%80%A2The+Falcon%2C+Junkyard+Garbage	V4C035	•The Falcon, Junkyard Garbage / •The Falcon, Junkyard Garbage (V)	The Falcon, Junkyard Garbage	The Falcon, Junkyard Garbage	(V)	
@@ -1576,7 +1576,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 2865	https://res.starwarsccg.org/cards/Dagobah-Light/large/yoda.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Yoda	DAGR002	•Yoda	Yoda			
 5172	https://res.starwarsccg.org/cards/Virtual7-Light/large/yoda.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Yoda+%28V%29	V7R010	•Yoda (V)	Yoda		(V)	
 2867	https://res.starwarsccg.org/cards/Dagobah-Light/large/yodastew.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Yoda+Stew	DAGU072	•Yoda Stew	Yoda Stew			
-2868	https://res.starwarsccg.org/cards/ReflectionsII-Light/large/yodastew&youdohaveyourmoments.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Yoda+Stew+%26+%E2%80%A2You+Do+Have+Your+Moments	Ref2PM027	•Yoda Stew & •You Do Have Your Moments	Yoda Stew & You Do Have Your Moments			
+2868	https://res.starwarsccg.org/cards/ReflectionsII-Light/large/yodastew&youdohaveyourmoments.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Yoda+Stew+%26+%E2%80%A2You+Do+Have+Your+Moments	Ref2PM027	•Yoda Stew & •You Do Have Your Moments	Yoda Stew	You Do Have Your Moments		
 5014	https://res.starwarsccg.org/cards/Virtual2-Light/large/yodakeeperofthepeace.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Yoda%2C+Keeper+Of+The+Peace	V2U004	•Yoda, Keeper Of The Peace (V)	Yoda	Keeper Of The Peace	(V)	
 2869	https://res.starwarsccg.org/cards/ReflectionsIII-Light/large/yodamasteroftheforce.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Yoda%2C+Master+Of+The+Force	Ref3PM048	•Yoda, Master Of The Force	Yoda	Master Of The Force		
 2870	https://res.starwarsccg.org/cards/Coruscant-Light/large/yodaseniorcouncilmember.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Yoda%2C+Senior+Council+Member	CORR035	•Yoda, Senior Council Member	Yoda	Senior Council Member		
@@ -1596,7 +1596,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 2891	https://res.starwarsccg.org/cards/Tatooine-Light/large/youllfindimfullofsurprises.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2You%27ll+Find+I%27m+Full+Of+Surprises	TATU041	•You'll Find I'm Full Of Surprises	You'll Find I'm Full Of Surprises			
 2898	https://res.starwarsccg.org/cards/DeathStarII-Light/large/yourinsightservesyouwell.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Your+Insight+Serves+You+Well	DS2U047	•Your Insight Serves You Well	Your Insight Serves You Well			
 2899	https://res.starwarsccg.org/cards/ReflectionsIII-Light/large/yourinsightservesyouwell.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Your+Insight+Serves+You+Well	Ref3PM049	•Your Insight Serves You Well	Your Insight Serves You Well			
-2900	https://res.starwarsccg.org/cards/Coruscant-Light/large/yourinsightservesyouwell&stagingareas.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Your+Insight+Serves+You+Well+%26+%E2%80%A2Staging+Areas	CORR051	•Your Insight Serves You Well & •Staging Areas	Your Insight Serves You Well & Staging Areas			
+2900	https://res.starwarsccg.org/cards/Coruscant-Light/large/yourinsightservesyouwell&stagingareas.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Your+Insight+Serves+You+Well+%26+%E2%80%A2Staging+Areas	CORR051	•Your Insight Serves You Well & •Staging Areas	Your Insight Serves You Well	Staging Areas		
 6048	https://res.starwarsccg.org/cards/ResetDS-Light/large/yourinsightservesyouwellv.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Your+Insight+Serves+You+Well+%28Death+Star+II%29+%28V%29	VDSPM032	•Your Insight Serves You Well (Death Star II) (V)	Your Insight Serves You Well	Death Star II	(V)	
 4407	https://res.starwarsccg.org/cards/ResetDS-Light/large/yourinsightservesyouwell.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Your+Insight+Serves+You+Well+%28V%29	VDSPM032	•Your Insight Serves You Well (V)	Your Insight Serves You Well		(V)	
 2902	https://res.starwarsccg.org/cards/ReflectionsIII-Light/large/yourship.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Your+Ship%3F	Ref3PM050	•Your Ship?	Your Ship?			
@@ -1643,7 +1643,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 6864	https://res.starwarsccg.org/cards/Virtual14-Light/large/dindjarin.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Din+Djarin	V14U018	•Din Djarin (V)	Din Djarin		(V)	
 6865	https://res.starwarsccg.org/cards/Virtual14-Light/large/reyallofthejedi.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Rey%2C+All+Of+The+Jedi	V14U022	•Rey, All Of The Jedi (V)	Rey	All Of The Jedi	(V)	
 6866	https://res.starwarsccg.org/cards/Virtual14-Light/large/ouronlyhope.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Our+Only+Hope+%28V%29	V14U020	•Our Only Hope (V)	Our Only Hope		(V)	
-6867	https://res.starwarsccg.org/cards/Virtual14-Light/large/alterfriendlyfire.gif	https://scomp.starwarsccg.org/?s=Alter+%26+Friendly+Fire+%28V%29	V14PM013	Alter & Friendly Fire (V)	Alter & Friendly Fire		(V)	
+6867	https://res.starwarsccg.org/cards/Virtual14-Light/large/alterfriendlyfire.gif	https://scomp.starwarsccg.org/?s=Alter+%26+Friendly+Fire+%28V%29	V14PM013	Alter & Friendly Fire (V)	Alter	Friendly Fire	(V)	
 6868	https://res.starwarsccg.org/cards/Virtual14-Light/large/endorchiefchirpashut.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Endor%3A+Chief+Chirpa%27s+Hut+%28V%29	V14R019	•Endor: Chief Chirpa's Hut (V)	Endor	Chief Chirpa's Hut	(V)	
 6869	https://res.starwarsccg.org/cards/Virtual14-Light/large/arc170starfighter.gif	https://scomp.starwarsccg.org/?s=ARC-170+Starfighter	V14C2014	ARC-170 Starfighter (V)	ARC-170 Starfighter		(V)	
 6870	https://res.starwarsccg.org/cards/Virtual15-Light/large/oddballstorrentstarfighter.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Odd+Ball%27s+Torrent+Starfighter	V15U001	•Odd Ball's Torrent Starfighter (V)	Odd Ball's Torrent Starfighter		(V)	
@@ -1676,8 +1676,8 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 6927	https://res.starwarsccg.org/cards/Virtual16-Light/large/communing.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Communing	V16U024	•Communing (V)	Communing		(V)	
 6928	https://res.starwarsccg.org/cards/Virtual16-Light/large/coruscantjeditemplemeditationroom.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Coruscant%3A+Jedi+Temple+Meditation+Room	V16U025	•Coruscant: Jedi Temple Meditation Room (V)	Coruscant	Jedi Temple Meditation Room	(V)	
 6929	https://res.starwarsccg.org/cards/Virtual16-Light/large/dagobahyodashut.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Dagobah%3A+Yoda%27s+Hut+%28V%29	V16R026	•Dagobah: Yoda's Hut (V)	Dagobah	Yoda's Hut	(V)	
-6930	https://res.starwarsccg.org/cards/Virtual16-Light/large/figrindanthemodalnodes.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Figrin+D%27an+%26+%E2%80%A2The+Modal+Nodes	V16C2027	•Figrin D'an & •The Modal Nodes (V)	Figrin D'an & The Modal Nodes		(V)	
-6931	https://res.starwarsccg.org/cards/Virtual16-Light/large/freerideendorcelebration.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Free+Ride+%26+%E2%80%A2Endor+Celebration+%28V%29	V16R028	•Free Ride & •Endor Celebration (V)	Free Ride & Endor Celebration		(V)	
+6930	https://res.starwarsccg.org/cards/Virtual16-Light/large/figrindanthemodalnodes.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Figrin+D%27an+%26+%E2%80%A2The+Modal+Nodes	V16C2027	•Figrin D'an & •The Modal Nodes (V)	Figrin D'an	The Modal Nodes	(V)	
+6931	https://res.starwarsccg.org/cards/Virtual16-Light/large/freerideendorcelebration.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Free+Ride+%26+%E2%80%A2Endor+Celebration+%28V%29	V16R028	•Free Ride & •Endor Celebration (V)	Free Ride	Endor Celebration	(V)	
 6932	https://res.starwarsccg.org/cards/Virtual16-Light/large/grogu.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Grogu	V16U029	•Grogu (V)	Grogu		(V)	
 6933	https://res.starwarsccg.org/cards/Virtual16-Light/large/heavyinfantrymandalorian.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2%E2%80%A2%E2%80%A2Heavy+Infantry+Mandalorian	V16C2030	•••Heavy Infantry Mandalorian (V)	Heavy Infantry Mandalorian		(V)	
 6934	https://res.starwarsccg.org/cards/Virtual16-Light/large/jediholocron.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Jedi+Holocron	V16C031	•Jedi Holocron (V)	Jedi Holocron		(V)	
@@ -1701,7 +1701,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 6952	https://res.starwarsccg.org/cards/Virtual16-Light/large/yarua.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Yarua+%28V%29	V16U049	•Yarua (V)	Yarua		(V)	
 6978	https://res.starwarsccg.org/cards/Virtual17-Light/large/admiralkilian.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Admiral+Kilian	V17C026	•Admiral Kilian (V)	Admiral Kilian		(V)	
 6979	https://res.starwarsccg.org/cards/Virtual17-Light/large/ajanklosstrainingcourse.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Ajan+Kloss%3A+Training+Course	V17U027	•Ajan Kloss: Training Course (V)	Ajan Kloss	Training Course	(V)	
-6980	https://res.starwarsccg.org/cards/Virtual17-Light/large/anotherpatheticlifeformsecuritycontrol.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Another+Pathetic+Lifeform+%26+%E2%80%A2Security+Control	V17U028	•Another Pathetic Lifeform & •Security Control (V)	Another Pathetic Lifeform & Security Control		(V)	
+6980	https://res.starwarsccg.org/cards/Virtual17-Light/large/anotherpatheticlifeformsecuritycontrol.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Another+Pathetic+Lifeform+%26+%E2%80%A2Security+Control	V17U028	•Another Pathetic Lifeform & •Security Control (V)	Another Pathetic Lifeform	Security Control	(V)	
 6981	https://res.starwarsccg.org/cards/Virtual17-Light/large/bewithme.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Be+With+Me	V17C029	•Be With Me (V)	Be With Me		(V)	
 6983	https://res.starwarsccg.org/cards/Virtual17-Light/large/boba.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Boba	V17C2031	•Boba (V)	Boba		(V)	
 6982	https://res.starwarsccg.org/cards/Virtual17-Light/large/bokatan.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Bo-Katan	V17U030	•Bo-Katan (V)	Bo-Katan		(V)	
@@ -1729,19 +1729,19 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 7005	https://res.starwarsccg.org/cards/Virtual17-Light/large/yourthoughtsdwellonyourmother.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Your+Thoughts+Dwell+On+Your+Mother	V17U052	•Your Thoughts Dwell On Your Mother (V)	Your Thoughts Dwell On Your Mother		(V)	
 7043	https://res.starwarsccg.org/cards/Virtual18-Light/large/masterquigonwithlightsaber.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Master+Qui-Gon+With+Lightsaber	V18C003	•Master Qui-Gon With Lightsaber (V)	Master Qui-Gon With Lightsaber		(V)	
 7044	https://res.starwarsccg.org/cards/Virtual18-Light/large/masterwindu.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Master+Windu	V18U004	•Master Windu (V)	Master Windu		(V)	
-7045	https://res.starwarsccg.org/cards/Virtual18-Light/large/rebelleadershipcriticalerrorrevealed.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Rebel+Leadership+%26+%E2%80%A2Critical+Error+Revealed	V18C005	•Rebel Leadership & •Critical Error Revealed (V)	Rebel Leadership & Critical Error Revealed		(V)	
+7045	https://res.starwarsccg.org/cards/Virtual18-Light/large/rebelleadershipcriticalerrorrevealed.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Rebel+Leadership+%26+%E2%80%A2Critical+Error+Revealed	V18C005	•Rebel Leadership & •Critical Error Revealed (V)	Rebel Leadership	Critical Error Revealed	(V)	
 7046	https://res.starwarsccg.org/cards/Virtual18-Light/large/takeaseatyoungskywalker.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2%E2%80%A2Take+A+Seat%2C+Young+Skywalker	V18U006	••Take A Seat, Young Skywalker (V)	Take A Seat	Young Skywalker	(V)	
-7055	https://res.starwarsccg.org/cards/Virtual18-Light/large/agoodblasteratyoursiderestricteddeployment.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2A+Good+Blaster+At+Your+Side+%26+%E2%80%A2Restricted+Deployment	V18U1014	•A Good Blaster At Your Side & •Restricted Deployment (V)	A Good Blaster At Your Side & Restricted Deployment		(V)	
+7055	https://res.starwarsccg.org/cards/Virtual18-Light/large/agoodblasteratyoursiderestricteddeployment.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2A+Good+Blaster+At+Your+Side+%26+%E2%80%A2Restricted+Deployment	V18U1014	•A Good Blaster At Your Side & •Restricted Deployment (V)	A Good Blaster At Your Side	Restricted Deployment	(V)	
 7056	https://res.starwarsccg.org/cards/Virtual18-Light/large/beststarpilotinthegalaxy.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Best+Starpilot+In+The+Galaxy	V18C2015	•Best Starpilot In The Galaxy (V)	Best Starpilot In The Galaxy		(V)	
 7057	https://res.starwarsccg.org/cards/Virtual18-Light/large/computerinterface.gif	https://scomp.starwarsccg.org/?s=Computer+Interface+%28V%29	V18C016	Computer Interface (V)	Computer Interface		(V)	
 7058	https://res.starwarsccg.org/cards/Virtual18-Light/large/deathstariiturboliftwalkway.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Death+Star+II%3A+Turbolift+Walkway	V18U018	•Death Star II: Turbolift Walkway (V)	Death Star II	Turbolift Walkway	(V)	
 7059	https://res.starwarsccg.org/cards/Virtual18-Light/large/deathstarlevel6coreshaftcorridor.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Death+Star%3A+Level+6+Core+Shaft+Corridor+%28V%29	V18PM017	•Death Star: Level 6 Core Shaft Corridor (V)	Death Star	Level 6 Core Shaft Corridor	(V)	
 7060	https://res.starwarsccg.org/cards/Virtual18-Light/large/fallofthelegend.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Fall+Of+The+Legend+%28V%29	V18U019	•Fall Of The Legend (V)	Fall Of The Legend		(V)	
 7061	https://res.starwarsccg.org/cards/Virtual18-Light/large/fleetadmiralgialackbar.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Fleet+Admiral+Gial+Ackbar	V18U020	•Fleet Admiral Gial Ackbar (V)	Fleet Admiral Gial Ackbar		(V)	
-7062	https://res.starwarsccg.org/cards/Virtual18-Light/large/imustbeallowedtospeaksmugglersblues.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2I+Must+Be+Allowed+To+Speak+%26+%E2%80%A2Smuggler%27s+Blues	V18R021	•I Must Be Allowed To Speak & •Smuggler's Blues (V)	I Must Be Allowed To Speak & Smuggler's Blues		(V)	
+7062	https://res.starwarsccg.org/cards/Virtual18-Light/large/imustbeallowedtospeaksmugglersblues.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2I+Must+Be+Allowed+To+Speak+%26+%E2%80%A2Smuggler%27s+Blues	V18R021	•I Must Be Allowed To Speak & •Smuggler's Blues (V)	I Must Be Allowed To Speak	Smuggler's Blues	(V)	
 7063	https://res.starwarsccg.org/cards/Virtual18-Light/large/kefbiroceanicruins.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Kef+Bir%3A+Oceanic+Ruins	V18C022	•Kef Bir: Oceanic Ruins (V)	Kef Bir	Oceanic Ruins	(V)	
 7064	https://res.starwarsccg.org/cards/Virtual18-Light/large/liswarr.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Liswarr	V18U023	•Liswarr (V)	Liswarr		(V)	
-7065	https://res.starwarsccg.org/cards/Virtual18-Light/large/localdefenseputthatdown.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Local+Defense+%26+%E2%80%A2Put+That+Down	V18C024	•Local Defense & •Put That Down (V)	Local Defense & Put That Down		(V)	
+7065	https://res.starwarsccg.org/cards/Virtual18-Light/large/localdefenseputthatdown.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Local+Defense+%26+%E2%80%A2Put+That+Down	V18C024	•Local Defense & •Put That Down (V)	Local Defense	Put That Down	(V)	
 7066	https://res.starwarsccg.org/cards/Virtual18-Light/large/masterluke.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Master+Luke+%28V%29	V18PM025	•Master Luke (V)	Master Luke		(V)	
 7067	https://res.starwarsccg.org/cards/Virtual18-Light/large/ouneeta.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Ounee+Ta+%28V%29	V18PM026	•Ounee Ta (V)	Ounee Ta		(V)	
 7068	https://res.starwarsccg.org/cards/Virtual18-Light/large/outrider.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Outrider+%28V%29	V18PM027	•Outrider (V)	Outrider		(V)	
@@ -1765,7 +1765,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 7114	https://res.starwarsccg.org/cards/Virtual19-Light/large/malachor.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Malachor	V19U036	•Malachor (V)	Malachor		(V)	
 7115	https://res.starwarsccg.org/cards/Virtual19-Light/large/mandalore.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Mandalore	V19U037	•Mandalore (V)	Mandalore		(V)	
 7116	https://res.starwarsccg.org/cards/Virtual19-Light/large/phoenixsquadronoperations.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Phoenix+Squadron+Operations	V19C043	•Phoenix Squadron Operations (V)	Phoenix Squadron Operations		(V)	
-7117	https://res.starwarsccg.org/cards/Virtual19-Light/large/steadysteadybargainingtable.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Steady%2C+Steady+%26+%E2%80%A2Bargaining+Table	V19U044	•Steady, Steady & •Bargaining Table (V)	Steady	Steady & Bargaining Table	(V)	
+7117	https://res.starwarsccg.org/cards/Virtual19-Light/large/steadysteadybargainingtable.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Steady%2C+Steady+%26+%E2%80%A2Bargaining+Table	V19U044	•Steady, Steady & •Bargaining Table (V)	Steady, Steady	Bargaining Table	(V)	
 7118	https://res.starwarsccg.org/cards/Virtual19-Light/large/thisisourrebellion.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2This+Is+Our+Rebellion	V19C045	•This Is Our Rebellion (V)	This Is Our Rebellion		(V)	
 7119	https://res.starwarsccg.org/cards/Virtual19-Light/large/utinni.gif	https://scomp.starwarsccg.org/?s=Utinni%21+%28V%29	V19R1046	[LS] Utinni! (V)	Utinni!		(V)	
 7120	https://res.starwarsccg.org/cards/Virtual19-Light/large/weathervane.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Weather+Vane+%28V%29	V19U047	[LS] •Weather Vane (V)	Weather Vane		(V)	
@@ -1801,7 +1801,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 48	https://res.starwarsccg.org/cards/CloudCity-Dark/large/abyss.gif	https://scomp.starwarsccg.org/?s=Abyss	CCU111	Abyss	Abyss			
 49	https://res.starwarsccg.org/cards/JabbasPalace-Dark/large/abyssin.gif	https://scomp.starwarsccg.org/?s=Abyssin	JPC091	Abyssin	Abyssin			
 50	https://res.starwarsccg.org/cards/JabbasPalace-Dark/large/abyssinornament.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Abyssin+Ornament	JPU151	•Abyssin Ornament	Abyssin Ornament			
-51	https://res.starwarsccg.org/cards/ReflectionsII-Dark/large/abyssinornament&woundedwookiee.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Abyssin+Ornament+%26+%E2%80%A2Wounded+Wookiee	Ref2PM028	•Abyssin Ornament & •Wounded Wookiee	Abyssin Ornament & Wounded Wookiee			
+51	https://res.starwarsccg.org/cards/ReflectionsII-Dark/large/abyssinornament&woundedwookiee.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Abyssin+Ornament+%26+%E2%80%A2Wounded+Wookiee	Ref2PM028	•Abyssin Ornament & •Wounded Wookiee	Abyssin Ornament	Wounded Wookiee		
 52	https://res.starwarsccg.org/cards/Endor-Dark/large/accelerate.gif	https://scomp.starwarsccg.org/?s=Accelerate	EDRC134	Accelerate	Accelerate			
 53	https://res.starwarsccg.org/cards/Coruscant-Dark/large/acceptingtradefederationcontrol.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Accepting+Trade+Federation+Control	CORU127	•Accepting Trade Federation Control	Accepting Trade Federation Control			
 4101	https://res.starwarsccg.org/cards/Virtual1-Dark/large/accordingtomydesign.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2According+To+My+Design	V1U034	•According To My Design (V)	According To My Design		(V)	
@@ -1830,7 +1830,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 93	https://res.starwarsccg.org/cards/ReflectionsIII-Dark/large/allegationsofcorruption.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Allegations+Of+Corruption	Ref3PM052	•Allegations Of Corruption	Allegations Of Corruption			
 98	https://res.starwarsccg.org/cards/Coruscant-Dark/large/alter.gif	https://scomp.starwarsccg.org/?s=Alter	CORU145	[DS] Alter	Alter			
 94	https://res.starwarsccg.org/cards/Premiere-Dark/large/alter.gif	https://scomp.starwarsccg.org/?s=Alter	PU1234	[DS] Alter	Alter			
-96	https://res.starwarsccg.org/cards/ReflectionsII-Dark/large/alter&collateraldamage.gif	https://scomp.starwarsccg.org/?s=Alter+%26+Collateral+Damage	Ref2PM030	Alter & Collateral Damage	Alter & Collateral Damage			
+96	https://res.starwarsccg.org/cards/ReflectionsII-Dark/large/alter&collateraldamage.gif	https://scomp.starwarsccg.org/?s=Alter+%26+Collateral+Damage	Ref2PM030	Alter & Collateral Damage	Alter	Collateral Damage		
 6083	https://res.starwarsccg.org/cards/Virtual0-Dark/large/altercoruscant.gif	https://scomp.starwarsccg.org/?s=Alter+%28Coruscant%29+%28V%29	V0U1144	[DS] Alter (Coruscant) (V)	Alter	Coruscant	(V)	
 6085	https://res.starwarsccg.org/cards/Virtual0-Dark/large/alterpremiere.gif	https://scomp.starwarsccg.org/?s=Alter+%28Premiere%29+%28V%29	V0U1115	[DS] Alter (Premiere) (V)	Alter	Premiere	(V)	
 101	https://res.starwarsccg.org/cards/Endor-Dark/large/alwaysthinkingwithyourstomach.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Always+Thinking+With+Your+Stomach	EDRR135	•Always Thinking With Your Stomach	Always Thinking With Your Stomach			
@@ -1887,7 +1887,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 207	https://res.starwarsccg.org/cards/TheedPalace-Dark/large/battledroidpilot.gif	https://scomp.starwarsccg.org/?s=Battle+Droid+Pilot	TPC074	Battle Droid Pilot	Battle Droid Pilot			
 208	https://res.starwarsccg.org/cards/Endor-Dark/large/battleorder.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Battle+Order	EDRU118	•Battle Order	Battle Order			
 209	https://res.starwarsccg.org/cards/ReflectionsIII-Dark/large/battleorder.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Battle+Order	Ref3PM054	•Battle Order	Battle Order			
-210	https://res.starwarsccg.org/cards/Coruscant-Dark/large/battleorder&firststrike.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Battle+Order+%26+%E2%80%A2First+Strike	CORR129	•Battle Order & •First Strike	Battle Order & First Strike			
+210	https://res.starwarsccg.org/cards/Coruscant-Dark/large/battleorder&firststrike.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Battle+Order+%26+%E2%80%A2First+Strike	CORR129	•Battle Order & •First Strike	Battle Order	First Strike		
 214	https://res.starwarsccg.org/cards/JabbasPalace-Dark/large/beedo.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Beedo	JPR097	•Beedo	Beedo			
 216	https://res.starwarsccg.org/cards/Coruscant-Dark/large/beginlandingyourtroops.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Begin+Landing+Your+Troops	CORU130	•Begin Landing Your Troops	Begin Landing Your Troops			
 220	https://res.starwarsccg.org/cards/Tatooine-Dark/large/benquadinarospodracer.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Ben+Quadinaros%27+Podracer	TATC095	•Ben Quadinaros' Podracer	Ben Quadinaros' Podracer			
@@ -2064,7 +2064,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 4000	https://res.starwarsccg.org/cards/Virtual0-Dark/large/conquest.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Conquest+%28V%29	V0R1133	•Conquest (V)	Conquest		(V)	
 524	https://res.starwarsccg.org/cards/Coruscant-Dark/large/control.gif	https://scomp.starwarsccg.org/?s=Control	CORU146	[DS] Control	Control			
 520	https://res.starwarsccg.org/cards/Dagobah-Dark/large/control.gif	https://scomp.starwarsccg.org/?s=Control	DAGU139	[DS] Control	Control			
-522	https://res.starwarsccg.org/cards/ReflectionsII-Dark/large/control&setforstun.gif	https://scomp.starwarsccg.org/?s=Control+%26+Set+For+Stun	Ref2PM034	Control & Set For Stun	Control & Set For Stun			
+522	https://res.starwarsccg.org/cards/ReflectionsII-Dark/large/control&setforstun.gif	https://scomp.starwarsccg.org/?s=Control+%26+Set+For+Stun	Ref2PM034	Control & Set For Stun	Control	Set For Stun		
 526	https://res.starwarsccg.org/cards/SpecialEdition-Dark/large/coordinatedattack.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Coordinated+Attack	SEC248	•Coordinated Attack	Coordinated Attack			
 535	https://res.starwarsccg.org/cards/Endor-Dark/large/corporalavarik.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Corporal+Avarik	EDRU095	•Corporal Avarik	Corporal Avarik			
 538	https://res.starwarsccg.org/cards/Dagobah-Dark/large/corporalderdram.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Corporal+Derdram	DAGU098	•Corporal Derdram	Corporal Derdram			
@@ -2116,7 +2116,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 6216	https://res.starwarsccg.org/cards/Virtual11-Dark/large/darkjedilightsaber.gif	https://scomp.starwarsccg.org/?s=Dark+Jedi+Lightsaber+%28V%29	V11U1025	Dark Jedi Lightsaber (V)	Dark Jedi Lightsaber		(V)	
 621	https://res.starwarsccg.org/cards/Premiere-Dark/large/darkjedipresence.gif	https://scomp.starwarsccg.org/?s=Dark+Jedi+Presence	PR1240	Dark Jedi Presence	Dark Jedi Presence			
 622	https://res.starwarsccg.org/cards/Premiere-Dark/large/darkmaneuvers.gif	https://scomp.starwarsccg.org/?s=Dark+Maneuvers	PC2241	Dark Maneuvers	Dark Maneuvers			
-623	https://res.starwarsccg.org/cards/ReflectionsII-Dark/large/darkmaneuvers&tallonroll.gif	https://scomp.starwarsccg.org/?s=Dark+Maneuvers+%26+Tallon+Roll	Ref2PM035	Dark Maneuvers & Tallon Roll	Dark Maneuvers & Tallon Roll			
+623	https://res.starwarsccg.org/cards/ReflectionsII-Dark/large/darkmaneuvers&tallonroll.gif	https://scomp.starwarsccg.org/?s=Dark+Maneuvers+%26+Tallon+Roll	Ref2PM035	Dark Maneuvers & Tallon Roll	Dark Maneuvers	Tallon Roll		
 624	https://res.starwarsccg.org/cards/ReflectionsIII-Dark/large/darkrage.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Dark+Rage	Ref3PM064	•Dark Rage	Dark Rage			
 625	https://res.starwarsccg.org/cards/CloudCity-Dark/large/darkstrike.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Dark+Strike	CCC135	•Dark Strike	Dark Strike			
 626	https://res.starwarsccg.org/cards/ANewHope-Dark/large/darkwaters.gif	https://scomp.starwarsccg.org/?s=Dark+Waters	ANHR2119	Dark Waters	Dark Waters			
@@ -2174,7 +2174,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 686	https://res.starwarsccg.org/cards/ReflectionsIII-Dark/large/deephatred.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Deep+Hatred	Ref3PM065	•Deep Hatred	Deep Hatred			
 687	https://res.starwarsccg.org/cards/ANewHope-Dark/large/defel.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2%E2%80%A2%E2%80%A2Defel	ANHC2087	•••Defel	Defel			
 688	https://res.starwarsccg.org/cards/Dagobah-Dark/large/defensivefire.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Defensive+Fire	DAGC140	•Defensive Fire	Defensive Fire			
-689	https://res.starwarsccg.org/cards/ReflectionsII-Dark/large/defensivefire&huttsmooch.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Defensive+Fire+%26+%E2%80%A2Hutt+Smooch	Ref2PM036	•Defensive Fire & •Hutt Smooch	Defensive Fire & Hutt Smooch			
+689	https://res.starwarsccg.org/cards/ReflectionsII-Dark/large/defensivefire&huttsmooch.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Defensive+Fire+%26+%E2%80%A2Hutt+Smooch	Ref2PM036	•Defensive Fire & •Hutt Smooch	Defensive Fire	Hutt Smooch		
 690	https://res.starwarsccg.org/cards/Virtual0-Dark/large/defensivefire.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Defensive+Fire+%28V%29	V0C118	•Defensive Fire (V)	Defensive Fire		(V)	
 692	https://res.starwarsccg.org/cards/Hoth-Dark/large/deflectorshieldgenerators.gif	https://scomp.starwarsccg.org/?s=Deflector+Shield+Generators	HU2094	Deflector Shield Generators	Deflector Shield Generators			
 5026	https://res.starwarsccg.org/cards/Virtual3-Dark/large/deflectorshieldgenerators.gif	https://scomp.starwarsccg.org/?s=Deflector+Shield+Generators+%28V%29	V3U2029	Deflector Shield Generators (V)	Deflector Shield Generators		(V)	
@@ -2221,7 +2221,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 6263	https://res.starwarsccg.org/cards/Virtual9-Dark/large/drchellilonaaphra.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Dr.+Chelli+Lona+Aphra	V9R1035	•Dr. Chelli Lona Aphra (V)	Dr. Chelli Lona Aphra		(V)	
 7008	https://res.starwarsccg.org/cards/VirtualAlternateImage-Dark/large/drchellilonaaphra_ai.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Dr.+Chelli+Lona+Aphra+%28AI%29	V9R1035AI	•Dr. Chelli Lona Aphra (AI) (V)	Dr. Chelli Lona Aphra		(AI)	
 768	https://res.starwarsccg.org/cards/Premiere-Dark/large/drevazan.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Dr.+Evazan	PR2172	•Dr. Evazan	Dr. Evazan			
-769	https://res.starwarsccg.org/cards/ReflectionsII-Dark/large/drevazan&pondababa.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Dr.+Evazan+%26+%E2%80%A2Ponda+Baba	Ref2PM037	•Dr. Evazan & •Ponda Baba	Dr. Evazan & Ponda Baba			
+769	https://res.starwarsccg.org/cards/ReflectionsII-Dark/large/drevazan&pondababa.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Dr.+Evazan+%26+%E2%80%A2Ponda+Baba	Ref2PM037	•Dr. Evazan & •Ponda Baba	Dr. Evazan	Ponda Baba		
 770	https://res.starwarsccg.org/cards/SpecialEdition-Dark/large/drevazanssawedoffblaster.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Dr.+Evazan%27s+Sawed-off+Blaster	SEU320	•Dr. Evazan's Sawed-off Blaster	Dr. Evazan's Sawed-off Blaster			
 771	https://res.starwarsccg.org/cards/Dagobah-Dark/large/dragonsnake.gif	https://scomp.starwarsccg.org/?s=%3C%3EDragonsnake	DAGR109	♢Dragonsnake	Dragonsnake			
 773	https://res.starwarsccg.org/cards/SpecialEdition-Dark/large/dreadedimperialstarfleet.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Dreaded+Imperial+Starfleet	SER227	•Dreaded Imperial Starfleet	Dreaded Imperial Starfleet			
@@ -2293,7 +2293,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 887	https://res.starwarsccg.org/cards/JabbasPalace-Dark/large/ev9d9.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2EV-9D9	JPR102	•EV-9D9	EV-9D9			
 888	https://res.starwarsccg.org/cards/Premiere-Dark/large/evacuate.gif	https://scomp.starwarsccg.org/?s=Evacuate%3F	PU2245	Evacuate?	Evacuate?			
 891	https://res.starwarsccg.org/cards/ANewHope-Dark/large/evader.gif	https://scomp.starwarsccg.org/?s=Evader	ANHU1131	Evader	Evader			
-892	https://res.starwarsccg.org/cards/ReflectionsII-Dark/large/evader&monnok.gif	https://scomp.starwarsccg.org/?s=Evader+%26+Monnok	Ref2PM038	Evader & Monnok	Evader & Monnok			
+892	https://res.starwarsccg.org/cards/ReflectionsII-Dark/large/evader&monnok.gif	https://scomp.starwarsccg.org/?s=Evader+%26+Monnok	Ref2PM038	Evader & Monnok	Evader	Monnok		
 906	https://res.starwarsccg.org/cards/Dagobah-Dark/large/executor.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Executor	DAGR167	•Executor	Executor			
 907	https://res.starwarsccg.org/cards/Dagobah-Dark/large/executorcommstation.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Executor%3A+Comm+Station	DAGU159	•Executor: Comm Station	Executor	Comm Station		
 908	https://res.starwarsccg.org/cards/Dagobah-Dark/large/executorcontrolstation.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Executor%3A+Control+Station	DAGU160	•Executor: Control Station	Executor	Control Station		
@@ -2375,7 +2375,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 1030	https://res.starwarsccg.org/cards/Virtual0-Dark/large/generalveers.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2General+Veers+%28V%29	V0R1081	•General Veers (V)	General Veers		(V)	
 1034	https://res.starwarsccg.org/cards/Tatooine-Dark/large/ghanagleemort.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Ghana+Gleemort	TATU057	•Ghana Gleemort	Ghana Gleemort			
 1035	https://res.starwarsccg.org/cards/ANewHope-Dark/large/ghhhk.gif	https://scomp.starwarsccg.org/?s=Ghhhk	ANHC2132	Ghhhk	Ghhhk			
-1036	https://res.starwarsccg.org/cards/ReflectionsII-Dark/large/ghhhk&thoserebelswontescapeus.gif	https://scomp.starwarsccg.org/?s=Ghhhk+%26+Those+Rebels+Won%27t+Escape+Us	Ref2PM039	Ghhhk & Those Rebels Won't Escape Us	Ghhhk & Those Rebels Won't Escape Us			
+1036	https://res.starwarsccg.org/cards/ReflectionsII-Dark/large/ghhhk&thoserebelswontescapeus.gif	https://scomp.starwarsccg.org/?s=Ghhhk+%26+Those+Rebels+Won%27t+Escape+Us	Ref2PM039	Ghhhk & Those Rebels Won't Escape Us	Ghhhk	Those Rebels Won't Escape Us		
 1041	https://res.starwarsccg.org/cards/JabbasPalace-Dark/large/giran.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Giran	JPR106	•Giran	Giran			
 1043	https://res.starwarsccg.org/cards/Endor-Dark/large/goforhelp.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Go+For+Help%21	EDRC144	•Go For Help!	Go For Help!			
 1058	https://res.starwarsccg.org/cards/Tatooine-Dark/large/gragra.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Gragra	TATU058	•Gragra	Gragra			
@@ -2464,10 +2464,10 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 1253	https://res.starwarsccg.org/cards/Hoth-Dark/large/imageofthedarklord.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Image+Of+The+Dark+Lord	HR2105	•Image Of The Dark Lord	Image Of The Dark Lord			
 1254	https://res.starwarsccg.org/cards/Virtual0-Dark/large/imageofthedarklord.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Image+Of+The+Dark+Lord+%28V%29	V0R2107	•Image Of The Dark Lord (V)	Image Of The Dark Lord		(V)	
 1255	https://res.starwarsccg.org/cards/Dagobah-Dark/large/imbalance.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Imbalance	DAGU144	•Imbalance	Imbalance			
-4051	https://res.starwarsccg.org/cards/Virtual0-Dark/large/imbalance&kintanstrider.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Imbalance+%26+%E2%80%A2Kintan+Strider	V0U122	•Imbalance & •Kintan Strider (V)	Imbalance & Kintan Strider		(V)	
+4051	https://res.starwarsccg.org/cards/Virtual0-Dark/large/imbalance&kintanstrider.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Imbalance+%26+%E2%80%A2Kintan+Strider	V0U122	•Imbalance & •Kintan Strider (V)	Imbalance	Kintan Strider	(V)	
 1256	https://res.starwarsccg.org/cards/Endor-Dark/large/imperialacademytraining.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Imperial+Academy+Training	EDRC125	•Imperial Academy Training	Imperial Academy Training			
 1258	https://res.starwarsccg.org/cards/Endor-Dark/large/imperialarrestorder.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Imperial+Arrest+Order	EDRU126	•Imperial Arrest Order	Imperial Arrest Order			
-1259	https://res.starwarsccg.org/cards/Coruscant-Dark/large/imperialarrestorder&secretplans.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Imperial+Arrest+Order+%26+%E2%80%A2Secret+Plans	CORR135	•Imperial Arrest Order & •Secret Plans	Imperial Arrest Order & Secret Plans			
+1259	https://res.starwarsccg.org/cards/Coruscant-Dark/large/imperialarrestorder&secretplans.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Imperial+Arrest+Order+%26+%E2%80%A2Secret+Plans	CORR135	•Imperial Arrest Order & •Secret Plans	Imperial Arrest Order	Secret Plans		
 1260	https://res.starwarsccg.org/cards/Coruscant-Dark/large/imperialartillery.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2%E2%80%A2Imperial+Artillery	CORR148	••Imperial Artillery	Imperial Artillery			
 1263	https://res.starwarsccg.org/cards/Premiere-Dark/large/imperialbarrier.gif	https://scomp.starwarsccg.org/?s=Imperial+Barrier	PC2249	Imperial Barrier	Imperial Barrier			
 1264	https://res.starwarsccg.org/cards/Premiere-Dark/large/imperialblaster.gif	https://scomp.starwarsccg.org/?s=Imperial+Blaster	PC2317	Imperial Blaster	Imperial Blaster			
@@ -2596,7 +2596,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 6475	https://res.starwarsccg.org/cards/Virtual11-Dark/large/ladyproxima.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Lady+Proxima	V11R003	•Lady Proxima (V)	Lady Proxima		(V)	
 1462	https://res.starwarsccg.org/cards/Endor-Dark/large/lambdaclassshuttle.gif	https://scomp.starwarsccg.org/?s=Lambda-Class+Shuttle	EDRC168	Lambda-Class Shuttle	Lambda-Class Shuttle			
 1463	https://res.starwarsccg.org/cards/Coruscant-Dark/large/lanadobreed.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Lana+Dobreed	CORU150	•Lana Dobreed	Lana Dobreed			
-6478	https://res.starwarsccg.org/cards/Virtual9-Dark/large/lanadobreedsacrifice.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Lana+Dobreed+%26+%E2%80%A2Sacrifice	V9U048	•Lana Dobreed & •Sacrifice (V)	Lana Dobreed & Sacrifice		(V)	
+6478	https://res.starwarsccg.org/cards/Virtual9-Dark/large/lanadobreedsacrifice.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Lana+Dobreed+%26+%E2%80%A2Sacrifice	V9U048	•Lana Dobreed & •Sacrifice (V)	Lana Dobreed	Sacrifice	(V)	
 1465	https://res.starwarsccg.org/cards/CloudCity-Dark/large/landocalrissian.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Lando+Calrissian	CCR099	[DS] •Lando Calrissian	Lando Calrissian			
 1470	https://res.starwarsccg.org/cards/Dagobah-Dark/large/landosystem.gif	https://scomp.starwarsccg.org/?s=Lando+System%3F	DAGR145	Lando System?	Lando System?			
 1477	https://res.starwarsccg.org/cards/Coruscant-Dark/large/lasercannonbattery.gif	https://scomp.starwarsccg.org/?s=Laser+Cannon+Battery	CORU187	Laser Cannon Battery	Laser Cannon Battery			
@@ -2675,7 +2675,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 6513	https://res.starwarsccg.org/cards/Virtual10-Dark/large/marquandinblizzard6.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Marquand+In+Blizzard+6	V10PM038	•Marquand In Blizzard 6 (V)	Marquand In Blizzard 6		(V)	
 1652	https://res.starwarsccg.org/cards/TheedPalace-Dark/large/masterdestroyers.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Master%2C+Destroyers%21	TPR104	•Master, Destroyers!	Master	Destroyers!		
 1653	https://res.starwarsccg.org/cards/SpecialEdition-Dark/large/masterfulmove.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Masterful+Move	SEC257	•Masterful Move	Masterful Move			
-1654	https://res.starwarsccg.org/cards/Coruscant-Dark/large/masterfulmove&endoroccupation.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Masterful+Move+%26+%E2%80%A2Endor+Occupation	CORR152	•Masterful Move & •Endor Occupation	Masterful Move & Endor Occupation			
+1654	https://res.starwarsccg.org/cards/Coruscant-Dark/large/masterfulmove&endoroccupation.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Masterful+Move+%26+%E2%80%A2Endor+Occupation	CORR152	•Masterful Move & •Endor Occupation	Masterful Move	Endor Occupation		
 1655	https://res.starwarsccg.org/cards/Coruscant-Dark/large/maulstrikes.gif	https://scomp.starwarsccg.org/?s=Maul+Strikes	CORR153	Maul Strikes	Maul Strikes			Kenoobiiiiiiiiiiiiii
 1656	https://res.starwarsccg.org/cards/ReflectionsIII-Dark/large/maulsdoublebladedlightsaber.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Maul%27s+Double-Bladed+Lightsaber	Ref3PM075	•Maul's Double-Bladed Lightsaber	Maul's Double-Bladed Lightsaber			Kenoobiiiiiiiiiiiiii
 1657	https://res.starwarsccg.org/cards/Tatooine-Dark/large/maulselectrobinoculars.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Maul%27s+Electrobinoculars	TATC067	•Maul's Electrobinoculars	Maul's Electrobinoculars			Kenoobiiiiiiiiiiiiii
@@ -2766,7 +2766,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 1826	https://res.starwarsccg.org/cards/Hoth-Dark/large/ohswitchoff.gif	https://scomp.starwarsccg.org/?s=Oh%2C+Switch+Off	HC2130	Oh, Switch Off	Oh	Switch Off		
 1830	https://res.starwarsccg.org/cards/Endor-Dark/large/ominousrumors.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Ominous+Rumors	EDRR127	•Ominous Rumors	Ominous Rumors			
 1831	https://res.starwarsccg.org/cards/Premiere-Dark/large/ommnibox.gif	https://scomp.starwarsccg.org/?s=Ommni+Box	PC2262	Ommni Box	Ommni Box			
-1832	https://res.starwarsccg.org/cards/ReflectionsII-Dark/large/ommnibox&itsworse.gif	https://scomp.starwarsccg.org/?s=Ommni+Box+%26+It%27s+Worse	Ref2PM044	Ommni Box & It's Worse	Ommni Box & It's Worse			
+1832	https://res.starwarsccg.org/cards/ReflectionsII-Dark/large/ommnibox&itsworse.gif	https://scomp.starwarsccg.org/?s=Ommni+Box+%26+It%27s+Worse	Ref2PM044	Ommni Box & It's Worse	Ommni Box	It's Worse		
 1835	https://res.starwarsccg.org/cards/Coruscant-Dark/large/onthepayrollofthetradefederation.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2On+The+Payroll+Of+The+Trade+Federation	CORC156	•On The Payroll Of The Trade Federation	On The Payroll Of The Trade Federation			
 1837	https://res.starwarsccg.org/cards/SpecialEdition-Dark/large/onearm.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2One-Arm	SER212	•One-Arm	One-Arm			
 1840	https://res.starwarsccg.org/cards/DeathStarII-Dark/large/onyx1.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Onyx+1	DS2R160	•Onyx 1	Onyx 1			
@@ -2939,7 +2939,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 2214	https://res.starwarsccg.org/cards/Premiere-Dark/large/sendadetachmentdown.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Send+A+Detachment+Down	PR1229	•Send A Detachment Down	Send A Detachment Down			
 2220	https://res.starwarsccg.org/cards/Coruscant-Dark/large/sense.gif	https://scomp.starwarsccg.org/?s=Sense	CORU157	[DS] Sense	Sense			
 2216	https://res.starwarsccg.org/cards/Premiere-Dark/large/sense.gif	https://scomp.starwarsccg.org/?s=Sense	PU1267	[DS] Sense	Sense			
-2219	https://res.starwarsccg.org/cards/ReflectionsII-Dark/large/sense&uncertainisthefuture.gif	https://scomp.starwarsccg.org/?s=Sense+%26+Uncertain+Is+The+Future	Ref2PM046	Sense & Uncertain Is The Future	Sense & Uncertain Is The Future			
+2219	https://res.starwarsccg.org/cards/ReflectionsII-Dark/large/sense&uncertainisthefuture.gif	https://scomp.starwarsccg.org/?s=Sense+%26+Uncertain+Is+The+Future	Ref2PM046	Sense & Uncertain Is The Future	Sense	Uncertain Is The Future		
 2223	https://res.starwarsccg.org/cards/SpecialEdition-Dark/large/sentinelclasslandingcraft.gif	https://scomp.starwarsccg.org/?s=Sentinel-Class+Landing+Craft	SEF307	Sentinel-Class Landing Craft	Sentinel-Class Landing Craft			
 2224	https://res.starwarsccg.org/cards/Endor-Dark/large/sergeantbarich.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Sergeant+Barich	EDRR111	•Sergeant Barich	Sergeant Barich			
 2229	https://res.starwarsccg.org/cards/Endor-Dark/large/sergeantelsek.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Sergeant+Elsek	EDRU112	•Sergeant Elsek	Sergeant Elsek			
@@ -2959,7 +2959,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 6638	https://res.starwarsccg.org/cards/Virtual9-Dark/large/shadowsoftheempire.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Shadows+Of+The+Empire	V9R043	•Shadows Of The Empire (V)	Shadows Of The Empire		(V)	
 2248	https://res.starwarsccg.org/cards/CloudCity-Dark/large/shatteredhope.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Shattered+Hope	CCU152	•Shattered Hope	Shattered Hope			
 2255	https://res.starwarsccg.org/cards/CloudCity-Dark/large/shockingrevelation.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Shocking+Revelation	CCC153	•Shocking Revelation	Shocking Revelation			
-2260	https://res.starwarsccg.org/cards/Coruscant-Dark/large/shortrangefighters&watchyourback.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Short+Range+Fighters+%26+%E2%80%A2Watch+Your+Back%21	CORR158	•Short Range Fighters & •Watch Your Back!	Short Range Fighters & Watch Your Back!			
+2260	https://res.starwarsccg.org/cards/Coruscant-Dark/large/shortrangefighters&watchyourback.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Short+Range+Fighters+%26+%E2%80%A2Watch+Your+Back%21	CORR158	•Short Range Fighters & •Watch Your Back!	Short Range Fighters	Watch Your Back!		
 6640	https://res.starwarsccg.org/cards/SpecialEdition-Dark/large/shortrangefighters.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Short-range+Fighters	SER262	•Short-range Fighters	Short-range Fighters			
 2261	https://res.starwarsccg.org/cards/Dagobah-Dark/large/shotinthedark.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Shot+In+The+Dark	DAGU131	•Shot In The Dark	Shot In The Dark			
 2262	https://res.starwarsccg.org/cards/Dagobah-Dark/large/shuthimuporshuthimdown.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Shut+Him+Up+Or+Shut+Him+Down	DAGU147	•Shut Him Up Or Shut Him Down	Shut Him Up Or Shut Him Down			
@@ -2985,7 +2985,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 2288	https://res.starwarsccg.org/cards/Endor-Dark/large/sneakattack.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Sneak+Attack	EDRC153	•Sneak Attack	Sneak Attack			
 2289	https://res.starwarsccg.org/cards/Virtual0-Dark/large/sneakattack.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Sneak+Attack+%28V%29	V0C124	•Sneak Attack (V)	Sneak Attack		(V)	
 2290	https://res.starwarsccg.org/cards/ANewHope-Dark/large/sniper.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Sniper	ANHU1139	•Sniper	Sniper			
-2291	https://res.starwarsccg.org/cards/ReflectionsII-Dark/large/sniper&darkstrike.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Sniper+%26+%E2%80%A2Dark+Strike	Ref2PM047	•Sniper & •Dark Strike	Sniper & Dark Strike			
+2291	https://res.starwarsccg.org/cards/ReflectionsII-Dark/large/sniper&darkstrike.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Sniper+%26+%E2%80%A2Dark+Strike	Ref2PM047	•Sniper & •Dark Strike	Sniper	Dark Strike		
 2293	https://res.starwarsccg.org/cards/ReflectionsII-Dark/large/snoova.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Snoova	Ref2PM048	•Snoova	Snoova			
 2295	https://res.starwarsccg.org/cards/Hoth-Dark/large/snowtrooper.gif	https://scomp.starwarsccg.org/?s=Snowtrooper	HC3091	Snowtrooper	Snowtrooper			
 2296	https://res.starwarsccg.org/cards/Hoth-Dark/large/snowtrooperofficer.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2%E2%80%A2%E2%80%A2Snowtrooper+Officer	HC1092	•••Snowtrooper Officer	Snowtrooper Officer			
@@ -3034,7 +3034,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 2369	https://res.starwarsccg.org/cards/Dagobah-Dark/large/suddenimpact.gif	https://scomp.starwarsccg.org/?s=Sudden+Impact	DAGU132	Sudden Impact	Sudden Impact			
 2371	https://res.starwarsccg.org/cards/DeathStarII-Dark/large/sullust.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Sullust	DS2C150	[DS] •Sullust	Sullust			
 2373	https://res.starwarsccg.org/cards/Premiere-Dark/large/sunsdown.gif	https://scomp.starwarsccg.org/?s=Sunsdown	PU1230	Sunsdown	Sunsdown			
-2374	https://res.starwarsccg.org/cards/ReflectionsII-Dark/large/sunsdown&toocoldforspeeders.gif	https://scomp.starwarsccg.org/?s=Sunsdown+%26+Too+Cold+For+Speeders	Ref2PM050	Sunsdown & Too Cold For Speeders	Sunsdown & Too Cold For Speeders			
+2374	https://res.starwarsccg.org/cards/ReflectionsII-Dark/large/sunsdown&toocoldforspeeders.gif	https://scomp.starwarsccg.org/?s=Sunsdown+%26+Too+Cold+For+Speeders	Ref2PM050	Sunsdown & Too Cold For Speeders	Sunsdown	Too Cold For Speeders		
 2378	https://res.starwarsccg.org/cards/ANewHope-Dark/large/superlaser.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Superlaser	ANHR2161	•Superlaser	Superlaser			
 2379	https://res.starwarsccg.org/cards/DeathStarII-Dark/large/superlasermarkii.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Superlaser+Mark+II	DS2U182	•Superlaser Mark II	Superlaser Mark II			
 6669	https://res.starwarsccg.org/cards/Virtual9-Dark/large/supremeleadersnoke.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Supreme+Leader+Snoke	V9C039	•Supreme Leader Snoke (V)	Supreme Leader Snoke		(V)	
@@ -3123,7 +3123,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 2550	https://res.starwarsccg.org/cards/Tatooine-Dark/large/thereisnoconflict.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2There+Is+No+Conflict	TATC088	•There Is No Conflict	There Is No Conflict			
 2551	https://res.starwarsccg.org/cards/Dagobah-Dark/large/thereisnotry.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2There+Is+No+Try	DAGC134	•There Is No Try	There Is No Try			
 2552	https://res.starwarsccg.org/cards/ReflectionsIII-Dark/large/thereisnotry.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2There+Is+No+Try	Ref3PM090	•There Is No Try	There Is No Try			
-2553	https://res.starwarsccg.org/cards/ReflectionsII-Dark/large/thereisnotry&oppressiveenforcement.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2There+Is+No+Try+%26+%E2%80%A2Oppressive+Enforcement	Ref2PM052	•There Is No Try & •Oppressive Enforcement	There Is No Try & Oppressive Enforcement			
+2553	https://res.starwarsccg.org/cards/ReflectionsII-Dark/large/thereisnotry&oppressiveenforcement.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2There+Is+No+Try+%26+%E2%80%A2Oppressive+Enforcement	Ref2PM052	•There Is No Try & •Oppressive Enforcement	There Is No Try	Oppressive Enforcement		
 2554	https://res.starwarsccg.org/cards/TheedPalace-Dark/large/theretheyare.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2There+They+Are%21	TPU107	•There They Are!	There They Are!			
 2555	https://res.starwarsccg.org/cards/ANewHope-Dark/large/therellbehelltopay.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2%E2%80%A2%E2%80%A2There%27ll+Be+Hell+To+Pay	ANHU2128	•••There'll Be Hell To Pay	There'll Be Hell To Pay			
 2556	https://res.starwarsccg.org/cards/JabbasPalace-Dark/large/thermaldetonator.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Thermal+Detonator	JPR179	•Thermal Detonator	Thermal Detonator			
@@ -3139,7 +3139,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 2576	https://res.starwarsccg.org/cards/Coruscant-Dark/large/thisisoutrageous.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2This+Is+Outrageous%21	CORU142	•This Is Outrageous!	This Is Outrageous!			
 2577	https://res.starwarsccg.org/cards/ANewHope-Dark/large/thisissomerescue.gif	https://scomp.starwarsccg.org/?s=This+Is+Some+Rescue%21	ANHU1141	This Is Some Rescue!	This Is Some Rescue!			
 2578	https://res.starwarsccg.org/cards/CloudCity-Dark/large/thisisstillwrong.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2This+Is+Still+Wrong	CCR157	•This Is Still Wrong	This Is Still Wrong			
-2579	https://res.starwarsccg.org/cards/ReflectionsIII-Dark/large/thok&thug.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Thok+%26+Thug	Ref3PM092	•Thok & Thug	Thok & Thug			
+2579	https://res.starwarsccg.org/cards/ReflectionsIII-Dark/large/thok&thug.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Thok+%26+Thug	Ref3PM092	•Thok & Thug	Thok	Thug		
 2580	https://res.starwarsccg.org/cards/Dagobah-Dark/large/thoserebelswontescapeus.gif	https://scomp.starwarsccg.org/?s=Those+Rebels+Won%27t+Escape+Us	DAGC150	Those Rebels Won't Escape Us	Those Rebels Won't Escape Us			
 2584	https://res.starwarsccg.org/cards/ReflectionsIII-Dark/large/throughthecorridor.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Through+The+Corridor	Ref3PM093	•Through The Corridor	Through The Corridor			
 2589	https://res.starwarsccg.org/cards/JabbasPalace-Dark/large/thulfain.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Thul+Fain	JPR125	•Thul Fain	Thul Fain			
@@ -3295,7 +3295,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 2875	https://res.starwarsccg.org/cards/CloudCity-Dark/large/youarebeaten.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2You+Are+Beaten	CCU163	•You Are Beaten	You Are Beaten			
 2877	https://res.starwarsccg.org/cards/DeathStarII-Dark/large/youcannothideforever.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2You+Cannot+Hide+Forever	DS2U133	•You Cannot Hide Forever	You Cannot Hide Forever			
 2878	https://res.starwarsccg.org/cards/ReflectionsIII-Dark/large/youcannothideforever.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2You+Cannot+Hide+Forever	Ref3PM099	•You Cannot Hide Forever	You Cannot Hide Forever			
-2879	https://res.starwarsccg.org/cards/Coruscant-Dark/large/youcannothideforever&mobilizationpoints.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2You+Cannot+Hide+Forever+%26+%E2%80%A2Mobilization+Points	CORR144	•You Cannot Hide Forever & •Mobilization Points	You Cannot Hide Forever & Mobilization Points			
+2879	https://res.starwarsccg.org/cards/Coruscant-Dark/large/youcannothideforever&mobilizationpoints.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2You+Cannot+Hide+Forever+%26+%E2%80%A2Mobilization+Points	CORR144	•You Cannot Hide Forever & •Mobilization Points	You Cannot Hide Forever	Mobilization Points		
 6771	https://res.starwarsccg.org/cards/ResetDS-Dark/large/youcannothideforeverv.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2You+Cannot+Hide+Forever+%28Death+Star+II%29+%28V%29	VDSU100	•You Cannot Hide Forever (Death Star II) (V)	You Cannot Hide Forever	Death Star II	(V)	
 4400	https://res.starwarsccg.org/cards/ResetDS-Dark/large/youcannothideforever.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2You+Cannot+Hide+Forever+%28V%29	VDSPM100	•You Cannot Hide Forever (V)	You Cannot Hide Forever		(V)	
 5200	https://res.starwarsccg.org/cards/Virtual8-Dark/large/youknowwhativecomefor.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2You+Know+What+I%27ve+Come+For	V8U046	•You Know What I've Come For (V)	You Know What I've Come For		(V)	
@@ -3365,11 +3365,11 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 6852	https://res.starwarsccg.org/cards/Virtual14-Dark/large/theclient.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2The+Client	V14R010	•The Client (V)	The Client		(V)	
 6853	https://res.starwarsccg.org/cards/Virtual14-Dark/large/thedeadspeak.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2The+Dead+Speak%21	V14C1011	•The Dead Speak! (V)	The Dead Speak!		(V)	
 6854	https://res.starwarsccg.org/cards/Virtual14-Dark/large/thefirstorderwasjustthebeginning.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2The+First+Order+Was+Just+The+Beginning	V14R012	•The First Order Was Just The Beginning (V)	The First Order Was Just The Beginning		(V)	
-6855	https://res.starwarsccg.org/cards/Virtual14-Dark/large/altercollateraldamage.gif	https://scomp.starwarsccg.org/?s=Alter+%26+Collateral+Damage+%28V%29	V14PM001	Alter & Collateral Damage (V)	Alter & Collateral Damage		(V)	
+6855	https://res.starwarsccg.org/cards/Virtual14-Dark/large/altercollateraldamage.gif	https://scomp.starwarsccg.org/?s=Alter+%26+Collateral+Damage+%28V%29	V14PM001	Alter & Collateral Damage (V)	Alter	Collateral Damage	(V)	
 6856	https://res.starwarsccg.org/cards/Virtual14-Dark/large/exegolsiththrone.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Exegol%3A+Sith+Throne	V14R004	•Exegol: Sith Throne (V)	Exegol	Sith Throne	(V)	
 6857	https://res.starwarsccg.org/cards/Virtual14-Dark/large/kijimids.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Kijimi	V14C1006	•Kijimi (V)	Kijimi		(V)	
 6858	https://res.starwarsccg.org/cards/Virtual14-Dark/large/bestoonlegacy.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Bestoon+Legacy	V14C2002	•Bestoon Legacy (V)	Bestoon Legacy		(V)	
-6859	https://res.starwarsccg.org/cards/Virtual14-Dark/large/intimidatorpersecutor.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Intimidator+%26+%E2%80%A2Persecutor	V14U005	•Intimidator & •Persecutor (V)	Intimidator & Persecutor		(V)	
+6859	https://res.starwarsccg.org/cards/Virtual14-Dark/large/intimidatorpersecutor.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Intimidator+%26+%E2%80%A2Persecutor	V14U005	•Intimidator & •Persecutor (V)	Intimidator	Persecutor	(V)	
 6860	https://res.starwarsccg.org/cards/Virtual14-Dark/large/steadfast.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Steadfast	V14C009	•Steadfast (V)	Steadfast		(V)	
 6861	https://res.starwarsccg.org/cards/Virtual14-Dark/large/darksaber.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Darksaber	V14U003	•Darksaber (V)	Darksaber		(V)	
 6896	https://res.starwarsccg.org/cards/Virtual15-Dark/large/admiralpiett.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Admiral+Piett+%28V%29	V15XR022	•Admiral Piett (V)	Admiral Piett		(V)	
@@ -3400,7 +3400,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 6922	https://res.starwarsccg.org/cards/Virtual16-Dark/large/superlaser.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Superlaser+%28V%29	V16R2019	•Superlaser (V)	Superlaser		(V)	
 6953	https://res.starwarsccg.org/cards/Virtual17-Dark/large/aneffectivedemonstration.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2An+Effective+Demonstration	V17U001	•An Effective Demonstration (V)	An Effective Demonstration		(V)	
 6954	https://res.starwarsccg.org/cards/Virtual17-Dark/large/bb9e.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2BB-9E	V17C2002	•BB-9E (V)	BB-9E		(V)	
-6955	https://res.starwarsccg.org/cards/Virtual17-Dark/large/beginlandingyourtroopsfightersstraightahead.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Begin+Landing+Your+Troops+%26+%E2%80%A2Fighters+Straight+Ahead	V17U003	•Begin Landing Your Troops & •Fighters Straight Ahead (V)	Begin Landing Your Troops & Fighters Straight Ahead		(V)	
+6955	https://res.starwarsccg.org/cards/Virtual17-Dark/large/beginlandingyourtroopsfightersstraightahead.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Begin+Landing+Your+Troops+%26+%E2%80%A2Fighters+Straight+Ahead	V17U003	•Begin Landing Your Troops & •Fighters Straight Ahead (V)	Begin Landing Your Troops	Fighters Straight Ahead	(V)	
 6956	https://res.starwarsccg.org/cards/Virtual17-Dark/large/blizzard1.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Blizzard+1+%28V%29	V17R1004	•Blizzard 1 (V)	Blizzard 1		(V)	
 6957	https://res.starwarsccg.org/cards/Virtual17-Dark/large/burg.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Burg	V17R2005	•Burg (V)	Burg		(V)	
 6958	https://res.starwarsccg.org/cards/Virtual17-Dark/large/captainneeda.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Captain+Needa+%28V%29	V17R006	•Captain Needa (V)	Captain Needa		(V)	
@@ -3423,9 +3423,9 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 6975	https://res.starwarsccg.org/cards/Virtual17-Dark/large/tragedyofplagueis.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Tragedy+Of+Plagueis	V17U023	•Tragedy Of Plagueis (V)	Tragedy Of Plagueis		(V)	
 6976	https://res.starwarsccg.org/cards/Virtual17-Dark/large/unlimitedpower.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Unlimited+Power%21	V17R024	•Unlimited Power! (V)	Unlimited Power!		(V)	
 6977	https://res.starwarsccg.org/cards/Virtual17-Dark/large/wattambor.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Wat+Tambor	V17C2025	•Wat Tambor (V)	Wat Tambor		(V)	
-7041	https://res.starwarsccg.org/cards/Virtual18-Dark/large/imperialcommandinrange.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Imperial+Command+%26+%E2%80%A2In+Range	V18C001	•Imperial Command & •In Range (V)	Imperial Command & In Range		(V)	
+7041	https://res.starwarsccg.org/cards/Virtual18-Dark/large/imperialcommandinrange.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Imperial+Command+%26+%E2%80%A2In+Range	V18C001	•Imperial Command & •In Range (V)	Imperial Command	In Range	(V)	
 7042	https://res.starwarsccg.org/cards/Virtual18-Dark/large/sealoffthebridge.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Seal+Off+The+Bridge	V18U002	•Seal Off The Bridge (V)	Seal Off The Bridge		(V)	
-7047	https://res.starwarsccg.org/cards/Virtual18-Dark/large/adarktimefortherebelliontarkinsorders.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2A+Dark+Time+For+The+Rebellion+%26+%E2%80%A2Tarkin%27s+Orders	V18C1007	•A Dark Time For The Rebellion & •Tarkin's Orders (V)	A Dark Time For The Rebellion & Tarkin's Orders		(V)	
+7047	https://res.starwarsccg.org/cards/Virtual18-Dark/large/adarktimefortherebelliontarkinsorders.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2A+Dark+Time+For+The+Rebellion+%26+%E2%80%A2Tarkin%27s+Orders	V18C1007	•A Dark Time For The Rebellion & •Tarkin's Orders (V)	A Dark Time For The Rebellion	Tarkin's Orders	(V)	
 7048	https://res.starwarsccg.org/cards/Virtual18-Dark/large/alpha1.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Alpha+1	V18F008	•Alpha 1 (V)	Alpha 1		(V)	
 7049	https://res.starwarsccg.org/cards/Virtual18-Dark/large/crushtherebellion.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Crush+The+Rebellion+%28V%29	V18PM009	•Crush The Rebellion (V)	Crush The Rebellion		(V)	
 7050	https://res.starwarsccg.org/cards/Virtual18-Dark/large/hesnogoodtomedead.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2He%27s+No+Good+To+Me+Dead	V18U032	•He's No Good To Me Dead (V)	He's No Good To Me Dead		(V)	
