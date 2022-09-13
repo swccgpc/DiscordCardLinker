@@ -393,14 +393,6 @@ namespace DiscordCardLinker {
 					await SendImage(e.Message, candidates.First());
 				}
 				else {
-					string title = candidates.First().Title;
-					if(candidates.All(x => x.Title == title)) {
-						var cutdown = candidates.Where(x => string.IsNullOrWhiteSpace(x.TitleSuffix)).ToList();
-						if(cutdown.Count == 1) {
-							await SendImage(e.Message, cutdown.First());
-							continue;
-						}
-					}
 
 					/*
 					 * If more than one card was found, send a list of the crads in a dropdown as a method of allowing the 
