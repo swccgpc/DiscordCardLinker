@@ -33,16 +33,12 @@ namespace DiscordCardLinker {
 		public Settings CurrentSettings { get; }
 		private DiscordClient Client { get; set; }
 
-		private const string squareRegex = @"\[(?!@)(.*?)]";
-		private const string curlyRegex = @"{(?!@)(.*?)}";
-		private const string angleRegex = @"<(?!@)(.*?)>";
+		private const string squareRegex = @"\[\[(?!@)(.*?)]]";
 		private const string aliasRegex = @"(.*?)\s*\((.*)\)";
 		private const string abbreviationReductionRegex = @"[^\w\s]+";
 		private const string stripNonWordsRegex = @"\W+";
 
 		private Regex squareCR;
-		private Regex curlyCR;
-		private Regex angleCR;
 		private Regex aliasCR;
 		private Regex abbreviationReductionCR;
 		private Regex stripNonWordsCR;
@@ -58,12 +54,14 @@ namespace DiscordCardLinker {
 		private Dictionary<string, List<CardDefinition>> CardNicknames { get; set; }
 		private Dictionary<string, CardDefinition> CardCollInfo{ get; set; }
 
+		private CardDefinition NullCard { get; } = new CardDefinition() {			
+			ImageURL = ""
+		};
+
 
 		public CardBot(Settings settings) {
 			CurrentSettings = settings;
 			squareCR = new Regex(squareRegex, RegexOptions.Compiled);
-			curlyCR = new Regex(curlyRegex, RegexOptions.Compiled);
-			angleCR = new Regex(angleRegex, RegexOptions.Compiled);
 			aliasCR = new Regex(aliasRegex, RegexOptions.Compiled);
 			abbreviationReductionCR = new Regex(abbreviationReductionRegex, RegexOptions.Compiled);
 			stripNonWordsCR = new Regex(stripNonWordsRegex, RegexOptions.Compiled);
@@ -86,6 +84,9 @@ namespace DiscordCardLinker {
 
 
 			foreach(var card in Cards) {
+				if (string.IsNullOrWhiteSpace(card.ID) || string.IsNullOrWhiteSpace(card.CollInfo))
+					continue;
+
 				AddEntry(CardTitles, ScrubInput(card.Title), card);
 				AddEntry(CardSubtitles, ScrubInput(card.Subtitle), card);
 
@@ -105,11 +106,16 @@ namespace DiscordCardLinker {
 					if (String.IsNullOrWhiteSpace(entry))
 						continue;
 
-					AddEntry(CardNicknames, ScrubInput(entry), card);
+					//Once the nicknames column in cards.tsv has been cleared of all that redundant crud, feel free
+					// to uncomment this.  For the meantime tho, it's adding tens of thousands of completely unnecessary
+					// search terms, slowing down the search time.
+					//AddEntry(CardNicknames, ScrubInput(entry), card);
 				}
 
 				CardCollInfo.Add(ScrubInput(card.CollInfo), card);
 			}
+
+			Loading = false;
 		}
 
 		//This produces a version of the card title with all spaces, punctuation, and sundry all removed from the lookup.
@@ -178,7 +184,9 @@ namespace DiscordCardLinker {
 				MinimumLogLevel = LogLevel.Debug
 			});
 			Client.MessageCreated += OnMessageCreated;
-			Client.MessageReactionAdded += OnReactionAdded;
+			Client.ComponentInteractionCreated += OnButtonPressed;
+			Client.ThreadCreated += OnThreadCreated;
+			Client.ThreadUpdated += OnThreadUpdated;
 
 			// https://dsharpplus.github.io/api/DSharpPlus.DiscordClient.html?q=ConnectAsync#DSharpPlus_DiscordClient_ConnectAsync_DiscordActivity_System_Nullable_UserStatus__System_Nullable_DateTimeOffset__
 			/* connecting to discord */
@@ -186,97 +194,85 @@ namespace DiscordCardLinker {
 			/* successfully connected to discord */
 		}
 
-		/*
-		 * process reaction to discord chat message
-		 */
-		private async Task OnReactionAdded(DiscordClient sender, MessageReactionAddEventArgs e) {
-			if (Loading) {
-				await Task.Delay(3000);
-				if (Loading)
-					return;
+		private async Task OnThreadUpdated(DiscordClient sender, ThreadUpdateEventArgs e)
+		{
+			await e.ThreadAfter.JoinThreadAsync();
+		}
+
+		private async Task OnThreadCreated(DiscordClient sender, ThreadCreateEventArgs e)
+		{
+			await e.Thread.JoinThreadAsync();
+		}
+
+		private async Task OnButtonPressed(DiscordClient sender, ComponentInteractionCreateEventArgs e)
+		{
+			var match = Regex.Match(e.Id, @"(\w+?)_(.*)");
+			string buttonId = match.Groups[1].Value;
+			ulong authorId = Convert.ToUInt64(match.Groups[2].Value);
+
+			switch (buttonId)
+			{
+				case "delete":
+					if (authorId == 0 || e.User.Id == authorId || e.Message.Reference.Message?.Author?.Id == e.User.Id || e.Guild.OwnerId == e.User.Id)
+					{
+						await e.Message.DeleteAsync();
+					}
+					break;
+
+				case "lockin":
+					if (authorId == 0 || e.User.Id == authorId || e.Message.Reference.Message?.Author?.Id == e.User.Id || e.Guild.OwnerId == e.User.Id)
+					{
+						var builder = new DiscordMessageBuilder()
+						.WithContent(e.Message.Content);
+
+						var comps = e.Message.Components.First().Components.ToList();
+						var newButtons = new List<DiscordComponent>();
+						foreach (var comp in comps)
+						{
+							if (!String.IsNullOrWhiteSpace(comp.CustomId))
+								continue;
+							builder.AddComponents(comp);
+						}
+
+						await e.Message.ModifyAsync(builder);
+						await e.Interaction.CreateResponseAsync(InteractionResponseType.UpdateMessage);
+					}
+
+					break;
+
+				case "dropdown":
+					if (authorId == 0 || e.User.Id == authorId || e.Message.Reference.Message?.Author?.Id == e.User.Id || e.Guild.OwnerId == e.User.Id)
+					{
+						var card = CardCollInfo[ScrubInput(e.Values.First())];
+
+						var dbuilder = BuildSingle(e.Message, card, true, true, false);
+
+						var dropdown = e.Message.Components.Last().Components.First();
+						var buttons = e.Message.Components.First().Components.ToList();
+
+						dbuilder.WithContent(card.ImageURL)
+							.AddComponents(dropdown);
+
+						await e.Message.ModifyAsync(dbuilder);
+						await e.Interaction.CreateResponseAsync(InteractionResponseType.UpdateMessage);
+					}
+
+					break;
+
+				case "repick":
+
+					break;
+				default:
+					break;
 			}
-
-			if (e.Message.Author != Client.CurrentUser)
-				return;
-
-			if (e.Message.ReferencedMessage.Author != e.User && !e.Message.ReferencedMessage.Author.IsBot)
-				return;
-
-			/*
-			 * Check if the user is looking for an Image or a Wiki page.
-			 */
-			MatchType type;
-			if(e.Message.Content.Contains("Found multiple potential candidates for card image")) {
-				type = MatchType.Image;
-			}
-			else if (e.Message.Content.Contains("Found multiple potential candidates for card wiki page")) {
-				type = MatchType.Wiki;
-			}
-			else {
-				// It's not an Image or a Wiki page? How odd...
-				return;
-			}
-
-			/*
-			 * Loop through the lines of the message sent to the user originally looking for the line with the emoji on it.
-			 * Once the correct emoji line is found, pull the collection code from it.
-			 * Do a new search with the collection code and send th results.
-			 * Emoji chosen by user: e.Emoji.GetDiscordName()
-			 */
-			foreach(string line in e.Message.Content.Split("\n")) {
-
-				/*
-				 * If the current line contains the emoji, process that line.
-				 * Lines look like: ":one: : •Ben Kenobi (SER004)"
-				 * The emoji will be ":one:"
-				 */
-				if (line.Contains(e.Emoji.GetDiscordName())) {
-					Console.WriteLine("Line contains "+e.Emoji.GetDiscordName()+":");
-					Console.WriteLine(line);
-					/*
-					 * Use regex to pull the collection code out of the line
-					 * Lines look like: ":one: : •Ben Kenobi (SER004)"
-					 * The collection code in this case would be SER004
-					 */
-					string search = Regex.Match(line, @"\(([A-Z0-9]+)\)$").Value.Replace("(", "").Replace(")", "");
-
-					/*
-					 * All card indexes are imported as lowercase, so the search must be made to be lowercase as well.
-					 * SER004 -> ser004
-					 */
-					string lowerSearch = search.ToLower().Trim();
-					var card = CardCollInfo[lowerSearch];
-
-					/*
-					 * Delete the emojis from the message.
-					 */
-					await e.Message.DeleteAllReactionsAsync();
-
-					/*
-					 * Send the image or wiki link back to the user.
-					 */
-					switch (type) {
-						case MatchType.Image:
-							await e.Message.ModifyAsync(card.ImageURL);
-							break;
-						case MatchType.Wiki:
-							await e.Message.ModifyAsync("Information about " + card.Title + " is available on scomp at: " + card.WikiURL);
-							break;
-					} // switch
-
-				} // if
-
-			} // foreach
-
-			
-		} // OnReactionAdded
+		}
 
 		/*
 		 * Message created in discord chat, check if we should process it.
 		 */
 		private async Task OnMessageCreated(DiscordClient sender, MessageCreateEventArgs e) {
 			if (Loading) {
-				await Task.Delay(3000);
+				await Task.Delay(1000);
 				if (Loading)
 					return;
 			}
@@ -289,10 +285,6 @@ namespace DiscordCardLinker {
 			string content = e.Message.Content;
 
 			var requests = new List<(MatchType type, string searchString)>();
-
-			foreach (Match match in curlyCR.Matches(content)) {
-				requests.Add((MatchType.Wiki, match.Groups[1].Value));
-			}
 
 			foreach (Match match in squareCR.Matches(content)) {
 				requests.Add((MatchType.Image, match.Groups[1].Value));
@@ -307,20 +299,14 @@ namespace DiscordCardLinker {
 					await SendNotFound(e, searchString);
 				}
 				else if(candidates.Count == 1) {
-					await SendSingle(e, candidates.First(), type, searchString);
+					await SendImage(e.Message, candidates.First());
 				}
 				else {
 					string title = candidates.First().Title;
 					if(candidates.All(x => x.Title == title)) {
 						var cutdown = candidates.Where(x => string.IsNullOrWhiteSpace(x.TitleSuffix)).ToList();
 						if(cutdown.Count == 1) {
-							await SendSingle(e, cutdown.First(), type, searchString);
-							continue;
-						}
-
-						string fulltitle = cutdown.First().DisplayName;
-						if(cutdown.All(x => x.DisplayName == fulltitle)) {
-							await SendSingle(e, cutdown.First(), type, searchString);
+							await SendImage(e.Message, cutdown.First());
 							continue;
 						}
 					}
@@ -332,64 +318,81 @@ namespace DiscordCardLinker {
 					await SendCollisions(e, type, searchString, candidates);
 				}
 			}
-				
-
 		}
 
-		private async Task<List<CardDefinition>> PerformSearch(string searchString) {
-			var candidates = new List<CardDefinition>();
+		private async Task<HashSet<CardDefinition>> PerformSearch(string searchString) {
+			var candidates = new HashSet<CardDefinition>();
 
 			string lowerSearch = ScrubInput(searchString);
 
-			if (CardSubtitles.ContainsKey(lowerSearch)) {
-				candidates.AddRange(CardSubtitles[lowerSearch]);
-				return candidates;
-			}
-
 			if (CardCollInfo.ContainsKey(lowerSearch)) {
 				candidates.Add(CardCollInfo[lowerSearch]);
-				return candidates;
 			}
 
 			if (CardFullTitles.ContainsKey(lowerSearch)) {
 				candidates.AddRange(CardFullTitles[lowerSearch]);
-				return candidates;
 			}
 
 			if (CardTitles.ContainsKey(lowerSearch)) {
 				candidates.AddRange(CardTitles[lowerSearch]);
-				return candidates;
+			}
+
+			if (CardSubtitles.ContainsKey(lowerSearch))
+			{
+				candidates.AddRange(CardSubtitles[lowerSearch]);
 			}
 
 			if (CardNicknames.ContainsKey(lowerSearch)) {
 				candidates.AddRange(CardNicknames[lowerSearch]);
-				return candidates;
 			}
 
-			//TODO: fuzzy search on all of the above
+			if (lowerSearch.Length > 2)
+			{
+				foreach (var key in CardFullTitles.Keys)
+				{
+					if (key.Contains(lowerSearch))
+					{
+						candidates.AddRange(CardFullTitles[key]);
+					}
+				};
+			}
 			return candidates;
 		}
 
-		private async Task SendSingle(MessageCreateEventArgs e, CardDefinition card, MatchType type, string search) {
-			switch (type) {
-				case MatchType.Image:
-					await SendImage(e, card);
-					break;
-				case MatchType.Wiki:
-					await SendWikiLink(e, card);
-					break;
+		private DiscordButtonComponent DeleteButton(ulong AuthorID)
+		{
+			return new DiscordButtonComponent(ButtonStyle.Danger, $"delete_{AuthorID}", "Delete");
+		}
+
+		private DiscordButtonComponent LockinButton(ulong AuthorID, bool disabled = false)
+		{
+			return new DiscordButtonComponent(ButtonStyle.Primary, $"lockin_{AuthorID}", "Accept", disabled);
+		}
+
+		private async Task SendImage(DiscordMessage original, CardDefinition card)
+		{
+			await original.RespondAsync(BuildSingle(original, card, true, true, false));
+		}
+
+		private DiscordMessageBuilder BuildSingle(DiscordMessage original, CardDefinition card, bool wiki, bool buttons, bool disable)
+		{
+			var builder = new DiscordMessageBuilder()
+				.WithReply(original.Id)
+				.WithContent(card.ImageURL);
+
+			var comps = new List<DiscordComponent>();
+
+			if (wiki)
+			{
+				comps.Add(new DiscordLinkButtonComponent(card.WikiURL, "Wiki", false));
 			}
-		}
+			if (buttons)
+			{
+				comps.Add(LockinButton(original.Author.Id, disable));
+				comps.Add(DeleteButton(original.Author.Id));
+			}
 
-		private async Task SendImage(MessageCreateEventArgs e, CardDefinition card) {
-			await e.Message.RespondAsync(card.ImageURL);
-		}
-
-		private async Task SendWikiLink(MessageCreateEventArgs e, CardDefinition card) {
-			await e.Message.RespondAsync("Information about " + card.Title + " is available on scomp at: " + card.WikiURL);
-			//var msg = await new DiscordMessageBuilder()
-			//	.With
-			//e.Message.RespondAsync()
+			return builder.AddComponents(comps);
 		}
 
 		/*
@@ -397,86 +400,41 @@ namespace DiscordCardLinker {
 		 */
 		private async Task SendNotFound(MessageCreateEventArgs e, string search) {
 			string response = $"Sir, I am fluent in 6 million forms of communication. This signal, `{search}`, is not used by the Alliance.";
-			await e.Message.RespondAsync(response);
+			var builder = new DiscordMessageBuilder()
+				.WithReply(e.Message.Id)
+				.WithContent(response)
+				.AddComponents(DeleteButton(0));
+
+			await e.Message.RespondAsync(builder);
 		}
 
 		/*
-		 * If more than one card was found, send a list of the crads with emoji as a method of allowing the 
-		 * caller to select one of the cards from the list.
+		 * If more than one card was found, send a list of the crads, using a rich drop-down for the user to select
 		 */
-		private async Task SendCollisions(MessageCreateEventArgs e, MatchType type, string search, List<CardDefinition> candidates) {
-			string response = "";
-
-			switch (type) {
-				case MatchType.Image:
-					response += $"Found multiple potential candidates for card image `{search}`.\nReact with the option you'd like to display:\n\n";
-					break;
-				case MatchType.Wiki:
-					response += $"Found multiple potential candidates for card wiki page `{search}`.\nReact with the option you'd like to display:\n\n";
-					break;
+		private const string LengthMessage = ". . . .\n\n**Too many results to list**! Try a more specific query.";
+		private async Task SendCollisions(MessageCreateEventArgs e, MatchType type, string search, IEnumerable<CardDefinition> candidates)
+		{
+			string response = $"Found multiple potential candidates for card image `{search}`.";
+			if (candidates.Count() > 25) {
+				response += $"\nFound {candidates.Count()} options.  The top 25 are shown below, but you may need to try a more specific query.\n";
 			}
-			
+			response += "\nSelect your choice from the dropdown below:\n\n";
 
 			var menu = new List<string>();
 
-			int count = 1;
-			foreach(var card in candidates) {
-				string emoji = GetEmoji(count++);
-				menu.Add(emoji);
+			var options = candidates.OrderBy(x => x.Title)
+				.Take(25)
+				.Select(x => new DiscordSelectComponentOption($"{x.DisplayName} ({x.CollInfo})", x.CollInfo));
 
-				if(count == 22) {
-					response += "\n Maximum menu limit reached.  More cards were found:\n";
-				}
+			var dropdown = new DiscordSelectComponent($"dropdown_{e.Message.Author.Id}", null, options);
 
-				if(count < 22) {
-					response += $"\t{emoji} : {card.DisplayName} ({card.CollInfo})\n"; // :one: : •Ben Kenobi (SER004)
-				}
-				else {
-					response += $"\t{card.DisplayName} ({card.CollInfo})\n";
-				}
+			var builder = BuildSingle(e.Message, NullCard, false, true, true)
+				.WithReply(e.Message.Id)
+				.WithContent(response)
+				.AddComponents(dropdown);
 
-				
-			}
-			var reply = await e.Message.RespondAsync(response);
+			await e.Message.RespondAsync(builder);
 
-			foreach (var option in menu) {
-				if (option == "-")
-					continue;
-
-				await reply.CreateReactionAsync(DiscordEmoji.FromName(Client, option));
-			}
-		}
-
-		//There's a limit of 20 reactions to any one message on Discord
-		private Dictionary<int, string> IDEmoji = new Dictionary<int, string>() {
-			[1] = ":one:",
-			[2] = ":two:",
-			[3] = ":three:",
-			[4] = ":four:",
-			[5] = ":five:",
-			[6] = ":six:",
-			[7] = ":seven:",
-			[8] = ":eight:",
-			[9] = ":nine:",
-			[10] = ":regional_indicator_a:",
-			[11] = ":regional_indicator_b:",
-			[12] = ":regional_indicator_c:",
-			[13] = ":regional_indicator_d:",
-			[14] = ":regional_indicator_e:",
-			[15] = ":regional_indicator_f:",
-			[16] = ":regional_indicator_g:",
-			[17] = ":regional_indicator_h:",
-			[18] = ":regional_indicator_i:",
-			[19] = ":regional_indicator_j:",
-			[20] = ":regional_indicator_k:",
-
-		};
-
-		private string GetEmoji(int count) {
-			if (count <= 0 || count > 20)
-				return "-";
-
-			return IDEmoji[count];
 		}
 	}
 }
