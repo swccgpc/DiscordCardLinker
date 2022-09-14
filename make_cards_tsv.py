@@ -3,6 +3,8 @@
 import json
 import os
 import codecs
+import copy
+import re
 import urllib.parse
 
 class CardRow:
@@ -33,6 +35,9 @@ def parse_json_file(json_filename):
 
   for card in side_json["cards"]:
     row = CardRow()
+    row2 = None
+    double_sided = False
+    same_name = False
     
     row.card_id       = str(card["id"])
     row.img_url       = card["front"]["imageUrl"]
@@ -100,14 +105,16 @@ def parse_json_file(json_filename):
     ##  but it shouldn't hurt the actual search results)
     
     if "/" in row.title:
-      names      = row.title.split("/", 1)
-      if names[0] == names[1]:
+      names            = row.title.split("/", 1)
+      double_sided     = True
+      if names[0].strip() == names[1].strip():
         row.title      = names[0].strip()
+        same_name      = True
       else:
         row.title      = names[0].strip()
         row.subtitle   = names[1].strip()
     elif "&" in row.title:
-      names      = row.title.split("&", 1)
+      names            = row.title.split("&", 1)
       if names[0] == names[1]:
         row.title      = names[0].strip()
       else:
@@ -116,15 +123,15 @@ def parse_json_file(json_filename):
     
     if row.subtitle == "":
       if (row.title.count(",") == 1):
-        names              = row.title.split(",", 1)
+        names          = row.title.split(",", 1)
         row.title      = names[0].strip()
         row.subtitle   = names[1].strip()
       elif (":" in row.title):
-        names              = row.title.split(":", 1)
+        names          = row.title.split(":", 1)
         row.title      = names[0].strip()
         row.subtitle   = names[1].strip()
       elif ("(" in row.title):
-        names              = row.title.split("(", 1)
+        names          = row.title.split("(", 1)
         row.title      = names[0].strip()
         row.subtitle   = names[1].replace(")", "").strip()
         
@@ -135,6 +142,21 @@ def parse_json_file(json_filename):
       row.title_suffix = "(V)"
       
     row.displayName = row.displayName.replace("<>", "♢");
+    
+    # nicknames already embedded in the data files
+    if "abbr" in card:
+      nicks = card["abbr"]
+      for nick in nicks:
+        # We don't care about actual abbreviations, as the main app
+        # handles that.  We are however interested in aliases, which
+        # aren't in all caps.  Also the abbreviations tend to add
+        # random assortments of V for virtual, which again the app handles.
+        nick = re.sub(r'[vV]$', '', nick)
+        nick = re.sub(r' ?(V) ?', '', nick)
+        if nick.isupper(): 
+          continue
+        
+        row.nicknames.append(nick)
 
     # easter eggs
     if (("Obi-Wan" in row.title) or ("Kenobi" in row.title)):
@@ -143,6 +165,44 @@ def parse_json_file(json_filename):
     #
     if "Maul" in row.title:
       row.nicknames.append("Kenoobiiiiiiiiiiiiii")
+      
+      
+    if double_sided:
+      #Make a new row to handle dual-sided cards
+      row2 = copy.deepcopy(row)
+      
+      row2.img_url = card["back"]["imageUrl"]
+
+      #For a dual-sided card we want to swap the title/subtitle
+      # in the copy.  This allows searches where one side is known to 
+      # find and display the flip side.
+      if same_name == False:
+        row2.title = row.subtitle
+        row2.subtitle = row.title
+        match = re.search(r'(.*?) ?/ ?(.*?)(\(.*\)$)?$', row.displayName, re.MULTILINE)
+        row2.displayName = match.group(2) + " / " + match.group(1) 
+        if match.group(3) is not None:
+          row2.displayName += match.group(3)
+        
+      #For a dual-sided card with the same title on either side, we want to
+      # differentiate the front and back rather than repeat the name
+      else:
+        print(row2.title)
+        match = re.search(r'(.*?) ?/ ?(.*?)(\(.*\)$)?$', row.displayName, re.MULTILINE)
+        row.displayName = match.group(1) 
+        row2.displayName = match.group(2)
+        if match.group(3) is not None:
+          row.displayName += match.group(3)
+          row2.displayName += match.group(3)
+        row.displayName  += " (Front)"
+        row2.displayName += " (Back)"
+
+      #some ids demand uniqueness, so we'll give it to them
+      row.card_id += "F"
+      row.collecting += "F"
+      row2.card_id += "B"
+      row2.collecting += "B"
+      row2.unique_id += "B"
 
     if (row.unique_id in known_ids):
       print("\n\n!!!! " + row.unique_id)
@@ -157,6 +217,9 @@ def parse_json_file(json_filename):
         collisions[code]["Light"] = []
       
       collisions[code][row.side].append(row)
+      if(row2 is not None):
+        known_ids[row2.unique_id] = row2
+        collisions[code][row.side].append(row2)
   
   
 def output_rows():
@@ -171,7 +234,7 @@ def output_rows():
   for uid in known_ids:   
     row = known_ids[uid]
     out = row.card_id + "\t" + row.img_url + "\t" + row.http_url + "\t" + row.collecting + "\t" + row.displayName + "\t" + row.title + "\t" + row.subtitle + "\t" + row.title_suffix + "\t" + ",".join(row.nicknames)
-    print(uid)
+    #print(uid)
     fh.write(out+"\n")
 
 if __name__ == "__main__":
