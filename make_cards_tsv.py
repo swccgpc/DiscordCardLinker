@@ -136,10 +136,12 @@ def parse_json_file(json_filename):
         row.subtitle   = names[1].replace(")", "").strip()
         
     
+    if ("(V)" in row.displayName):
+      row.title_suffix += "(V)"
+      
     if ("(AI)" in row.displayName):
-      row.title_suffix = "(AI)"
-    elif ("(V)" in row.displayName):
-      row.title_suffix = "(V)"
+      row.title_suffix += "(AI)"
+    
       
     row.displayName = row.displayName.replace("<>", "♢");
     
@@ -234,7 +236,7 @@ def output_rows():
   for uid in known_ids:   
     row = known_ids[uid]
     out = row.card_id + "\t" + row.img_url + "\t" + row.http_url + "\t" + row.collecting + "\t" + row.displayName + "\t" + row.title + "\t" + row.subtitle + "\t" + row.title_suffix + "\t" + ",".join(row.nicknames)
-    #print(uid)
+    print(uid)
     fh.write(out+"\n")
 
 if __name__ == "__main__":

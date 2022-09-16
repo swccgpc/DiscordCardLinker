@@ -43,12 +43,14 @@ namespace DiscordCardLinker {
 		private Regex abbreviationReductionCR;
 		private Regex stripNonWordsCR;
 
-		//Maybe split this into groups: has subtitles, has nicks, etc
 		private List<CardDefinition> Cards { get; set; }
 
 		private bool Loading { get; set; }
 
-		private Dictionary<string, List<CardDefinition>> CardTitles { get; set; }
+		private Dictionary<DiscordMessage, List<DiscordMessage>> PendingResponses { get; set; } = new Dictionary<DiscordMessage, List<DiscordMessage>>();
+		private DateTime LastPurge { get; set; } = DateTime.UtcNow;
+
+		private Dictionary<string, List<CardDefinition>> CardTitles { get; set; } = new Dictionary<string, List<CardDefinition>>();
 		private Dictionary<string, List<CardDefinition>> CardSubtitles { get; set; }
 		private Dictionary<string, List<CardDefinition>> CardFullTitles { get; set; }
 		private Dictionary<string, List<CardDefinition>> CardNicknames { get; set; }
@@ -254,6 +256,9 @@ namespace DiscordCardLinker {
             collection[key].Add(card);
 		}
 
+		/*
+		 * Instantiates the Discord bot and subcribes to events on connected guilds.
+		 */
 		public async Task Initialize() {
 			Client = new DiscordClient(new DiscordConfiguration() {
 				Token = CurrentSettings.Token,
@@ -262,6 +267,7 @@ namespace DiscordCardLinker {
 				MinimumLogLevel = LogLevel.Debug
 			});
 			Client.MessageCreated += OnMessageCreated;
+			Client.MessageUpdated += OnMessageEdited;
 			Client.ComponentInteractionCreated += OnUIControlInteracted;
 			Client.ThreadCreated += OnThreadCreated;
 			Client.ThreadUpdated += OnThreadUpdated;
@@ -272,11 +278,11 @@ namespace DiscordCardLinker {
 			/* successfully connected to discord */
 		}
 
-		/*
+        /*
 		 * Ensures that any existing threads that were created while the bot was offline (or unaware of threads)
 		 * will be subscribed to by the bot whenever someone posts in that thread (or changes its status).
 		 */
-		private async Task OnThreadUpdated(DiscordClient sender, ThreadUpdateEventArgs e)
+        private async Task OnThreadUpdated(DiscordClient sender, ThreadUpdateEventArgs e)
 		{
 			await e.ThreadAfter.JoinThreadAsync();
 		}
@@ -310,6 +316,7 @@ namespace DiscordCardLinker {
 					if (authorId == 0 || e.User.Id == authorId || e.Message.Reference.Message?.Author?.Id == e.User.Id || e.Guild.OwnerId == e.User.Id)
 					{
 						await e.Message.DeleteAsync();
+						PendingResponses[e.Message.Reference.Message] = null;
 					}
 					break;
 
@@ -330,6 +337,7 @@ namespace DiscordCardLinker {
 
 						await e.Message.ModifyAsync(builder);
 						await e.Interaction.CreateResponseAsync(InteractionResponseType.UpdateMessage);
+						PendingResponses[e.Message.Reference.Message] = null;
 					}
 
 					break;
@@ -359,6 +367,43 @@ namespace DiscordCardLinker {
 		}
 
 		/*
+		 * If it's been more than an hour since we last checked, loop through all currently pending messages 
+		 * (i.e. all messages that the user has not confirmed "Accept" or "Delete", and remove any messages
+		 * that are now 24 hours old.  We will no longer track those messages as invalid for responses.
+		 */
+		private void CheckPurgeTime()
+        {
+			DateTime now = DateTime.UtcNow;
+			if (now.Subtract(LastPurge).TotalHours < 1)
+				return;
+
+			foreach(var message in PendingResponses.Keys.ToList())
+            {
+				if (now.Subtract(message.Timestamp.UtcDateTime).TotalDays > 1)
+					PendingResponses.Remove(message);
+            }
+        }
+
+		/*
+		 * A message was edited somewhere in the discord chat, we shall check to see if it's one we care about.
+		 */
+		private async Task OnMessageEdited(DiscordClient sender, MessageUpdateEventArgs e)
+		{
+			if (Loading)
+			{
+				await Task.Delay(1000);
+				if (Loading)
+					return;
+			}
+
+			if (e.Message.Author.IsBot)
+				return;
+
+
+			await CheckMessageForSummons(e.Message, true);
+		}
+
+		/*
 		 * Message created in discord chat, check if we should process it.
 		 */
 		private async Task OnMessageCreated(DiscordClient sender, MessageCreateEventArgs e) {
@@ -373,33 +418,78 @@ namespace DiscordCardLinker {
 			if (e.Message.Author.IsBot)
 				return;
 
-			string content = e.Message.Content;
+			await CheckMessageForSummons(e.Message);
+		}
+
+		/*
+		 * Shared functionality for evaluating if a message body contains a bot summons, and if so kicks off the process
+		 * of producing the search results.
+		 */
+		private async Task CheckMessageForSummons(DiscordMessage message, bool edit=false)
+        {
+			string content = message.Content;
 
 			var requests = new List<(MatchType type, string searchString)>();
 
-			foreach (Match match in squareCR.Matches(content)) {
+			foreach (Match match in squareCR.Matches(content))
+			{
 				requests.Add((MatchType.Image, match.Groups[1].Value));
 			}
 
-			foreach (var (type, searchString) in requests) {
-				/*
-				 * Search for the card requested
-				 */
-				var candidates = PerformSearch(searchString);
-				if(candidates.Count == 0) {
-					await SendNotFound(e, searchString);
+			if (requests.Count > 0)
+			{
+				
+				if (edit)
+				{
+					//If we have previously recorded a response AND that response is supposedly null,
+					// this means that the message was locked in, either with the Accept or Delete button.
+					// We will no longer respond to that message being edited.
+					if(PendingResponses.ContainsKey(message) && PendingResponses[message] == null)
+						return;
 				}
-				else if(candidates.Count == 1) {
-					await SendImage(e.Message, candidates.First());
-				}
-				else {
+				List<DiscordMessage> responses = new List<DiscordMessage>();
+				if(PendingResponses.ContainsKey(message))
+                {
+					responses = PendingResponses[message];
+                }
+				PendingResponses[message] = responses;
 
+				int i = 0;
+				foreach (var (type, searchString) in requests)
+				{
+					DiscordMessage response = null;
+					if(i < responses.Count)
+                    {
+						response = responses[i];
+                    }
 					/*
-					 * If more than one card was found, send a list of the crads in a dropdown as a method of allowing the 
-					 * caller to select one of the cards from the list.
+					 * Search for the card requested
 					 */
-					await SendCollisions(e, type, searchString, candidates);
+					var candidates = PerformSearch(searchString);
+					if (candidates.Count == 0)
+					{
+						await SendNotFound(message, searchString, response, i);
+					}
+					else if (candidates.Count == 1)
+					{
+						await SendImage(message, candidates.First(), response, i);
+					}
+					else
+					{
+
+						/*
+						 * If more than one card was found, send a list of the crads in a dropdown as a method of allowing the 
+						 * caller to select one of the cards from the list.
+						 */
+						await SendCollisions(message, type, searchString, candidates, response, i);
+					}
+					i++;
 				}
+			}
+			else
+			{
+				//If it's not a bot summons, we'll use it as a sort of regular timer to see if we've purged old pending requests
+				CheckPurgeTime();
 			}
 		}
 
@@ -474,6 +564,23 @@ namespace DiscordCardLinker {
 		}
 
 		/*
+		 * Helper function for inserting responses in a manner that is aware of multiple entries in a message
+		 */
+		private void AddResponse(DiscordMessage request, DiscordMessage response, int index)
+        {
+			var responses = PendingResponses[request];
+			if(responses.Count <= index)
+            {
+				responses.Add(response);
+            }
+            else
+            {
+				responses[index] = response;
+            }
+
+		}
+
+		/*
 		 * Helper function for generating a consistent Delete button, which uses the ID to store the original
 		 * author of the summons as well as which action to perform when interacted with.
 		 */
@@ -495,9 +602,18 @@ namespace DiscordCardLinker {
 		 * Responds to the summons with a message consisting only of a card URL, which should automatically embed
 		 * as an image in Discord.  Also ensures that a discreet wiki link button is presented.
 		 */
-		private async Task SendImage(DiscordMessage original, CardDefinition card)
+		private async Task SendImage(DiscordMessage original, CardDefinition card, DiscordMessage response, int responseIndex)
 		{
-			await original.RespondAsync(BuildSingle(original, card, true, true, false));
+			var builder = BuildSingle(original, card, true, true, false);
+			if (response == null)
+			{
+				response = await original.RespondAsync(builder);
+			}
+			else
+			{
+				response = await response.ModifyAsync(builder);
+			}
+			AddResponse(original, response, responseIndex);
 		}
 
 		/*
@@ -527,27 +643,35 @@ namespace DiscordCardLinker {
 		/*
 		 * If no card found, send a response to the caller telling them you are unable to find the card.
 		 */
-		private async Task SendNotFound(MessageCreateEventArgs e, string search) {
-			string response = $"Sir, I am fluent in 6 million forms of communication. This signal, `{search}`, is not used by the Alliance.";
+		private async Task SendNotFound(DiscordMessage message, string search, DiscordMessage response, int responseIndex) {
+			string blurb = $"Sir, I am fluent in 6 million forms of communication. This signal, `{search}`, is not used by the Alliance.";
 			var builder = new DiscordMessageBuilder()
-				.WithReply(e.Message.Id)
-				.WithContent(response)
+				.WithReply(message.Id)
+				.WithContent(blurb)
 				.AddComponents(DeleteButton(0));
 
-			await e.Message.RespondAsync(builder);
+			if (response == null)
+			{
+				response = await message.RespondAsync(builder);
+			}
+			else
+            {
+				response = await response.ModifyAsync(builder);
+            }
+			AddResponse(message, response, responseIndex);
 		}
 
 		/*
 		 * If more than one card was found, send a list of the crads, using a rich drop-down for the user to select
 		 */
 		private const string LengthMessage = ". . . .\n\n**Too many results to list**! Try a more specific query.";
-		private async Task SendCollisions(MessageCreateEventArgs e, MatchType type, string search, IEnumerable<CardDefinition> candidates)
+		private async Task SendCollisions(DiscordMessage message, MatchType type, string search, IEnumerable<CardDefinition> candidates, DiscordMessage response, int responseIndex)
 		{
-			string response = $"Found multiple potential candidates for card image `{search}`.";
+			string content = $"Found multiple potential candidates for card image `{search}`.";
 			if (candidates.Count() > 25) {
-				response += $"\nFound {candidates.Count()} options.  The top 25 are shown below, but you may need to try a more specific query.\n";
+				content += $"\nFound {candidates.Count()} options.  The top 25 are shown below, but you may need to try a more specific query.\n";
 			}
-			response += "\nSelect your choice from the dropdown below:\n\n";
+			content += "\nSelect your choice from the dropdown below:\n\n";
 
 			var menu = new List<string>();
 
@@ -555,14 +679,23 @@ namespace DiscordCardLinker {
 				.Take(25)
 				.Select(x => new DiscordSelectComponentOption($"{x.DisplayName} ({x.CollInfo})", x.CollInfo));
 
-			var dropdown = new DiscordSelectComponent($"dropdown_{e.Message.Author.Id}", null, options);
+			var dropdown = new DiscordSelectComponent($"dropdown_{message.Author.Id}", null, options);
 
-			var builder = BuildSingle(e.Message, NullCard, false, true, true)
-				.WithReply(e.Message.Id)
-				.WithContent(response)
+			var builder = BuildSingle(message, NullCard, false, true, true)
+				.WithReply(message.Id)
+				.WithContent(content)
 				.AddComponents(dropdown);
 
-			await e.Message.RespondAsync(builder);
+			if (response == null)
+			{
+				response = await message.RespondAsync(builder);
+			}
+			else
+			{
+				response = await response.ModifyAsync(builder);
+			}
+
+			AddResponse(message, response, responseIndex);
 
 		}
 	}
