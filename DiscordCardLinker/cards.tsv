@@ -45,7 +45,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 5326	https://res.starwarsccg.org/cards/Virtual10-Light/large/ahchtosaddle.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Ahch-To%3A+Saddle	V10R001	•Ahch-To: Saddle (V)	Ahch-To	Saddle	(V)	
 7020	https://res.starwarsccg.org/cards/VirtualAlternateImage-Light/large/ahchtosaddle_ai.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Ahch-To%3A+Saddle+%28AI%29	V10R001AI	•Ahch-To: Saddle (AI) (V)	Ahch-To	Saddle	(V)(AI)	
 5327	https://res.starwarsccg.org/cards/Virtual11-Light/large/ahsokatano.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Ahsoka+Tano	V11C059	•Ahsoka Tano (V)	Ahsoka Tano		(V)	
-5137	https://res.starwarsccg.org/cards/DemoDeck-Light/large/ahsokatanowithlightsabers.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Ahsoka+Tano+With+Lightsabers	VPC001	•Ahsoka Tano With Lightsabers	Ahsoka Tano With Lightsabers			EPP Ahsoka
+5137	https://res.starwarsccg.org/cards/VirtualPremium-Light/large/ahsokatanowithlightsabers.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Ahsoka+Tano+With+Lightsabers	VPC001	•Ahsoka Tano With Lightsabers	Ahsoka Tano With Lightsabers			EPP Ahsoka
 7021	https://res.starwarsccg.org/cards/VirtualAlternateImage-Light/large/ahsokatanowithlightsabers_ai.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Ahsoka+Tano+With+Lightsabers+%28AI%29	VPC001AI	•Ahsoka Tano With Lightsabers (AI)	Ahsoka Tano With Lightsabers		(AI)	EPP Ahsoka
 74	https://res.starwarsccg.org/cards/Endor-Light/large/aimhigh.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Aim+High	EDRR034	•Aim High	Aim High			
 75	https://res.starwarsccg.org/cards/ReflectionsIII-Light/large/aimhigh.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Aim+High	Ref3PM004	•Aim High	Aim High			
@@ -236,8 +236,8 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 5165	https://res.starwarsccg.org/cards/Virtual7-Light/large/chirrutimwe.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Chirrut+Imwe	V7C002	•Chirrut Imwe (V)	Chirrut Imwe		(V)	
 7024	https://res.starwarsccg.org/cards/VirtualAlternateImage-Light/large/chirrutimwe_ai.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Chirrut+Imwe+%28AI%29	V7C002AI	•Chirrut Imwe (AI) (V)	Chirrut Imwe		(V)(AI)	
 411	https://res.starwarsccg.org/cards/JabbasPalace-Light/large/choke.gif	https://scomp.starwarsccg.org/?s=Choke	JPC062	Choke	Choke			
-5421F	https://res.starwarsccg.org/cards/DemoDeck-Light/large/cityintheclouds.gif	https://scomp.starwarsccg.org/?s=City+In+The+Clouds+%2F+You+Truly+Belong+Here+With+Us	VPPM002F	City In The Clouds / You Truly Belong Here With Us	City In The Clouds	You Truly Belong Here With Us		LS Demo Deck
-5421B	https://res.starwarsccg.org/cards/DemoDeck-Light/large/youtrulybelongherewithus.gif	https://scomp.starwarsccg.org/?s=City+In+The+Clouds+%2F+You+Truly+Belong+Here+With+Us	VPPM002B	You Truly Belong Here With Us / City In The Clouds	You Truly Belong Here With Us	City In The Clouds		LS Demo Deck
+5421F	https://res.starwarsccg.org/cards/VirtualPremium-Light/large/cityintheclouds.gif	https://scomp.starwarsccg.org/?s=City+In+The+Clouds+%2F+You+Truly+Belong+Here+With+Us	VPPM002F	City In The Clouds / You Truly Belong Here With Us	City In The Clouds	You Truly Belong Here With Us		LS Demo Deck
+5421B	https://res.starwarsccg.org/cards/VirtualPremium-Light/large/youtrulybelongherewithus.gif	https://scomp.starwarsccg.org/?s=City+In+The+Clouds+%2F+You+Truly+Belong+Here+With+Us	VPPM002B	You Truly Belong Here With Us / City In The Clouds	You Truly Belong Here With Us	City In The Clouds		LS Demo Deck
 414	https://res.starwarsccg.org/cards/CloudCity-Light/large/civildisorder.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Civil+Disorder	CCC020	•Civil Disorder	Civil Disorder			
 416	https://res.starwarsccg.org/cards/ANewHope-Light/large/clakdorvii.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Clak%27dor+VII	ANHR2060	•Clak'dor VII	Clak'dor VII			
 417	https://res.starwarsccg.org/cards/SpecialEdition-Light/large/clakdorviioperative.gif	https://scomp.starwarsccg.org/?s=Clak%27dor+VII+Operative	SEU010	Clak'dor VII Operative	Clak'dor VII Operative			
@@ -557,7 +557,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 1050	https://res.starwarsccg.org/cards/Premiere-Light/large/gold5.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Gold+5	PR2142	•Gold 5	Gold 5			
 1051	https://res.starwarsccg.org/cards/SpecialEdition-Light/large/gold6.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Gold+6	SEU143	•Gold 6	Gold 6			
 5552	https://res.starwarsccg.org/cards/RebelLeader-Light/large/goldleaderingold1.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Gold+Leader+In+Gold+1	RLPPM001	•Gold Leader In Gold 1	Gold Leader In Gold 1			GLiG1
-1053	https://res.starwarsccg.org/cards/Virtual0-Light/large/goldleaderingold1.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Gold+Leader+In+Gold+1+%28V%29	V0PM062	•Gold Leader In Gold 1 (V)	Gold Leader In Gold 1		(V)	
+1053	https://res.starwarsccg.org/cards/Virtual0-Light/large/goldleaderingold1.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Gold+Leader+In+Gold+1+%28V%29	V0PM062	•Gold Leader In Gold 1 (V)	Gold Leader In Gold 1		(V)	GLiG1
 1054	https://res.starwarsccg.org/cards/DeathStarII-Light/large/goldsquadron1.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Gold+Squadron+1	DS2R068	•Gold Squadron 1	Gold Squadron 1			
 1055	https://res.starwarsccg.org/cards/OfficialTournamentSealedDeck-Light/large/goldsquadronywing.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2%E2%80%A2%E2%80%A2Gold+Squadron+Y-wing	OTSDPM004	•••Gold Squadron Y-wing	Gold Squadron Y-wing			
 4410	https://res.starwarsccg.org/cards/Virtual0-Light/large/goldenrod.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Goldenrod	VDSR027	•Goldenrod (V)	Goldenrod		(V)	
@@ -977,7 +977,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 1760	https://res.starwarsccg.org/cards/SpecialEdition-Light/large/nebdulo.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Neb+Dulo	SEU034	•Neb Dulo	Neb Dulo			
 1763	https://res.starwarsccg.org/cards/DeathStarII-Light/large/nebulonbfrigate.gif	https://scomp.starwarsccg.org/?s=Nebulon-B+Frigate	DS2U080	Nebulon-B Frigate	Nebulon-B Frigate			
 1764	https://res.starwarsccg.org/cards/Tatooine-Light/large/neckandneck.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Neck+And+Neck	TATU038	•Neck And Neck	Neck And Neck			
-1768	https://res.starwarsccg.org/cards/Dagobah-Light/large/nevertellmetheodds.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Never+Tell+Me+The+Odds	DAGC027	•Never Tell Me The Odds	Never Tell Me The Odds			
+1768	https://res.starwarsccg.org/cards/Dagobah-Light/large/nevertellmetheodds.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Never+Tell+Me+The+Odds	DAGC027	•Never Tell Me The Odds	Never Tell Me The Odds			Numbers
 1769	https://res.starwarsccg.org/cards/Coruscant-Light/large/newleadershipisneeded.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2New+Leadership+Is+Needed	CORC064	•New Leadership Is Needed	New Leadership Is Needed			
 1773	https://res.starwarsccg.org/cards/Hoth-Light/large/niceofyouguystodropby.gif	https://scomp.starwarsccg.org/?s=Nice+Of+You+Guys+To+Drop+By	HC2046	Nice Of You Guys To Drop By	Nice Of You Guys To Drop By			
 1775	https://res.starwarsccg.org/cards/SpecialEdition-Light/large/nickoftime.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Nick+Of+Time	SEU072	•Nick Of Time	Nick Of Time			
@@ -1799,7 +1799,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 7121B	https://res.starwarsccg.org/cards/Virtual19-Light/large/liberationoflothal.gif	https://scomp.starwarsccg.org/?s=Zero+Hour+%2F+Liberation+Of+Lothal	V19R048B	Liberation Of Lothal  / Zero Hour(V)	Liberation Of Lothal	Zero Hour	(V)	
 7128	https://res.starwarsccg.org/cards/Virtual20-Light/large/beskardeflection.gif	https://scomp.starwarsccg.org/?s=Beskar+Deflection	V20C006	Beskar Deflection (V)	Beskar Deflection		(V)	
 7129	https://res.starwarsccg.org/cards/Virtual20-Light/large/millenniumfalcon.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Millennium+Falcon+%28V%29	V20R1007	•Millennium Falcon (V)	Millennium Falcon		(V)	
-7130	https://res.starwarsccg.org/cards/Virtual20-Light/large/nabootheedpalacegenerator.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Naboo%3A+Theed+Palace+Generator	V20PM008	[LS] •Naboo: Theed Palace Generator (V)	Naboo	Theed Palace Generator	(V)	
+7130	https://res.starwarsccg.org/cards/Virtual20-Light/large/nabootheedpalacegenerator.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Naboo%3A+Theed+Palace+Generator+%28V%29	V20PM008	[LS] •Naboo: Theed Palace Generator (V)	Naboo	Theed Palace Generator	(V)	
 7131	https://res.starwarsccg.org/cards/Virtual20-Light/large/prisoner2187.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Prisoner+2187+%28V%29	V20PM009	•Prisoner 2187 (V)	Prisoner 2187		(V)	
 7132	https://res.starwarsccg.org/cards/Virtual20-Light/large/thrownback.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Thrown+Back+%28V%29	V20C010	•Thrown Back (V)	Thrown Back		(V)	
 7139	https://res.starwarsccg.org/cards/VirtualAlternateImage-Light/large/bb8inblacksquadron1_ai.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2BB-8+In+Black+Squadron+1+%28AI%29	V11U028AI	•BB-8 In Black Squadron 1 (AI) (V)	BB-8 In Black Squadron 1		(V)(AI)	
@@ -1813,7 +1813,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 7146B	https://res.starwarsccg.org/cards/VirtualAlternateImage-Light/large/thefalconjunkyardgarbageback_ai.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2The+Falcon%2C+Junkyard+Garbage+%2F+%E2%80%A2The+Falcon%2C+Junkyard+Garbage+%28AI%29	V4C035AIB	•The Falcon, Junkyard Garbage (AI) (V) (Back)	The Falcon	Junkyard Garbage	(V)(AI)	Flip Falcon
 7147	https://res.starwarsccg.org/cards/VirtualAlternateImage-Light/large/captainrex501stlegionholo_ai.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Captain+Rex%2C+501st+Legion+%28Holo+AI%29	V0C2003	•Captain Rex, 501st Legion (Holo AI) (V)	Captain Rex	501st Legion (Holo AI)	(V)	
 3	https://res.starwarsccg.org/cards/SpecialEdition-Dark/large/2x7kprtooex.gif	https://scomp.starwarsccg.org/?s=2X-7KPR+%28Tooex%29	SEC163	2X-7KPR (Tooex)	2X-7KPR	Tooex		
-4	https://res.starwarsccg.org/cards/Dagobah-Dark/large/3720to1.gif	https://scomp.starwarsccg.org/?s=%E2%80%A23%2C720+To+1	DAGC114	•3,720 To 1	3	720 To 1		
+4	https://res.starwarsccg.org/cards/Dagobah-Dark/large/3720to1.gif	https://scomp.starwarsccg.org/?s=%E2%80%A23%2C720+To+1	DAGC114	•3,720 To 1	3	720 To 1		Numbers
 5	https://res.starwarsccg.org/cards/TheedPalace-Dark/large/3b310.gif	https://scomp.starwarsccg.org/?s=%E2%80%A23B3-10	TPU069	•3B3-10	3B3-10			
 6	https://res.starwarsccg.org/cards/TheedPalace-Dark/large/3b31204.gif	https://scomp.starwarsccg.org/?s=%E2%80%A23B3-1204	TPU070	•3B3-1204	3B3-1204			
 7	https://res.starwarsccg.org/cards/TheedPalace-Dark/large/3b321.gif	https://scomp.starwarsccg.org/?s=%E2%80%A23B3-21	TPU071	•3B3-21	3B3-21			
@@ -1896,7 +1896,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 130	https://res.starwarsccg.org/cards/ReflectionsII-Dark/large/arica.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Arica	Ref2PM031	•Arica	Arica			Shannon McRandle,Undercover Mara Jade
 4021	https://res.starwarsccg.org/cards/Virtual0-Dark/large/arica.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Arica+%28V%29	V0PM074	•Arica (V)	Arica		(V)	Shannon McRandle,Undercover Mara Jade
 134	https://res.starwarsccg.org/cards/TheedPalace-Dark/large/armoredattacktank.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2%E2%80%A2%E2%80%A2Armored+Attack+Tank	TPU121	•••Armored Attack Tank	Armored Attack Tank			
-5139	https://res.starwarsccg.org/cards/DemoDeck-Dark/large/asajjventresswithlightsabers.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Asajj+Ventress+With+Lightsabers	VPC003	•Asajj Ventress With Lightsabers	Asajj Ventress With Lightsabers			EPP Asajj,EPPentress
+5139	https://res.starwarsccg.org/cards/VirtualPremium-Dark/large/asajjventresswithlightsabers.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Asajj+Ventress+With+Lightsabers	VPC003	•Asajj Ventress With Lightsabers	Asajj Ventress With Lightsabers			EPP Asajj,EPPentress
 7006	https://res.starwarsccg.org/cards/VirtualAlternateImage-Dark/large/asajjventresswithlightsabers_ai.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Asajj+Ventress+With+Lightsabers+%28AI%29	VPC003AI	•Asajj Ventress With Lightsabers (AI)	Asajj Ventress With Lightsabers		(AI)	EPP Asajj,EPPentress
 146	https://res.starwarsccg.org/cards/Premiere-Dark/large/assaultrifle.gif	https://scomp.starwarsccg.org/?s=Assault+Rifle	PR2311	Assault Rifle	Assault Rifle			
 148	https://res.starwarsccg.org/cards/Dagobah-Dark/large/asteroidfield.gif	https://scomp.starwarsccg.org/?s=%3C%3E%3C%3E%3C%3EAsteroid+Field	DAGC155	[DS] ♢♢♢Asteroid Field	Asteroid Field			
@@ -2744,7 +2744,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 1613	https://res.starwarsccg.org/cards/Premiere-Dark/large/miiyoomonith.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2M%27iiyoom+Onith	PU2187	•M'iiyoom Onith	M'iiyoom Onith			
 1678	https://res.starwarsccg.org/cards/Coruscant-Dark/large/mindtricksdontworkonme.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Mind+Tricks+Don%27t+Work+On+Me	CORU136	•Mind Tricks Don't Work On Me	Mind Tricks Don't Work On Me			
 1682	https://res.starwarsccg.org/cards/Dagobah-Dark/large/misthunter.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Mist+Hunter	DAGR170	•Mist Hunter	Mist Hunter			
-6522	https://res.starwarsccg.org/cards/Virtual11-Dark/large/mitthrawnuruodo.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Mitth%27raw%27nuruodo	V11PM001	•Mitth'raw'nuruodo (V)	Mitth'raw'nuruodo		(V)	
+6522	https://res.starwarsccg.org/cards/Virtual11-Dark/large/mitthrawnuruodo.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Mitth%27raw%27nuruodo	V11PM001	•Mitth'raw'nuruodo (V)	Mitth'raw'nuruodo		(V)	Thrawn,Mitthrawnuruodo
 1684	https://res.starwarsccg.org/cards/DeathStarII-Dark/large/mobilizationpoints.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Mobilization+Points	DS2C129	•Mobilization Points	Mobilization Points			Mob Points
 1685	https://res.starwarsccg.org/cards/ANewHope-Dark/large/mobqueta1deluxefloater.gif	https://scomp.starwarsccg.org/?s=Mobquet+A-1+Deluxe+Floater	ANHC2157	Mobquet A-1 Deluxe Floater	Mobquet A-1 Deluxe Floater			
 1686	https://res.starwarsccg.org/cards/DeathStarII-Dark/large/moffjerjerrod.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Moff+Jerjerrod	DS2R117	•Moff Jerjerrod	Moff Jerjerrod			
@@ -3249,8 +3249,8 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 2650	https://res.starwarsccg.org/cards/Premiere-Dark/large/tuskenscavengers.gif	https://scomp.starwarsccg.org/?s=Tusken+Scavengers	PC2275	Tusken Scavengers	Tusken Scavengers			
 2651	https://res.starwarsccg.org/cards/JabbasPalace-Dark/large/twilekadvisor.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Twi%27lek+Advisor	JPC160	•Twi'lek Advisor	Twi'lek Advisor			
 6715	https://res.starwarsccg.org/cards/Virtual11-Dark/large/twilekadvisor.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Twi%27lek+Advisor+%28V%29	V11C015	•Twi'lek Advisor (V)	Twi'lek Advisor		(V)	
-6716F	https://res.starwarsccg.org/cards/DemoDeck-Dark/large/twinsunsoftatooine.gif	https://scomp.starwarsccg.org/?s=Twin+Suns+Of+Tatooine+%2F+Well+Trained+In+The+Jedi+Arts	VPR004F	Twin Suns Of Tatooine / Well Trained In The Jedi Arts	Twin Suns Of Tatooine	Well Trained In The Jedi Arts		DS Demo Deck
-6716B	https://res.starwarsccg.org/cards/DemoDeck-Dark/large/welltrainedinthejediarts.gif	https://scomp.starwarsccg.org/?s=Twin+Suns+Of+Tatooine+%2F+Well+Trained+In+The+Jedi+Arts	VPR004B	Well Trained In The Jedi Arts / Twin Suns Of Tatooine	Well Trained In The Jedi Arts	Twin Suns Of Tatooine		DS Demo Deck
+6716F	https://res.starwarsccg.org/cards/VirtualPremium-Dark/large/twinsunsoftatooine.gif	https://scomp.starwarsccg.org/?s=Twin+Suns+Of+Tatooine+%2F+Well+Trained+In+The+Jedi+Arts	VPR004F	Twin Suns Of Tatooine / Well Trained In The Jedi Arts	Twin Suns Of Tatooine	Well Trained In The Jedi Arts		DS Demo Deck
+6716B	https://res.starwarsccg.org/cards/VirtualPremium-Dark/large/welltrainedinthejediarts.gif	https://scomp.starwarsccg.org/?s=Twin+Suns+Of+Tatooine+%2F+Well+Trained+In+The+Jedi+Arts	VPR004B	Well Trained In The Jedi Arts / Twin Suns Of Tatooine	Well Trained In The Jedi Arts	Twin Suns Of Tatooine		DS Demo Deck
 2657	https://res.starwarsccg.org/cards/Hoth-Dark/large/tyrant.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Tyrant	HR1153	•Tyrant	Tyrant			
 2659	https://res.starwarsccg.org/cards/ANewHope-Dark/large/u3po.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2U-3PO+%28Yoo-Threepio%29	ANHR1107	•U-3PO (Yoo-Threepio)	U-3PO	Yoo-Threepio		
 2660	https://res.starwarsccg.org/cards/Premiere-Dark/large/ubrikkian9000z001.gif	https://scomp.starwarsccg.org/?s=Ubrikkian+9000+Z001	PC2310	Ubrikkian 9000 Z001	Ubrikkian 9000 Z001			
@@ -3522,7 +3522,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 7092	https://res.starwarsccg.org/cards/Virtual19-Dark/large/thrawnpincer.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Thrawn+Pincer	V19C1021	•Thrawn Pincer (V)	Thrawn Pincer		(V)	
 7093	https://res.starwarsccg.org/cards/Virtual19-Dark/large/thrawnsartcollection.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Thrawn%27s+Art+Collection	V19C020	•Thrawn's Art Collection (V)	Thrawn's Art Collection		(V)	
 7094	https://res.starwarsccg.org/cards/Virtual19-Dark/large/thunderflare.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Thunderflare+%28V%29	V19R022	•Thunderflare (V)	Thunderflare		(V)	
-7095	https://res.starwarsccg.org/cards/Virtual19-Dark/large/tuskenraiderwithhuntingrifle.gif	https://scomp.starwarsccg.org/?s=Tusken+Raider+With+Hunting+Rifle	V19C023	Tusken Raider With Hunting Rifle (V)	Tusken Raider With Hunting Rifle		(V)	
+7095	https://res.starwarsccg.org/cards/Virtual19-Dark/large/tuskenraiderwithhuntingrifle.gif	https://scomp.starwarsccg.org/?s=Tusken+Raider+With+Hunting+Rifle	V19C023	Tusken Raider With Hunting Rifle (V)	Tusken Raider With Hunting Rifle		(V)	EPP Tusken
 7096	https://res.starwarsccg.org/cards/Virtual19-Dark/large/understandartunderstandaspecies.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Understand+Art%2C+Understand+A+Species	V19C024	•Understand Art, Understand A Species (V)	Understand Art	Understand A Species	(V)	
 7097	https://res.starwarsccg.org/cards/Virtual19-Dark/large/unkarplutt.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Unkar+Plutt	V19U2025	•Unkar Plutt (V)	Unkar Plutt		(V)	
 7098	https://res.starwarsccg.org/cards/Virtual19-Dark/large/vader.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Vader+%28V%29	V19PM026	•Vader (V)	Vader		(V)	
@@ -3531,7 +3531,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 7122	https://res.starwarsccg.org/cards/Virtual7-Dark/large/grandadmiralthrawn_ai.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Grand+Admiral+Thrawn+%28V%29+%28AI%29	V7PM030AI	•Grand Admiral Thrawn (V) (AI)	Grand Admiral Thrawn		(V)(AI)	
 7123	https://res.starwarsccg.org/cards/Virtual20-Dark/large/bibfortunaheirtothepalace.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Bib+Fortuna%2C+Heir+To+The+Palace	V20U001	•Bib Fortuna, Heir To The Palace (V)	Bib Fortuna	Heir To The Palace	(V)	
 7124	https://res.starwarsccg.org/cards/Virtual20-Dark/large/drop.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Drop%21+%28V%29	V20U002	•Drop! (V)	Drop!		(V)	
-7125	https://res.starwarsccg.org/cards/Virtual20-Dark/large/ralltiir.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Ralltiir	V20C1003	[DS] •Ralltiir (V)	Ralltiir		(V)	
+7125	https://res.starwarsccg.org/cards/Virtual20-Dark/large/ralltiir.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Ralltiir+%28V%29	V20C1003	[DS] •Ralltiir (V)	Ralltiir		(V)	
 7126	https://res.starwarsccg.org/cards/Virtual20-Dark/large/thirdsister.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Third+Sister	V20U004	•Third Sister (V)	Third Sister		(V)	
 7127	https://res.starwarsccg.org/cards/Virtual20-Dark/large/zuckuss.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Zuckuss+%28V%29	V20R005	•Zuckuss (V)	Zuckuss		(V)	
 7133	https://res.starwarsccg.org/cards/VirtualAlternateImage-Dark/large/4lomwithconcussionrifle_ai.gif	https://scomp.starwarsccg.org/?s=%E2%80%A24-LOM+With+Concussion+Rifle+%28V%29+%28AI%29	V0PM071AI	•4-LOM With Concussion Rifle (V) (AI)	4-LOM With Concussion Rifle		(V)(AI)	
