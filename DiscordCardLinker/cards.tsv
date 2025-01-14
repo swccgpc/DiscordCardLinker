@@ -3130,7 +3130,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 2270	https://res.starwarsccg.org/cards/Tatooine-Dark/large/sithfury.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Sith+Fury	TATC086	•Sith Fury	Sith Fury			
 4003	https://res.starwarsccg.org/cards/Virtual0-Dark/large/sithfury.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Sith+Fury+%28V%29	V0C123	•Sith Fury (V)	Sith Fury		(V)	
 2271	https://res.starwarsccg.org/cards/Tatooine-Dark/large/sithprobedroid.gif	https://scomp.starwarsccg.org/?s=Sith+Probe+Droid	TATR064	Sith Probe Droid	Sith Probe Droid			
-4033	https://res.starwarsccg.org/cards/Virtual0-Dark/large/drk1darkeyeprobedroid.gif	https://scomp.starwarsccg.org/?s=DRK-1+%28Dark+Eye+Probe+Droid%29	V0R090	DRK-1 (Dark Eye Probe Droid) (V)	DRK-1	Dark Eye Probe Droid	(V)	
+4033	https://res.starwarsccg.org/cards/Virtual0-Dark/large/drk1darkeyeprobedroid.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2DRK-1+%28Dark+Eye+Probe+Droid%29	V0R090	•DRK-1 (Dark Eye Probe Droid) (V)	DRK-1	Dark Eye Probe Droid	(V)	
 2273	https://res.starwarsccg.org/cards/JabbasPalace-Dark/large/skiff.gif	https://scomp.starwarsccg.org/?s=Skiff	JPC173	[DS] Skiff	Skiff			
 2275	https://res.starwarsccg.org/cards/JabbasPalace-Dark/large/skrilling.gif	https://scomp.starwarsccg.org/?s=Skrilling	JPC123	Skrilling	Skrilling			
 2278	https://res.starwarsccg.org/cards/CloudCity-Dark/large/slavei.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Slave+I	CCR177	•Slave I	Slave I			
@@ -3505,7 +3505,7 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 6807	https://res.starwarsccg.org/cards/Virtual13-Dark/large/farmorefrighteningthandeath.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Far+More+Frightening+Than+Death	V13R018	•Far More Frightening Than Death (V)	Far More Frightening Than Death		(V)	
 6808	https://res.starwarsccg.org/cards/Virtual13-Dark/large/ineveraskforanythingtwice.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2I+Never+Ask+For+Anything+Twice	V13R019	•I Never Ask For Anything Twice (V)	I Never Ask For Anything Twice		(V)	
 6809	https://res.starwarsccg.org/cards/Virtual13-Dark/large/ivebeensearchingforyouforsometime.gif	https://scomp.starwarsccg.org/?s=I%27ve+Been+Searching+For+You+For+Some+Time	V13U020	I've Been Searching For You For Some Time (V)	I've Been Searching For You For Some Time		(V)	
-6810	https://res.starwarsccg.org/cards/Virtual13-Dark/large/workingmuchmoreclosely.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Working+Much+More+Closely	V13R022	•Working Much More Closely (V)	Working Much More Closely		(V)	
+6810	https://res.starwarsccg.org/cards/Virtual13-Dark/large/workingmuchmoreclosely.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Working+Much+More+Closely	V13U022	•Working Much More Closely (V)	Working Much More Closely		(V)	
 6811	https://res.starwarsccg.org/cards/Virtual13-Dark/large/dathomirmaulschambers.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Dathomir%3A+Maul%27s+Chambers	V13U2023	•Dathomir: Maul's Chambers (V)	Dathomir	Maul's Chambers	(V)	
 6812	https://res.starwarsccg.org/cards/Virtual13-Dark/large/executorcontrolstation.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Executor%3A+Control+Station+%28V%29	V13U024	•Executor: Control Station (V)	Executor	Control Station	(V)	
 6813	https://res.starwarsccg.org/cards/Virtual13-Dark/large/firstlightbar.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2First+Light%3A+Bar	V13U2025	•First Light: Bar (V)	First Light	Bar	(V)	
