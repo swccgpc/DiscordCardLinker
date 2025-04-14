@@ -1926,6 +1926,10 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 7381	https://res.starwarsccg.org/cards/VirtualAlternateImage-Light/large/restorefreedomtothegalaxy_ai.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Restore+Freedom+To+The+Galaxy+%28AI%29	V8R017AI	•Restore Freedom To The Galaxy (AI) (V)	Restore Freedom To The Galaxy		(V)(AI)	
 7382	https://res.starwarsccg.org/cards/VirtualAlternateImage-Light/large/tatooineobiwanshut_ai.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Tatooine%3A+Obi-Wan%27s+Hut+%28V%29+%28AI%29	V16R1043AI	•Tatooine: Obi-Wan's Hut (V) (AI)	Tatooine	Obi-Wan's Hut	(V)(AI)	
 7383	https://res.starwarsccg.org/cards/VirtualAlternateImage-Light/large/captainherasyndulla_ai2.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Captain+Hera+Syndulla+%28Border+Breaker+AI%29	V4C003	•Captain Hera Syndulla (Border Breaker AI) (V)	Captain Hera Syndulla	Border Breaker AI	(V)	
+7391	https://res.starwarsccg.org/cards/Virtual25-Light/large/criticalerrorrevealed.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Critical+Error+Revealed+%28V%29	V25C007	•Critical Error Revealed (V)	Critical Error Revealed		(V)	
+7392	https://res.starwarsccg.org/cards/Virtual25-Light/large/idontneedtheirscumeither.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2I+Don%27t+Need+Their+Scum%2C+Either+%28V%29	V25R008	•I Don't Need Their Scum, Either (V)	I Don't Need Their Scum	Either	(V)	
+7393	https://res.starwarsccg.org/cards/Virtual25-Light/large/mysisterhasit.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2My+Sister+Has+It	V25R009	•My Sister Has It (V)	My Sister Has It		(V)	
+7394	https://res.starwarsccg.org/cards/Virtual25-Light/large/wuta.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Wuta+%28V%29	V25U010	•Wuta (V)	Wuta		(V)	
 3	https://res.starwarsccg.org/cards/SpecialEdition-Dark/large/2x7kprtooex.gif	https://scomp.starwarsccg.org/?s=2X-7KPR+%28Tooex%29	SEC163	2X-7KPR (Tooex)	2X-7KPR	Tooex		
 4	https://res.starwarsccg.org/cards/Dagobah-Dark/large/3720to1.gif	https://scomp.starwarsccg.org/?s=%E2%80%A23%2C720+To+1	DAGC114	•3,720 To 1	3	720 To 1		Numbers
 5	https://res.starwarsccg.org/cards/TheedPalace-Dark/large/3b310.gif	https://scomp.starwarsccg.org/?s=%E2%80%A23B3-10	TPU069	•3B3-10	3B3-10			
@@ -3766,3 +3770,10 @@ ID	ImageURL	WikiURL	CollInfo	DisplayName	Title	Subtitle	TitleSuffix	Nicknames
 7368	https://res.starwarsccg.org/cards/VirtualAlternateImage-Dark/large/hondoohnaka_ai.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Hondo+Ohnaka+%28AI%29	V5C013AI	•Hondo Ohnaka (AI) (V)	Hondo Ohnaka		(V)(AI)	
 7369	https://res.starwarsccg.org/cards/VirtualAlternateImage-Dark/large/iamyourfather_ai.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2I+Am+Your+Father+%28V%29+%28AI%29	V5R017AI	•I Am Your Father (V) (AI)	I Am Your Father		(V)(AI)	
 7370	https://res.starwarsccg.org/cards/VirtualAlternateImage-Dark/large/imperialdecree_ai.gif	https://scomp.starwarsccg.org/?s=Imperial+Decree+%28V%29+%28AI%29	V0U108AI	Imperial Decree (V) (AI)	Imperial Decree		(V)(AI)	
+7384	https://res.starwarsccg.org/cards/Virtual25-Dark/large/bibfortuna.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Bib+Fortuna+%28V%29	V25R001	•Bib Fortuna (V)	Bib Fortuna		(V)	
+7385	https://res.starwarsccg.org/cards/Virtual25-Dark/large/blastpoints.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Blast+Points+%28V%29	V25C002	•Blast Points (V)	Blast Points		(V)	
+7386	https://res.starwarsccg.org/cards/Virtual25-Dark/large/comehereyoubigcoward.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Come+Here+You+Big+Coward+%28V%29	VDSPM003	•Come Here You Big Coward (V)	Come Here You Big Coward		(V)	
+7387	https://res.starwarsccg.org/cards/Virtual25-Dark/large/comehereyoubigcowardv.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Come+Here+You+Big+Coward+%28Special+Edition%29+%28V%29	VDSC003	•Come Here You Big Coward (Special Edition) (V)	Come Here You Big Coward	Special Edition	(V)	
+7388	https://res.starwarsccg.org/cards/Virtual25-Dark/large/nobargain.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2No+Bargain+%28V%29	V25U004	•No Bargain (V)	No Bargain		(V)	
+7389	https://res.starwarsccg.org/cards/Virtual25-Dark/large/silunch.gif	https://scomp.starwarsccg.org/?s=%E2%80%A2Sil+Unch+%28V%29	V25U005	•Sil Unch (V)	Sil Unch		(V)	
+7390	https://res.starwarsccg.org/cards/Virtual25-Dark/large/stranded.gif	https://scomp.starwarsccg.org/?s=Stranded	V25U1006	Stranded (V)	Stranded		(V)	
